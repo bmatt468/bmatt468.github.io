@@ -1,6 +1,13 @@
 {
-  "name": "vue3-template",
-  "version": "0.0.0",
+  "name": "bmatt468.github.io",
+  "version": "0.0.1",
+  "description": "Benjamin Matthews' Personal Portfolio",
+  "homepage": "https://bmatt468.com",
+  "author": {
+    "name": "Benjamin Matthews",
+    "email": "benjamin@benjaminrmatthews.com",
+    "url": "https://bmatt468.com"
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite --host",
