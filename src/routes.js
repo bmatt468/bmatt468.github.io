@@ -1,4 +1,4 @@
-import Index from '@/pages/index.vue';
+import Index from '@/pages/Index.vue';
 import NotFound from '@/pages/not-found.vue';
 
 export const routes = [
