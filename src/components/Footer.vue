@@ -9,7 +9,7 @@ const lastDeploymentTime = computed(() => {
   return `${year} ${cleanTime}`;
 });
 const deployedCommit = import.meta.env.VITE_CURRENT_COMMIT;
-const deploymentLink = `https://github.com/bmatt468/bmatt468.github.io/commits/${deployedCommit}`;
+const deploymentLink = `https://github.com/bmatt468/bmatt468.github.io/tree/${deployedCommit}`;
 </script>
 
 <template>
