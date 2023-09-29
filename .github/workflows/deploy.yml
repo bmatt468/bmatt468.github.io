@@ -48,6 +48,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+
+      - name: Create .env
+        run: ./scripts/buildEnv.sh
+
       - name: Build assets
         run: pnpm run build
 
