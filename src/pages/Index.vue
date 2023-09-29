@@ -58,7 +58,7 @@ onMounted(() => {
     </header>
 
     <main class="mx-auto flex grow max-w-3xl flex-col items-center justify-center py-16 px-4">
-      <h1 class="pb-20 text-center text-6xl text-gray-700 transition-colors dark:text-gray-100">
+      <h1 class="pb-20 text-center text-6xl text-outerspace transition-colors dark:text-gray-100">
         Coming soon...
       </h1>
     </main>
@@ -69,6 +69,6 @@ onMounted(() => {
 
 <style>
 body {
-  @apply dark:bg-gray-900 dark:text-gray-50;
+  @apply dark:bg-outerspace dark:text-gray-50;
 }
 </style>
