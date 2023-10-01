@@ -1,13 +1,13 @@
 <script setup>
-import { computed } from 'vue';
+// import { computed } from 'vue';
 
-const lastDeploymentTime = computed(() => {
-  const dateObject = new Date(import.meta.env.VITE_LAST_DEPLOYMENT * 1000);
-  const [year, time] = dateObject.toISOString().split('T');
-  const [cleanTime] = time.split('.');
-
-  return `${year} ${cleanTime}`;
-});
+// const lastDeploymentTime = computed(() => {
+//   const dateObject = new Date(import.meta.env.VITE_LAST_DEPLOYMENT * 1000);
+//   const [year, time] = dateObject.toISOString().split('T');
+//   const [cleanTime] = time.split('.');
+//
+//   return `${year} ${cleanTime}`;
+// });
 const deployedCommit = import.meta.env.VITE_CURRENT_COMMIT;
 const deploymentLink = `https://github.com/bmatt468/bmatt468.github.io/tree/${deployedCommit}`;
 </script>
@@ -17,10 +17,6 @@ const deploymentLink = `https://github.com/bmatt468/bmatt468.github.io/tree/${de
     <div class="flex">
       <div class="grow p-1">
         &copy; {{ new Date().getFullYear() }} Benjamin R. Matthews.
-      </div>
-
-      <div class="p-1">
-        Last deployment: {{ lastDeploymentTime }}
       </div>
 
       <div class="p-1">

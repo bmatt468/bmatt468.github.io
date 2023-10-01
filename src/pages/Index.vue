@@ -11,7 +11,7 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <Header></Header>
+    <Header />
 
     <main class="mx-auto flex grow max-w-3xl flex-col items-center justify-center py-16 px-4">
       <h1 class="pb-20 text-center text-6xl text-outerspace transition-colors dark:text-gray-100">
@@ -19,7 +19,7 @@ onMounted(() => {
       </h1>
     </main>
 
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 
