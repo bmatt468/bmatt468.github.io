@@ -1,12 +1,12 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 
-import Compatibility from '../components/Compatibility.astro';
 import Features from '../components/Features.astro';
-import Footer from '../components/footer.astro';
+import Footer from '../components/Footer.astro';
 import Header from '../components/header.astro';
 import Intro from '../components/Intro.astro';
 import Showcase from '../components/Showcase.astro';
+import Skills from '../components/Skills.astro';
 import Splash from '../components/Splash.astro';
 ---
 
@@ -15,9 +15,10 @@ import Splash from '../components/Splash.astro';
   <Splash />
   <div class="space-y-24 px-8 py-32">
     <Intro />
+    <Skills />
     <Features />
-    <Compatibility />
     <Showcase />
   </div>
   <Footer />
+  <!--  some call to action here / contact-->
 </Layout>

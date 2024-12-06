@@ -1,8 +1,8 @@
 ---
 import type { CompatibilityItem } from '~/types';
 
-import CompatibilityList from './CompatibilityList.astro';
 import ContentSection from './ContentSection.astro';
+import SkillsList from './SkillsList.astro';
 
 const frameworks: Array<CompatibilityItem> = [
   {
@@ -80,14 +80,14 @@ const platforms: Array<CompatibilityItem> = [
     <span class="text-primary">framework</span>
     and deploy to your favorite <span class="text-primary">platform</span>.
   </Fragment>
-  <CompatibilityList
+  <SkillsList
     items={frameworks}
     title="Frameworks"
     url="https://docs.astro.build/core-concepts/framework-components/"
   />
-  <CompatibilityList
+  <SkillsList
     items={platforms}
-    title="Platforms"
+    title="Languages"
     url="https://docs.astro.build/guides/deploy/"
   />
 </ContentSection>
