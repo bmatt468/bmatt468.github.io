@@ -11,7 +11,7 @@ import Splash from '../components/Splash.astro';
 
 import '~/styles/index.css';
 
-const { generator, site } = Astro;
+const { site } = Astro;
 const image = new URL('social.jpg', site);
 const description = 'Hi! I\'m Benjamin, and welcome to my corner of the web. Come learn about what I\'m up to currently!';
 ---
@@ -33,10 +33,6 @@ const description = 'Hi! I\'m Benjamin, and welcome to my corner of the web. Com
       href="/favicon.svg"
       type="image/svg+xml"
     />
-    <meta
-      name="generator"
-      content={generator}
-    />
 
     <title>Benjamin R. Matthews</title>
     <meta
@@ -47,7 +43,7 @@ const description = 'Hi! I\'m Benjamin, and welcome to my corner of the web. Com
     <!-- social media -->
     <meta
       property="og:title"
-      content="Astro"
+      content="Benjamin R. Matthews"
     />
     <meta
       property="og:type"

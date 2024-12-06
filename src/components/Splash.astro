@@ -3,10 +3,10 @@ import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
 import astronautImage from '~/assets/astronaut.png';
-import HeroImage from './HeroImage.astro';
-import Starfield from './Starfield.astro';
 
 import GitHubCorner from './GithubCorner.astro';
+import HeroImage from './HeroImage.astro';
+import Starfield from './Starfield.astro';
 
 const widths = [450, 800];
 const sizes = '(min-width: 640px) 42vw, 67vw';
@@ -26,16 +26,15 @@ const sizes = '(min-width: 640px) 42vw, 67vw';
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
       <Icon
-        name="logomark"
+        name="logos/logo"
         class="size-20 text-white md:size-32"
       />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"
+      <span
+        class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-7xl lg:text-8xl"
       >
-        Build fast
-        <br /> websites,
-        <br /> faster.
-      </div>
+        Hello,
+        <br /> I'm&nbsp;Benjamin!
+      </span>
     </h2>
     <div
       id="astronaut"
