@@ -1,5 +1,22 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import Footer from "../components/footer.astro";
+import Splash from "../components/Splash.astro";
+import Showcase from "../components/Showcase.astro";
+import Compatibility from "../components/Compatibility.astro";
+import Header from "../components/header.astro";
+import Intro from "../components/Intro.astro";
+import Features from "../components/Features.astro";
 ---
 
-<Layout></Layout>
+<Layout>
+  <Header />
+  <Splash />
+  <div class="space-y-24 px-8 py-32">
+    <Intro />
+    <Features />
+    <Compatibility />
+    <Showcase />
+  </div>
+  <Footer />
+</Layout>
