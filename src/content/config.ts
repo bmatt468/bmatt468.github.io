@@ -1,7 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 const showcase = defineCollection({
-  type: "data",
+  type: 'data',
   schema: ({ image }) =>
     z.object({
       title: z.string().min(1),

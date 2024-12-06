@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 ---
 
 <!--
@@ -12,26 +12,35 @@ import { Icon } from "astro-icon/components";
   class="-ml-12 origin-[right_center] scale-0 transition-all duration-500"
 >
   <div id="icon-theme-light">
-    <Icon name="mdi:white-balance-sunny" class="size-6" />
+    <Icon
+      name="mdi:white-balance-sunny"
+      class="size-6"
+    />
     <span class="sr-only">Use light theme</span>
   </div>
-  <div id="icon-theme-dark" class="hidden">
-    <Icon name="mdi:weather-night" class="size-6" />
+  <div
+    id="icon-theme-dark"
+    class="hidden"
+  >
+    <Icon
+      name="mdi:weather-night"
+      class="size-6"
+    />
     <span class="sr-only">Use dark theme</span>
   </div>
 </button>
 
 <script>
-  import invariant from "tiny-invariant";
+  import invariant from 'tiny-invariant';
 
-  const themes = ["light", "dark"];
-  const button = document.querySelector("#theme-switcher");
-  invariant(button, "button should not be null");
+  const themes = ['light', 'dark'];
+  const button = document.querySelector('#theme-switcher');
+  invariant(button, 'button should not be null');
 
   const getThemeCurrent = () => document.documentElement.dataset.theme;
   const getThemeNext = () => {
     const themeCurrent = getThemeCurrent();
-    invariant(themeCurrent, "themeCurrent should not be undefined");
+    invariant(themeCurrent, 'themeCurrent should not be undefined');
     const indexThemeCurrent = themes.indexOf(themeCurrent);
     return themes[(indexThemeCurrent + 1) % themes.length];
   };
@@ -40,17 +49,17 @@ import { Icon } from "astro-icon/components";
     const themeCurrent = getThemeCurrent();
     document
       .querySelector(`#icon-theme-${themeCurrent}`)
-      ?.classList.add("hidden");
+      ?.classList.add('hidden');
     const themeNext = getThemeNext();
     document
       .querySelector(`#icon-theme-${themeNext}`)
-      ?.classList.remove("hidden");
+      ?.classList.remove('hidden');
   };
 
-  button.addEventListener("click", () => {
+  button.addEventListener('click', () => {
     const themeNext = getThemeNext();
     document.documentElement.dataset.theme = themeNext;
-    localStorage.setItem("theme", themeNext);
+    localStorage.setItem('theme', themeNext);
     updateIcon();
   });
 
