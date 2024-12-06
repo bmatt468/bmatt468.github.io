@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 
-import ContentSection from '~/components/content-section.astro';
-import ShowcaseCard from '~/components/showcase-card.astro';
+import ContentSection from './ContentSection.astro';
+import ShowcaseCard from './ShowcaseCard.astro';
 
 const featuredSites = await getCollection(
   'showcase',

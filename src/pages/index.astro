@@ -1,20 +1,19 @@
 ---
 import '@fontsource-variable/inter';
 
-import Compatibility from '~/components/compatibility.astro';
-import Features from '~/components/features.astro';
+import Compatibility from '../components/Compatibility.astro';
+import Features from '../components/Features.astro';
 import Footer from '~/components/footer.astro';
 import Header from '~/components/header.astro';
-import Intro from '~/components/intro.astro';
-import Showcase from '~/components/showcase.astro';
-import Splash from '~/components/splash.astro';
+import Intro from '../components/Intro.astro';
+import Showcase from '../components/Showcase.astro';
+import Splash from '../components/Splash.astro';
 
 import '~/styles/index.css';
 
 const { generator, site } = Astro;
 const image = new URL('social.jpg', site);
-const description =
-  'Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.';
+const description = 'Hi! I\'m Benjamin, and welcome to my corner of the web. Come learn about what I\'m up to currently!';
 ---
 
 <!doctype html>
