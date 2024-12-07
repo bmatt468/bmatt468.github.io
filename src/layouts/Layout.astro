@@ -2,6 +2,9 @@
 import '@fontsource-variable/inter';
 import '~/styles/index.css';
 
+import CommonMeta from '~/components/common/CommonMeta.astro';
+import Favicons from '~/components/common/Favicons.astro';
+
 const { site } = Astro;
 const image = new URL('social.jpg', site);
 const description =
@@ -15,16 +18,8 @@ const description =
   data-theme="dark"
 >
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <link
-      rel="icon"
-      href="/favicon.svg"
-      type="image/svg+xml"
-    />
+    <CommonMeta />
+    <Favicons />
 
     <title>Benjamin R. Matthews</title>
     <meta
