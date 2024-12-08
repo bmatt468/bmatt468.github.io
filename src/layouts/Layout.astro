@@ -2,23 +2,18 @@
 import '@fontsource-variable/inter';
 import '~/styles/index.css';
 
-import type { Metadata as MetadataType } from '~/types';
+import type { MetaData as MetaDataType } from '~/types';
 
 import Favicons from '~/components/common/Favicons.astro';
 
-import Metadata from '../components/common/Metadata.astro';
-import SocialMedia from '../components/common/SocialMedia.astro';
+import MetaData from '../components/common/MetaData.astro';
 import ThemeInitialization from '../components/common/ThemeInitialization.astro';
 
-// const { site } = Astro;
-// const image = new URL('social.jpg', site);
-
 export interface Props {
-  title?: string;
-  metadata: MetadataType;
+  metadata?: MetaDataType;
 }
 
-const { title = 'Benjamin R. Matthews', metadata } = Astro.props;
+const { metadata = {} } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,11 +23,8 @@ const { title = 'Benjamin R. Matthews', metadata } = Astro.props;
   data-theme="dark"
 >
   <head>
-    <title>{title}</title>
-
-    <Metadata description={metadata.description} />
+    <MetaData {...metadata} />
     <Favicons />
-    <SocialMedia />
     <ThemeInitialization />
   </head>
   <body

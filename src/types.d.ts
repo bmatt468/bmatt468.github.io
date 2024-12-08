@@ -16,13 +16,14 @@ export interface FooterLink {
   url: string;
 }
 
-export interface Metadata {
-  description: string;
+export interface MetaData {
+  title?: string;
+  description?: string;
+  site?: URL;
+  image?: URL;
 }
 
 export interface NavItem {
   title: string;
   url: string;
 }
-
-export interface SocialMedia {}
