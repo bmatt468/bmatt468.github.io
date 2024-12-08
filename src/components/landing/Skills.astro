@@ -1,8 +1,8 @@
 ---
-import type { CompatibilityItem } from '../types';
+import type { CompatibilityItem } from '../../types';
 
-import ContentSection from './ContentSection.astro';
-import SkillsList from './SkillsList.astro';
+import ContentSection from '../ContentSection.astro';
+import SkillsList from '../SkillsList.astro';
 
 const frameworks: Array<CompatibilityItem> = [
   {
@@ -72,8 +72,8 @@ const platforms: Array<CompatibilityItem> = [
 ---
 
 <ContentSection
-  title="Compatibility"
-  id="compatibility"
+  title="Skills"
+  id="skills"
 >
   <Fragment slot="lead">
     Astro <span class="text-primary">plays nice</span>. Bring your own UI{' '}
