@@ -13,3 +13,6 @@ This site is adapted from the incredible [Astro Landing Page](https://github.com
 ## Local Build
 
 ## Obfuscation
+
+- astrowind
+- other blog thingy
