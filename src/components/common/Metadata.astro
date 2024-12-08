@@ -1,5 +1,9 @@
 ---
+import type { Metadata as MetadataType } from '~/types';
 
+export interface Props extends MetadataType {}
+
+const { description = '' } = Astro.props;
 ---
 
 <!-- Common Meta -->
@@ -10,7 +14,7 @@
 />
 <meta
   name="description"
-  content="replaceme"
+  content={description}
 />
 
 <!-- TODO: Sitemap -->

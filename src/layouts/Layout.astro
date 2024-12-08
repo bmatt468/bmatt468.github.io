@@ -2,6 +2,8 @@
 import '@fontsource-variable/inter';
 import '~/styles/index.css';
 
+import type { Metadata as MetadataType } from '~/types';
+
 import Favicons from '~/components/common/Favicons.astro';
 
 import Metadata from '../components/common/Metadata.astro';
@@ -10,10 +12,13 @@ import ThemeInitialization from '../components/common/ThemeInitialization.astro'
 
 // const { site } = Astro;
 // const image = new URL('social.jpg', site);
-// const description =
-//   "Hi! I'm Benjamin, and welcome to my corner of the web. Come learn about what I'm up to currently!";
 
-const title = 'Benjamin R. Matthews';
+export interface Props {
+  title?: string;
+  metadata: MetadataType;
+}
+
+const { title = 'Benjamin R. Matthews', metadata } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,7 +30,7 @@ const title = 'Benjamin R. Matthews';
   <head>
     <title>{title}</title>
 
-    <Metadata />
+    <Metadata description={metadata.description} />
     <Favicons />
     <SocialMedia />
     <ThemeInitialization />
