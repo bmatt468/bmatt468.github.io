@@ -7,5 +7,13 @@ export default defineConfig({
   output: 'static',
   site: 'https://www.bmatt468.com',
 
-  integrations: [tailwind(), icon()],
+  integrations: [
+    tailwind(),
+    icon({
+      include: {
+        mdi: ['*'],
+        fa_brands: ['*'],
+      }
+    })
+  ],
 });
