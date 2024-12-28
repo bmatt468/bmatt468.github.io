@@ -13,7 +13,7 @@ export default defineConfig({
       include: {
         mdi: ['*'],
         fa_brands: ['*'],
-      }
-    })
+      },
+    }),
   ],
 });
