@@ -12,7 +12,8 @@ export default defineConfig({
     icon({
       include: {
         mdi: ['*'],
-        fa_brands: ['*'],
+        fa6_brands: ['*'],
+        game_icons: ['astronaut-helmet'],
       },
     }),
   ],
