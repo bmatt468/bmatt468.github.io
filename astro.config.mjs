@@ -11,9 +11,10 @@ export default defineConfig({
     tailwind(),
     icon({
       include: {
-        mdi: ['*'],
+        carbon: ['blog', 'network-enterprise'],
         fa6_brands: ['*'],
         game_icons: ['astronaut-helmet'],
+        mdi: ['*'],
       },
     }),
   ],
