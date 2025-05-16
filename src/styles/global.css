@@ -48,7 +48,3 @@
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-:root {
-  @apply transition-colors duration-100;
-}
