@@ -2,6 +2,7 @@
 import '../styles/global.css';
 
 import Favicons from '../components/common/Favicons.astro';
+import Metadata from '../components/common/Metadata.astro';
 ---
 
 <html
@@ -11,16 +12,9 @@ import Favicons from '../components/common/Favicons.astro';
 >
   <head>
     <Favicons />
-
     <!--  Fonts-->
     <!--  Meta-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-
-    <!--  Title-->
+    <Metadata />
   </head>
   <body class="min-h-screen">
     <slot />
