@@ -17,13 +17,15 @@
     "astro": "astro",
     "check": "npm run check:astro && npm run check:prettier && npm run check:eslint",
     "check:astro": "astro check",
-    "check:eslint": "npx eslint src/",
+    "check:eslint": "npx eslint .",
     "check:prettier": "npx prettier . --check",
     "fix": "npm run fix:prettier && npm run fix:eslint",
     "fix:eslint": "npx eslint --fix src/",
     "fix:prettier": "npx prettier . --write"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.7",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"
   },
   "devDependencies": {

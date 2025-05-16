@@ -1,18 +1,22 @@
 ---
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!-- Below is your "component template." It's just HTML, but with
-    some magic sprinkled in to help you build great templates. -->
-<html>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
-<style>
-  h1 {
-    color: orange;
-  }
-</style>
+<BaseLayout>
+  <h1>Header</h1>
+  <hr>
+
+  <h1>Hero</h1>
+  <hr>
+
+  <h1>Skills</h1>
+  <hr>
+  <h1>Experience</h1>
+  <hr>
+  <h1>Resume</h1>
+  <hr>
+  <h1>Contact</h1>
+  <hr>
+  <h1>Footer</h1>
+  <hr>
+</BaseLayout>
