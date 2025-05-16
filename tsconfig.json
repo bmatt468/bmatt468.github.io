@@ -12,5 +12,5 @@
       }
     ]
   },
-  "exclude": ["dist/",".archive"]
+  "exclude": ["dist/", ".archive"]
 }
