@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "homepage": "https://bmatt468.com",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "author": {
     "name": "Benjamin Matthews",
     "email": "me@bmatt468.com",
