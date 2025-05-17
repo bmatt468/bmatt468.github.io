@@ -32,19 +32,20 @@ const links: Array<FooterLink> = [
 ---
 
 <footer
-  class="bg-neutral text-neutral-content flex flex-col items-center justify-center md:flex-row p-8 md:p-4 gap-4"
+  class="bg-neutral text-neutral-content flex flex-col items-center justify-center gap-4 p-8 md:flex-row md:p-4"
 >
-  <aside class="flex-auto flex items-center gap-x-2">
+  <aside class="flex flex-auto items-center gap-x-2">
     <Icon
       name="logos/logo"
       class="size-14 md:size-10"
     />
-    <p class="text-sm leading-none hidden md:block">
-      Copyright &copy; {new Date().getFullYear()} Benjamin R. Matthews - All rights reserved
+    <p class="hidden text-sm leading-none md:block">
+      Copyright &copy; {new Date().getFullYear()} Benjamin R. Matthews - All rights
+      reserved
     </p>
   </aside>
 
-  <nav class="flex items-center justify-center md:justify-end gap-2">
+  <nav class="flex items-center justify-center gap-2 md:justify-end">
     {
       links.map((link) => (
         <a
@@ -60,7 +61,8 @@ const links: Array<FooterLink> = [
       ))
     }
   </nav>
-  <p class="text-center flex-auto text-pretty text-xs md:hidden">
-    Copyright &copy; {new Date().getFullYear()} Benjamin R. Matthews<br/>All rights reserved
+  <p class="flex-auto text-center text-xs text-pretty md:hidden">
+    Copyright &copy; {new Date().getFullYear()} Benjamin R. Matthews<br />All
+    rights reserved
   </p>
 </footer>
