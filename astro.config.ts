@@ -9,7 +9,14 @@ export default defineConfig({
   trailingSlash: 'ignore',
   output: 'static',
 
-  integrations: [icon(), sitemap()],
+  integrations: [
+    icon({
+      include: {
+        mdi: ['linkedin', 'github', 'blog', 'external-link'],
+      },
+    }),
+    sitemap(),
+  ],
 
   vite: {
     plugins: [tailwindcss()],
