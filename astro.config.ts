@@ -12,7 +12,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ['linkedin', 'github', 'blog', 'external-link'],
+        mdi: ['linkedin', 'github', 'blog', 'external-link','code-braces-box'],
       },
     }),
     sitemap(),
