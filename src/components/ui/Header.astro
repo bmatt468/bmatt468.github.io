@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import ThemeToggle from '@components/ui/ThemeToggle.astro';
+---
+
+<header
+  id="page-header"
+  class="navbar fixed z-50 p-4"
+>
+  <div class="navbar-start">
+    <Icon
+      name="logos/logo"
+      class="size-10"
+    />
+  </div>
+  <div class="navbar-end">
+    <ThemeToggle />
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('#page-header') as HTMLElement;
+  const page = document.documentElement;
+
+  document.addEventListener('scroll', () => {
+    const d = page.scrollTop - header.offsetHeight;
+    console.log(d);
+    header.classList.toggle('fixed-header', d > 0);
+  });
+</script>

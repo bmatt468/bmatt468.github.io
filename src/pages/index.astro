@@ -2,38 +2,13 @@
 import { Icon } from 'astro-icon/components';
 
 import Footer from '@components/ui/Footer.astro';
+import Header from '@components/ui/Header.astro';
 import ThemeToggle from '@components/ui/ThemeToggle.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <!--begin header-->
-  <header
-    id="page-header"
-    class="navbar fixed p-4"
-  >
-    <div class="navbar-start">
-      <Icon
-        name="logos/logo"
-        class="size-10"
-      />
-    </div>
-    <div class="navbar-end">
-      <ThemeToggle />
-    </div>
-  </header>
-
-  <script>
-    const header = document.querySelector('#page-header') as HTMLElement;
-    const page = document.documentElement;
-
-    document.addEventListener('scroll', () => {
-      const d = page.scrollTop - header.offsetHeight;
-      console.log(d);
-      header.classList.toggle('fixed-header', d > 0);
-    });
-  </script>
-  <!--end header-->
+  <Header />
 
   <!--begin hero-->
   <div class="hero bg-base-200 min-h-screen">
@@ -43,8 +18,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <h1 class="text-5xl font-bold">I'm Benjamin!</h1>
         <p class="hidden">General Kenobi...</p>
         <p class="py-6">
-          I am full-stack engineer and engineering leader with over a decade of
-          experience. Come see what I've been up to!
+          I am a full-stack engineer and engineering leader with over a decade
+          of experience. Come see what I've been up to!
         </p>
         <button class="btn btn-primary">Learn More</button>
         <a
