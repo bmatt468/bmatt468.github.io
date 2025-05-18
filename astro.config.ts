@@ -12,8 +12,8 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ['linkedin', 'github', 'blog', 'external-link','code-braces-box'],
-        "skill-icons": [
+        mdi: ['linkedin', 'github', 'blog', 'external-link', 'code-braces-box'],
+        'skill-icons': [
           'php-light',
           'php-dark',
           'phpstorm-light',
