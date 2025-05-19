@@ -50,8 +50,8 @@ export const skillIcons: { [key: string]: SkillIcon } = {
   },
 
   docker: {
-    darkIcon: 'skill-icons:docker-dark',
-    lightIcon: 'skill-icons:docker-light',
+    darkIcon: 'skill-icons:docker',
+    lightIcon: 'skill-icons:docker',
     tooltip: 'Docker',
   },
 
@@ -200,8 +200,8 @@ export const skillIcons: { [key: string]: SkillIcon } = {
   },
 
   vue: {
-    darkIcon: 'skill-icons:vue-dark',
-    lightIcon: 'skill-icons:vue-light',
+    darkIcon: 'skill-icons:vuejs-dark',
+    lightIcon: 'skill-icons:vuejs-light',
     tooltip: 'Vue.js',
   },
 
@@ -232,4 +232,8 @@ export function getSkillIcons(skills: string[]): Array<SkillIcon> {
   }
 
   return skillIcons;
+}
+
+export function getAllSkillIcons(): Array<SkillIcon> {
+  return Object.values(skillIcons);
 }
