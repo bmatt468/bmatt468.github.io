@@ -1,3 +1,11 @@
+// Head types
+export interface Metadata {
+  title?: string;
+  description?: string;
+  image?: string;
+  site?: string;
+}
+
 // Experience Types
 export interface ExperienceNode {
   timeframe: string;
