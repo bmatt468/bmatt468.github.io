@@ -1,31 +1,25 @@
-# Logs
-/logs
-*.log
+# My .ideas are my own 🤣
+.idea/
+
+# build output
+.archive/
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-report.*.json
-debug.log
 
-# Dependency directories
-node_modules/
-jspm_packages/
+# environment variables
+.env
+.env.production
 
-# macOS
+# macOS-specific files
 .DS_Store
-
-# Vim swap files
-*.swp
-
-# Build
-dist
-dist-ssr
-
-# IDE / Editor
-.idea
-
-# dotenv
-.env*
-*.local
-!.env.sample
-.stylelintcache

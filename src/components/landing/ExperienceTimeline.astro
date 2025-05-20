@@ -1,0 +1,97 @@
+---
+import type { ExperienceNode, SkillIcon } from '../../env';
+
+import { Icon } from 'astro-icon/components';
+
+import ContentSection from '@components/ui/ContentSection.astro';
+import { getAllSkillIcons } from '@icons/skillIcons';
+
+const experienceNodes: Array<ExperienceNode> = [
+  {
+    title: 'Director of Software Engineering',
+    company: 'PassiveInvesting.com',
+    timeframe: '2023 - 2024',
+    skillIcons: getAllSkillIcons(),
+  },
+  {
+    title: 'Engineering Manager',
+    company: 'ComplYant',
+    timeframe: '2021 - 2023',
+    skillIcons: getAllSkillIcons(),
+  },
+  {
+    title: 'Lead Software Engineer',
+    company: 'Formstack',
+    timeframe: '2018 - 2021',
+    skillIcons: getAllSkillIcons(),
+  },
+  {
+    title: 'Senior Software Engineer',
+    company: 'LoudDoor',
+    timeframe: '2016 - 2018',
+    skillIcons: getAllSkillIcons(),
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Decision Dynamics',
+    timeframe: '2015 - 2016',
+    skillIcons: getAllSkillIcons(),
+  },
+];
+
+function calcTimelineLeftRight(index: number): string[] {
+  const leftSide = ['timeline-start', 'md:text-end'];
+  const rightSide = ['timeline-end'];
+  return index % 2 === 0 ? leftSide : rightSide;
+}
+---
+
+<ContentSection classes={['landing-experience']}>
+  <h2>Experience</h2>
+  <div class="flex md:items-center md:justify-center">
+    <ul
+      class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical max-w-2xl"
+    >
+      {
+        experienceNodes.map((node: ExperienceNode, index: number) => (
+          <li>
+            <div class="timeline-middle">
+              <Icon
+                name="mdi:code-braces-box"
+                class="size-6"
+              />
+            </div>
+            <div class:list={['mt-3 mb-10', calcTimelineLeftRight(index)]}>
+              <p class="text-lg leading-none font-black">{node.title}</p>
+              <p class="leading-6 italic">{node.company}</p>
+              <p class="mb-1 leading-none">{node.timeframe}</p>
+              <div class="my-2 inline-grid grid-cols-6 gap-2">
+                {node.skillIcons.map((icon: SkillIcon) => (
+                  <div>
+                    <Icon
+                      name={icon.lightIcon}
+                      class="border-base-300 bg-base-300 size-8 rounded-lg border-1 shadow-md dark:hidden"
+                    />
+                    <Icon
+                      name={icon.darkIcon}
+                      class="border-base-300 bg-base-300 hidden size-8 rounded-lg border-1 shadow-md dark:block"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <hr />
+          </li>
+        ))
+      }
+      <li>
+        <div class="timeline-middle">
+          <Icon
+            name="mdi:code-braces-box"
+            class="size-6"
+          />
+        </div>
+      </li>
+    </ul>
+  </div>
+</ContentSection>

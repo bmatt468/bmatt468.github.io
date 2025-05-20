@@ -1,0 +1,22 @@
+---
+import '@styles/global.css';
+
+import Favicons from '@components/common/Favicons.astro';
+import Metadata from '@components/common/Metadata.astro';
+import ThemeInitialization from '@components/common/ThemeInitialization.astro';
+---
+
+<html
+  lang="en"
+  class="scroll-smooth"
+>
+  <head>
+    <Favicons />
+    <!--  Fonts-->
+    <Metadata />
+    <ThemeInitialization />
+  </head>
+  <body class="min-h-screen">
+    <slot />
+  </body>
+</html>

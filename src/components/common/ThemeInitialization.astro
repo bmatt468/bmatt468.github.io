@@ -1,0 +1,39 @@
+<script>
+  const darkTheme = 'dark';
+  const lightTheme = 'light';
+  const defaultTheme = lightTheme;
+  const theme = ((): string => {
+    const allowedThemes = [darkTheme, lightTheme];
+    const fallback = window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+    const localStorageTheme = localStorage?.getItem('theme') ?? '';
+    return allowedThemes.includes(localStorageTheme)
+      ? localStorageTheme
+      : fallback;
+  })();
+
+  window.localStorage.setItem('theme', theme);
+  document.documentElement.setAttribute('data-theme', theme);
+
+  [
+    ...document.querySelectorAll('input[type=checkbox].theme-controller'),
+  ].forEach((el) => {
+    if (theme === darkTheme) {
+      el.setAttribute('checked', 'checked');
+    } else {
+      el.removeAttribute('checked');
+    }
+
+    el.addEventListener('click', () => {
+      const lt = el.getAttribute('data-light-theme') ?? '';
+      const dt = el.getAttribute('data-dark-theme') ?? '';
+      const wt =
+        document.documentElement.getAttribute('data-theme') ?? defaultTheme;
+      const next = lt === wt ? dt : lt;
+
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  });
+</script>

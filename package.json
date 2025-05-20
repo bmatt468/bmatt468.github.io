@@ -1,45 +1,52 @@
 {
   "name": "bmatt468.github.io",
+  "type": "module",
   "version": "0.0.1",
-  "description": "Benjamin Matthews' Personal Portfolio",
   "homepage": "https://bmatt468.com",
+  "license": "GPL-3.0-or-later",
   "author": {
     "name": "Benjamin Matthews",
-    "email": "benjamin@benjaminrmatthews.com",
-    "url": "https://bmatt468.com"
+    "email": "me@bmatt468.com",
+    "url": "https://github.com/bmatt468"
   },
   "scripts": {
-    "build": "vite build",
-    "dev": "vite --host",
-    "lint": "pnpm run lint:js && pnpm run lint:style",
-    "lint:fix": "pnpm run lint:js -- --fix && pnpm run lint:style -- --fix",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore src",
-    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
-    "serve": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "npm run check:astro && npm run check:prettier && npm run check:eslint",
+    "check:astro": "astro check",
+    "check:eslint": "npx eslint .",
+    "check:prettier": "npx prettier . --check",
+    "fix": "npm run fix:prettier && npm run fix:eslint",
+    "fix:eslint": "npx eslint --fix src/",
+    "fix:prettier": "npx prettier . --write"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/skill-icons": "^1.2.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.7",
+    "astro": "^5.7.13",
+    "astro-icon": "^1.1.5",
+    "gsap": "^3.13.0",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.3.4",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.50.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-tailwindcss": "^3.13.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "postcss": "^8.4.31",
-    "postcss-html": "^1.5.0",
-    "stylelint": "^15.10.3",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-recommended-vue": "^1.5.0",
-    "stylelint-config-standard": "^30.0.1",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.9",
-    "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-stylelint": "^4.3.0",
-    "vite-svg-loader": "^4.0.0"
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "daisyui": "^5.0.35",
+    "eslint": "^9.26.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "jiti": "^2.4.2",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }

@@ -1,0 +1,64 @@
+---
+import ExperienceTimeline from '@components/landing/ExperienceTimeline.astro';
+import ContentSection from '@components/ui/ContentSection.astro';
+import Footer from '@components/ui/Footer.astro';
+import Header from '@components/ui/Header.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <Header />
+
+  <!--begin hero-->
+  <div class="hero landing-hero min-h-screen">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Hello there,</h1>
+        <h1 class="text-5xl font-bold">I'm Benjamin!</h1>
+        <p class="hidden">General Kenobi...</p>
+        <p class="py-6">
+          I am a full-stack engineer and engineering leader with over a decade
+          of experience. Come see what I've been up to!
+        </p>
+        <!--<a-->
+        <!--  class="btn btn-primary"-->
+        <!--  href="#skills"-->
+        <!--&gt;-->
+        <!--  Learn More-->
+        <!--</a>-->
+        <a
+          class="btn btn-primary"
+          href="/assets/resume-2025.pdf"
+          target="_blank"
+          >My Resume
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--end hero-->
+
+  <!--begin experience-->
+  <!--<ContentSection-->
+  <!--  id="skills"-->
+  <!--  classes={['landing-skills']}-->
+  <!--&gt;-->
+  <!--  <h2>Skills</h2>-->
+  <!--</ContentSection>-->
+  <!--end experience-->
+
+  <ExperienceTimeline />
+
+  <!--begin freelance-->
+  <!--<ContentSection classes={['landing-freelance']}>-->
+  <!--  <h2>Freelance</h2>-->
+  <!--</ContentSection>-->
+  <!--end freelance-->
+
+  <!--begin contact-->
+  <!--<ContentSection classes={['landing-contact']}>-->
+  <!--  <h2>Contact</h2>-->
+  <!--</ContentSection>-->
+  <!--end contact-->
+
+  <Footer />
+</BaseLayout>
