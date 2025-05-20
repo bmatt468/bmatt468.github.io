@@ -1,1 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 976.88 729.4"><defs><style>.cls-1{stroke:#21d0b2;}.cls-1,.cls-2{fill:none;stroke-linejoin:round;stroke-width:28px;}.cls-2{stroke:#495159;}</style></defs><g id="Logo"><g id="LogoLight"><path class="cls-2" d="M14,715.4V14h397.36l-206.61,364.69L14,715.4ZM14,715.4h397.36v-226.48l-206.61-110.23"/><polyline class="cls-1" points="411.36 488.92 962.88 14 962.88 715.4 411.36 14 411.36 715.4 629.54 715.4 962.88 14"/></g></g></svg>
+<svg viewBox="0 0 976.88 729.4" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1{stroke:#21d0b2;}.cls-1,.cls-2{fill:none;stroke-linejoin:round;stroke-width:28px;}.cls-2{stroke:#495159;}</style>
+  </defs>
+  <path id="b" class="cls-2" d="m14 715.4v-701.4h397.36l-206.61 364.69-190.75 336.71zh397.36v-226.48l-206.61-110.23"/>
+  <polyline id="m" class="cls-1" points="411.36 488.92 962.88 14 962.88 715.4 411.36 14 411.36 715.4 629.54 715.4 962.88 14"/>
+</svg>

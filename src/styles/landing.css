@@ -1,0 +1,57 @@
+@layer components {
+  .landing-header {
+    @apply bg-abbey-50 text-abbey-1000;
+
+    @variant dark {
+      @apply bg-abbey-800 text-abbey-50;
+    }
+  }
+
+  .landing-hero {
+    @apply bg-shakespeare-50 text-abbey-1000;
+
+    @variant dark {
+      @apply bg-shakespeare-800 text-shakespeare-50;
+    }
+  }
+
+  .landing-skills {
+    @apply bg-jellybean-100 text-abbey-1000;
+
+    @variant dark {
+      @apply bg-jellybean-800 text-jellybean-50;
+    }
+  }
+
+  .landing-experience {
+    @apply bg-bismark-100 text-abbey-1050;
+
+    @variant dark {
+      @apply bg-bismark-800 text-bismark-50;
+    }
+  }
+
+  .landing-freelance {
+    @apply bg-java-100 text-abbey-1050;
+
+    @variant dark {
+      @apply bg-java-800 text-java-50;
+    }
+  }
+
+  .landing-contact {
+    @apply bg-puerto-rico-100 text-abbey-1100;
+
+    @variant dark {
+      @apply bg-puerto-rico-800 text-puerto-rico-50;
+    }
+  }
+
+  .landing-footer {
+    @apply bg-abbey-100 text-abbey-1000;
+
+    @variant dark {
+      @apply bg-abbey-900 text-abbey-100;
+    }
+  }
+}

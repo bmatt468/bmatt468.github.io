@@ -46,8 +46,7 @@ function calcTimelineLeftRight(index: number): string[] {
 }
 ---
 
-<!--begin experience-->
-<ContentSection>
+<ContentSection classes={['landing-experience']}>
   <h2>Experience</h2>
   <div class="flex md:items-center md:justify-center">
     <ul
@@ -71,11 +70,11 @@ function calcTimelineLeftRight(index: number): string[] {
                   <div>
                     <Icon
                       name={icon.lightIcon}
-                      class="border-base-300 size-8 rounded-lg border-1 shadow-md dark:hidden"
+                      class="border-base-300 bg-base-300 size-8 rounded-lg border-1 shadow-md dark:hidden"
                     />
                     <Icon
                       name={icon.darkIcon}
-                      class="border-base-300 hidden size-8 rounded-lg border-1 shadow-md dark:block"
+                      class="border-base-300 bg-base-300 hidden size-8 rounded-lg border-1 shadow-md dark:block"
                     />
                   </div>
                 ))}
@@ -96,4 +95,3 @@ function calcTimelineLeftRight(index: number): string[] {
     </ul>
   </div>
 </ContentSection>
-<!--end experience-->

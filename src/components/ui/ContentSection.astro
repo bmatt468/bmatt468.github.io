@@ -1,12 +1,18 @@
 ---
 export interface Props {
+  classes?: string[];
   id?: string;
   title?: string;
+  subtitle?: string;
 }
 
-const { title, id } = Astro.props;
+const { classes, id, title, subtitle } = Astro.props;
 ---
 
-<section id={id}>
+<section
+  id={id}
+  class="p-8 px-16"
+  class:list={[classes]}
+>
   <slot />
 </section>
