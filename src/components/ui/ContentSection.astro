@@ -1,17 +1,14 @@
 ---
-export interface Props {
-  classes?: string[];
-  id?: string;
-  title?: string;
-  subtitle?: string;
-}
+import type { UiContentSection } from '../../types/components-ui';
 
-const { classes, id, title, subtitle } = Astro.props;
+export interface Props extends UiContentSection {}
+
+const { classes, id } = Astro.props;
 ---
 
 <section
   id={id}
-  class="p-8 px-16"
+  class="p-8 sm:px-16"
   class:list={[classes]}
 >
   <slot />

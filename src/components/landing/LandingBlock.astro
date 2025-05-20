@@ -1,0 +1,21 @@
+---
+import type { UiContentSection } from '../../types/components-ui';
+
+import ContentSection from '@components/ui/ContentSection.astro';
+
+export interface Props extends UiContentSection {
+  title?: string;
+  calloutText?: string;
+}
+
+const { classes, id, title, calloutText } = Astro.props;
+---
+
+<ContentSection
+  id={id}
+  classes={classes}
+>
+  {title && <p>{title}</p>}
+  {calloutText && <h2>{calloutText}</h2>}
+  <slot />
+</ContentSection>

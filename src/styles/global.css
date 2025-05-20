@@ -5,7 +5,8 @@
 @plugin "daisyui";
 
 @theme inline {
-  --color-bg-opt-one: var(--color-jellybean);
+  --color-brm-standard-text: var(--color-abbey-1000);
+  --color-brm-light-text: var(--color-abbey-800);
 }
 
 /*Light Theme*/

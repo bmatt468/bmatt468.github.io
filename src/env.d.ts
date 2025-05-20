@@ -1,3 +1,11 @@
+// Head types
+export interface Metadata {
+  title?: string;
+  description?: string;
+  image?: string;
+  site?: string;
+}
+
 // Experience Types
 export interface ExperienceNode {
   timeframe: string;
@@ -9,7 +17,9 @@ export interface ExperienceNode {
 export interface SkillIcon {
   lightIcon: string;
   darkIcon: string;
-  tooltip?: string;
+  tooltip: string;
+  category?: string;
+  precedence?: number;
 }
 
 // Footer Types
