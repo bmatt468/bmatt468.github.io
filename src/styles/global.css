@@ -54,7 +54,14 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-/*[data-icon="logos/logo"] path {*/
-/*  color: red;*/
-/*  stroke: red;*/
-/*}*/
+@layer components {
+  [data-icon="logos/logo"] {
+    .b {
+      stroke: var(--color-abbey-700);
+
+      @variant dark {
+        stroke: var(--color-abbey-100);
+      }
+    }
+  }
+}

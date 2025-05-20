@@ -76,6 +76,18 @@ export default defineConfig({
           'wordpress',
         ],
       },
+      svgoOptions: {
+        plugins: [
+          {
+            name: "preset-default",
+            params: {
+              overrides: {
+                cleanupIds: false,
+              },
+            },
+          },
+        ],
+      }
     }),
     sitemap(),
   ],
