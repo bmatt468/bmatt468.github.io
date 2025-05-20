@@ -1,5 +1,6 @@
 ---
-import type {ComponentsUiContentSection} from "../../types/components-ui";
+import type { ComponentsUiContentSection } from '../../types/components-ui';
+
 export interface Props extends ComponentsUiContentSection {}
 
 const { classes, id } = Astro.props;
@@ -7,7 +8,7 @@ const { classes, id } = Astro.props;
 
 <section
   id={id}
-  class="p-8 px-16"
+  class="p-8 sm:px-16"
   class:list={[classes]}
 >
   <slot />

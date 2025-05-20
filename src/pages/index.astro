@@ -1,4 +1,5 @@
 ---
+import Contact from '@components/landing/Contact.astro';
 import ExperienceTimeline from '@components/landing/ExperienceTimeline.astro';
 import ContentSection from '@components/ui/ContentSection.astro';
 import Footer from '@components/ui/Footer.astro';
@@ -37,28 +38,21 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   </div>
   <!--end hero-->
 
-  <!--begin experience-->
-  <!--<ContentSection-->
-  <!--  id="skills"-->
-  <!--  classes={['landing-skills']}-->
-  <!--&gt;-->
-  <!--  <h2>Skills</h2>-->
-  <!--</ContentSection>-->
-  <!--end experience-->
+  <ContentSection
+    id="skills"
+    classes={['landing-skills']}
+  >
+    <!--<h2>Skills</h2>-->
+  </ContentSection>
 
   <ExperienceTimeline />
 
   <!--begin freelance-->
-  <!--<ContentSection classes={['landing-freelance']}>-->
-  <!--  <h2>Freelance</h2>-->
-  <!--</ContentSection>-->
+  <ContentSection classes={['landing-freelance']}>
+    <!--<h2>Freelance</h2>-->
+  </ContentSection>
   <!--end freelance-->
 
-  <!--begin contact-->
-  <!--<ContentSection classes={['landing-contact']}>-->
-  <!--  <h2>Contact</h2>-->
-  <!--</ContentSection>-->
-  <!--end contact-->
-
+  <Contact />
   <Footer />
 </BaseLayout>

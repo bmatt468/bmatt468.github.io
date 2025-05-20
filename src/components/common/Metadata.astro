@@ -1,13 +1,13 @@
 ---
-import type { Metadata } from "../../env";
+import type { Metadata } from '../../env';
 
 export interface Props extends Metadata {}
 
- const {
-   title = 'Benjamin Matthews',
-   description = "Hi! I'm Benjamin, and welcome to my corner of the web. Come learn about what I'm up to currently!",
-   site = Astro.site,
-   // image = new URL('default-social.jpg', site),
+const {
+  title = 'Benjamin Matthews',
+  description = "Hi! I'm Benjamin, and welcome to my corner of the web. Come learn about what I'm up to currently!",
+  site = Astro.site,
+  // image = new URL('default-social.jpg', site),
 } = Astro.props;
 ---
 
@@ -57,11 +57,26 @@ export interface Props extends Metadata {}
   name="twitter:card"
   content="summary_large_image"
 />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content={site}>
-<meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={description}>
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+/>
+<meta
+  name="twitter:url"
+  content={site}
+/>
+<meta
+  name="twitter:title"
+  content={title}
+/>
+<meta
+  name="twitter:description"
+  content={description}
+/>
 <!--<meta name="twitter:image" content={image}>-->
 
 <!-- Canonical URL -->
-<link rel="canonical" href={site}>
+<link
+  rel="canonical"
+  href={site}
+/>
