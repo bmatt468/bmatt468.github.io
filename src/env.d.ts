@@ -17,7 +17,9 @@ export interface ExperienceNode {
 export interface SkillIcon {
   lightIcon: string;
   darkIcon: string;
-  tooltip?: string;
+  tooltip: string;
+  category?: string;
+  precedence?: number;
 }
 
 // Footer Types
