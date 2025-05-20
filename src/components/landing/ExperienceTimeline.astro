@@ -3,8 +3,8 @@ import type { ExperienceNode, SkillIcon } from '../../env';
 
 import { Icon } from 'astro-icon/components';
 
-import ContentSection from '@components/ui/ContentSection.astro';
 import { getAllSkillIcons } from '@icons/skillIcons';
+import LandingBlock from "@components/landing/LandingBlock.astro";
 
 const experienceNodes: Array<ExperienceNode> = [
   {
@@ -46,8 +46,7 @@ function calcTimelineLeftRight(index: number): string[] {
 }
 ---
 
-<ContentSection classes={['landing-experience']}>
-  <h2>Experience</h2>
+<LandingBlock classes={['landing-experience']} title="Experience" calloutText='Fleb'>
   <div class="flex md:items-center md:justify-center">
     <ul
       class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical max-w-2xl"
@@ -94,4 +93,4 @@ function calcTimelineLeftRight(index: number): string[] {
       </li>
     </ul>
   </div>
-</ContentSection>
+</LandingBlock>

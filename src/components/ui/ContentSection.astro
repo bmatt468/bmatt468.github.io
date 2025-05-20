@@ -1,12 +1,8 @@
 ---
-export interface Props {
-  classes?: string[];
-  id?: string;
-  title?: string;
-  subtitle?: string;
-}
+import type {ComponentsUiContentSection} from "../../types/components-ui";
+export interface Props extends ComponentsUiContentSection {}
 
-const { classes, id, title, subtitle } = Astro.props;
+const { classes, id } = Astro.props;
 ---
 
 <section
