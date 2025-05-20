@@ -83,18 +83,12 @@ function calcTimelineLeftRight(index: number): string[] {
                 ))}
               </div>
             </div>
-            <hr />
+            <hr
+              class:list={[{ hidden: index + 1 === experienceNodes.length }]}
+            />
           </li>
         ))
       }
-      <li>
-        <div class="timeline-middle">
-          <Icon
-            name="mdi:code-braces-box"
-            class="size-6"
-          />
-        </div>
-      </li>
     </ul>
   </div>
 </LandingBlock>
