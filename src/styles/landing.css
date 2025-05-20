@@ -56,31 +56,31 @@
   }
 
   .landing-skills {
-    @apply bg-gradient-to-b from-landing-skills-bg to-landing-experience-bg;
+    @apply from-landing-skills-bg to-landing-experience-bg bg-gradient-to-b;
     @apply text-landing-skills-text;
 
     @variant dark {
-      @apply bg-gradient-to-b from-landing-skills-bg-dark to-landing-experience-bg-dark;
+      @apply from-landing-skills-bg-dark to-landing-experience-bg-dark bg-gradient-to-b;
       @apply text-landing-skills-text-dark;
     }
   }
 
   .landing-experience {
-    @apply bg-gradient-to-b from-landing-experience-bg to-landing-freelance-bg;
+    @apply from-landing-experience-bg to-landing-freelance-bg bg-gradient-to-b;
     @apply text-landing-experience-text;
 
     @variant dark {
-      @apply bg-gradient-to-b from-landing-experience-bg-dark to-landing-freelance-bg-dark;
+      @apply from-landing-experience-bg-dark to-landing-freelance-bg-dark bg-gradient-to-b;
       @apply text-landing-experience-text-dark;
     }
   }
 
   .landing-freelance {
-    @apply bg-gradient-to-b from-landing-freelance-bg to-landing-contact-bg;
+    @apply from-landing-freelance-bg to-landing-contact-bg bg-gradient-to-b;
     @apply text-landing-freelance-text;
 
     @variant dark {
-      @apply bg-gradient-to-b from-landing-freelance-bg-dark to-landing-contact-bg-dark;
+      @apply from-landing-freelance-bg-dark to-landing-contact-bg-dark bg-gradient-to-b;
       @apply text-landing-freelance-text-dark;
     }
   }

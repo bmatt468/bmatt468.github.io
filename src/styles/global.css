@@ -55,7 +55,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer components {
-  [data-icon="logos/logo"] {
+  [data-icon='logos/logo'] {
     .b {
       stroke: var(--color-abbey-700);
 

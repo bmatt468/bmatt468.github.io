@@ -79,7 +79,7 @@ export default defineConfig({
       svgoOptions: {
         plugins: [
           {
-            name: "preset-default",
+            name: 'preset-default',
             params: {
               overrides: {
                 cleanupIds: false,
@@ -87,7 +87,7 @@ export default defineConfig({
             },
           },
         ],
-      }
+      },
     }),
     sitemap(),
   ],
