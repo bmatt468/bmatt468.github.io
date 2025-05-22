@@ -23,10 +23,10 @@
   --color-accent: var(--color-shakespeare);
   --color-accent-content: var(--color-shakespeare-950);
 
-  --color-base-100: var(--color-abbey-50);
-  --color-base-200: var(--color-abbey-100);
-  --color-base-300: var(--color-abbey-200);
-  --color-base-content: var(--color-abbey-1000);
+  --color-base-100: var(--color-neutral-100);
+  --color-base-200: var(--color-neutral-200);
+  --color-base-300: var(--color-neutral-300);
+  --color-base-content: var(--color-neutral-700);
 
   --color-neutral: var(--color-abbey-1100);
   --color-neutral-content: var(--color-abbey-400);
@@ -45,10 +45,10 @@
   --color-accent: var(--color-shakespeare);
   --color-accent-content: var(--color-shakespeare-700);
 
-  --color-base-100: var(--color-abbey-950);
-  --color-base-200: var(--color-abbey-1000);
-  --color-base-300: var(--color-abbey-1050);
-  --color-base-content: var(--color-abbey-50);
+  --color-base-100: var(--color-neutral-800);
+  --color-base-200: var(--color-neutral-900);
+  --color-base-300: var(--color-neutral-950);
+  --color-base-content: var(--color-neutral-50);
 
   --color-neutral: var(--color-abbey-1100);
   --color-neutral-content: var(--color-abbey-400);
