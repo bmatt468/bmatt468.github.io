@@ -7,6 +7,7 @@
 @theme inline {
   --color-brm-standard-text: var(--color-abbey-1000);
   --color-brm-light-text: var(--color-abbey-800);
+  --font-sans: InterVariable, sans-serif;
 }
 
 /*Light Theme*/
