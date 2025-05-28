@@ -7,64 +7,136 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout>
   <LandingGsap />
   <div
-    class="fixed -z-50 h-screen w-full bg-fuchsia-300"
+    class="fixed -z-50 h-screen w-full"
     id="landing-background"
   >
   </div>
-  <div
-    id="gsapBox1"
-    class="flex h-screen items-center justify-center bg-transparent p-2"
-  >
-    <div class="text-center">
-      <h1
-        id="hero-title"
-        class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div
+        id="gsapBox1"
+        class="flex h-screen items-center justify-center bg-transparent p-2"
       >
-        Hello, I'm Benjamin!
-      </h1>
-      <p
-        id="hero-subtitle"
-        class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
-      >
-        Full-stack engineer &amp; engineering leader
-      </p>
-      <LandingProgressBar />
-    </div>
-  </div>
+        <div class="text-center">
+          <h1
+            id="hero-title"
+            class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
+          >
+            Hello, I'm Benjamin!
+          </h1>
+          <p
+            id="hero-subtitle"
+            class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
+          >
+            Full-stack engineer &amp; engineering leader
+          </p>
+          <LandingProgressBar />
+        </div>
+      </div>
 
-  <div
-    class="flex h-screen items-center justify-center"
-    id="gsapBox2"
-  >
-    <div class="text-center">
-      <h1
-        class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+      <div
+        class="flex h-screen items-center justify-center"
+        id="gsapBoxResume"
       >
-        Second Section
-      </h1>
-      <p
-        class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-      >
-        Subtext
-      </p>
-    </div>
-  </div>
+        <div class="text-center">
+          <h1
+            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          >
+            Resume
+          </h1>
+          <p
+            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+          >
+            Subtext
+          </p>
+        </div>
+      </div>
 
-  <div
-    class="flex h-screen items-center justify-center"
-    id="gsapBox3"
-  >
-    <div class="text-center">
-      <h1
-        class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+      <div
+        class="flex h-screen items-center justify-center"
+        id="gsapBoxAbout"
       >
-        Third Section
-      </h1>
-      <p
-        class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        <div class="text-center">
+          <h1
+            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          >
+            About
+          </h1>
+          <p
+            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+          >
+            Subtext
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex h-screen items-center justify-center"
+        id="gsapBoxSkills"
       >
-        Subtext
-      </p>
+        <div class="text-center">
+          <h1
+            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          >
+            Skills
+          </h1>
+          <p
+            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+          >
+            Subtext
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex h-screen items-center justify-center"
+        id="gsapBoxExperience"
+      >
+        <div class="text-center">
+          <h1
+            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          >
+            Experience
+          </h1>
+          <p
+            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+          >
+            Subtext
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex h-screen items-center justify-center"
+        id="gsapBoxProjects"
+      >
+        <div class="text-center">
+          <h1
+            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          >
+            Projects
+          </h1>
+          <p
+            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+          >
+            Subtext
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex h-screen items-center justify-center"
+        id="gsapBoxContact"
+      >
+        <div class="text-center">
+          <h1
+            class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          >
+            Contact
+          </h1>
+          <p
+            class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+          >
+            Subtext
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

@@ -10,10 +10,21 @@
   // BOOTSTRAP              //
   ////////////////////////////
 
+  // Bind ScrollSmoother
+  ScrollSmoother.create({
+    smooth: 1,
+    effects: true,
+    smoothTouch: 0.01,
+  });
+
   // Register Timelines
   const heroTimeline = gsap.timeline({ paused: true });
-  const box2Timeline = registerBoxTimeline('gsapBox2');
-  const box3Timeline = registerBoxTimeline('gsapBox3');
+  const resumeTimeline = registerBoxTimeline('gsapBoxResume');
+  const aboutTimeline = registerBoxTimeline('gsapBoxAbout');
+  const skillsTimeline = registerBoxTimeline('gsapBoxSkills');
+  const experienceTimeline = registerBoxTimeline('gsapBoxExperience');
+  const projectsTimeline = registerBoxTimeline('gsapBoxProjects');
+  const contactTimeline = registerBoxTimeline('gsapBoxContact');
 
   // Store reference to the static background div and ensure it has got the correct base color
   const background = document.querySelector('#landing-background');
@@ -50,39 +61,48 @@
   });
 
   // Add hero subtitle and navigation links to the timeline
-  heroTimeline.addLabel('heroSubtitle').to('#hero-subtitle', {
-    autoAlpha: 1,
-    duration: 1,
-    ease: 'power1.inOut',
-    delay: 1.75,
-  });
+  heroTimeline
+    .fromTo(
+      '#hero-subtitle',
+      { y: 15 },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1,
+        ease: 'power1.inOut',
+        delay: 0.75,
+      }
+    )
+    .fromTo(
+      '#hero-links',
+      { y: 15 },
+      {
+        y: 0,
+        autoAlpha: 1,
+        duration: 1,
+        ease: 'power1.inOut',
+        delay: -0.75,
+      }
+    );
 
-  // Add hero navigation links to timeline
-  heroTimeline.addLabel('heroNavLinksX').to('#hero-links', {
-    scaleX: 1,
-    duration: 1,
-    ease: 'power1.inOut',
-    delay: -0.25,
-  });
-
-  box2Timeline.addLabel('startBox2').to(
+  aboutTimeline.addLabel('startAboutTimeline').to(
     background,
     {
       backgroundColor: 'rgb(255, 0, 0)',
       duration: 1,
       ease: 'none',
     },
-    'startBox2'
+    'startAboutTimeline'
   );
 
-  box3Timeline.addLabel('startBox3').to(
+  skillsTimeline.addLabel('startSkillsTimeline').to(
     background,
     {
       backgroundColor: 'rgb(0, 0, 255)',
       duration: 1,
       ease: 'none',
     },
-    'startBox3'
+    'startSkillsTimeline'
   );
 
   function registerBoxTimeline(
