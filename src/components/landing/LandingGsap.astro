@@ -15,10 +15,7 @@
   utils.boostrapGsapExtensions();
 
   // Bind ScrollSmoother
-  const smoothScroller = ScrollSmoother.create({
-    smooth: 1,
-    effects: true,
-  });
+  const smoother = utils.smootherSingleton();
 
   // Register Timelines
   const heroTimeline = gsap.timeline({ paused: true });
@@ -53,24 +50,7 @@
   contactTimeline.registerProgressItemOnTimeline('#progressLinkContact');
 
   // Bind AutoScroll Behavior to the Navigation Links
-  document
-    .querySelectorAll<HTMLAnchorElement>('a.progress-link-anchor')
-    .forEach((a) => {
-      a.addEventListener('click', (e) => {
-        if (e) {
-          e.preventDefault();
-        }
-
-        gsap.to(smoothScroller, {
-          scrollTop: Math.min(
-            ScrollTrigger.maxScroll(window),
-            smoothScroller.offset(a.hash, 'top')
-          ),
-          duration: 1.25,
-          ease: 'power1.inOut',
-        });
-      });
-    });
+  utils.registerNavigationLinks();
 
   ////////////////////////////
   // FIRST BOX (HERO)       //
