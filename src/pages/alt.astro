@@ -1,93 +1,40 @@
 ---
+import LandingGsap from '../components/landing/LandingGsap.astro';
+import LandingProgressBar from '../components/landing/LandingProgressBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <script>
-    import { gsap } from 'gsap';
-    import { ScrollSmoother } from 'gsap/ScrollSmoother';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-    const background = document.querySelector('#test');
-
-    // Fix the initial pop of white
-    gsap.set(background, {
-      backgroundColor: 'rgb(240, 171, 252)', // Tailwind's bg-fuchsia-300
-    });
-
-    // Box 2 timeline (Fuchsia → Red)
-    const box2Timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#box2',
-        start: 'top bottom',
-        end: 'top top',
-        scrub: true,
-        onEnter: () => console.log('[Box2] Entered viewport'),
-        onLeave: () => console.log('[Box2] Reached top'),
-        onEnterBack: () => console.log('[Box2] Re-entered from below'),
-        onLeaveBack: () => console.log('[Box2] Left viewport downward'),
-      },
-    });
-
-    // Box 3 timeline (Red → Blue)
-    const box3Timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#box3',
-        start: 'top bottom',
-        end: 'top top',
-        scrub: true,
-        onEnter: () => console.log('[Box3] Entered viewport'),
-        onLeave: () => console.log('[Box3] Reached top'),
-        onEnterBack: () => console.log('[Box3] Re-entered from below'),
-        onLeaveBack: () => console.log('[Box3] Left viewport downward'),
-      },
-    });
-
-    box2Timeline.addLabel('startBox2').to(
-      background,
-      {
-        backgroundColor: 'rgb(255, 0, 0)',
-        duration: 1,
-        ease: 'none',
-      },
-      'startBox2'
-    );
-
-    box3Timeline.addLabel('startBox3').to(
-      background,
-      {
-        backgroundColor: 'rgb(0, 0, 255)',
-        duration: 1,
-        ease: 'none',
-      },
-      'startBox3'
-    );
-  </script>
+  <LandingGsap />
   <div
     class="fixed -z-50 h-screen w-full bg-fuchsia-300"
-    id="test"
+    id="landing-background"
   >
   </div>
-  <div class="flex h-screen items-center justify-center bg-transparent">
+  <div
+    id="gsapBox1"
+    class="flex h-screen items-center justify-center bg-transparent p-2"
+  >
     <div class="text-center">
       <h1
-        class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        id="hero-title"
+        class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
       >
-        First Section
+        Hello, I'm Benjamin!
       </h1>
       <p
-        class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        id="hero-subtitle"
+        class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
       >
-        Subtext
+        Full-stack engineer &amp; engineering leader
       </p>
+      <LandingProgressBar />
     </div>
   </div>
 
   <div
     class="flex h-screen items-center justify-center"
-    id="box2"
+    id="gsapBox2"
   >
     <div class="text-center">
       <h1
@@ -105,7 +52,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <div
     class="flex h-screen items-center justify-center"
-    id="box3"
+    id="gsapBox3"
   >
     <div class="text-center">
       <h1

@@ -1,0 +1,111 @@
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollSmoother } from 'gsap/ScrollSmoother';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { SplitText } from 'gsap/SplitText';
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+
+  ////////////////////////////
+  // BOOTSTRAP              //
+  ////////////////////////////
+
+  // Register Timelines
+  const heroTimeline = gsap.timeline({ paused: true });
+  const box2Timeline = registerBoxTimeline('gsapBox2');
+  const box3Timeline = registerBoxTimeline('gsapBox3');
+
+  // Store reference to the static background div and ensure it has got the correct base color
+  const background = document.querySelector('#landing-background');
+  gsap.set(background, {
+    backgroundColor: 'rgb(240, 171, 252)', // Tailwind's bg-fuchsia-300
+  });
+
+  ////////////////////////////
+  // FIRST BOX (HERO)       //
+  ////////////////////////////
+
+  // Create SplitText Objects for Hero Text
+  SplitText.create('#hero-title', {
+    type: 'chars',
+    autoSplit: true,
+    smartWrap: true,
+    aria: 'auto',
+    onSplit: (self) => {
+      // Set invisible container to be visible
+      gsap.set('#hero-title', { autoAlpha: 1 });
+
+      // Execute title animation
+      gsap.from(self.chars, {
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power1.inOut',
+        stagger: 0.04,
+      });
+
+      // Execute the remainder of hero timeline
+      heroTimeline.play();
+    },
+  });
+
+  // Add hero subtitle and navigation links to the timeline
+  heroTimeline.addLabel('heroSubtitle').to('#hero-subtitle', {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'power1.inOut',
+    delay: 1.75,
+  });
+
+  // Add hero navigation links to timeline
+  heroTimeline.addLabel('heroNavLinksX').to('#hero-links', {
+    scaleX: 1,
+    duration: 1,
+    ease: 'power1.inOut',
+    delay: -0.25,
+  });
+
+  box2Timeline.addLabel('startBox2').to(
+    background,
+    {
+      backgroundColor: 'rgb(255, 0, 0)',
+      duration: 1,
+      ease: 'none',
+    },
+    'startBox2'
+  );
+
+  box3Timeline.addLabel('startBox3').to(
+    background,
+    {
+      backgroundColor: 'rgb(0, 0, 255)',
+      duration: 1,
+      ease: 'none',
+    },
+    'startBox3'
+  );
+
+  function registerBoxTimeline(
+    gsapBoxId: string,
+    start: string = 'top bottom',
+    end: string = 'top top'
+  ): GSAPTimeline {
+    if (gsapBoxId[0] !== '#') {
+      gsapBoxId = '#' + gsapBoxId;
+    }
+
+    return gsap.timeline({
+      scrollTrigger: {
+        trigger: gsapBoxId,
+        start: start,
+        end: end,
+        scrub: true,
+        markers: true,
+        onEnter: () => console.log(`[${gsapBoxId}] Entered viewport`),
+        onLeave: () => console.log(`[${gsapBoxId}] Reached top`),
+        onEnterBack: () => console.log(`[${gsapBoxId}] Re-entered from below`),
+        onLeaveBack: () => console.log(`[${gsapBoxId}] Left viewport downward`),
+      },
+    });
+  }
+</script>

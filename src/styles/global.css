@@ -2,11 +2,12 @@
 @import './colors.css';
 @import './landing.css';
 @plugin "@tailwindcss/typography";
-/*@plugin "daisyui";*/
+@plugin "daisyui";
 
 @theme inline {
   --color-brm-standard-text: var(--color-abbey-1000);
   --color-brm-light-text: var(--color-abbey-800);
+
   --font-sans: InterVariable, sans-serif;
 }
 
@@ -64,6 +65,50 @@
       @variant dark {
         stroke: var(--color-abbey-100);
       }
+    }
+  }
+
+  .swap {
+    @apply relative inline-grid cursor-pointer place-content-center align-middle select-none;
+
+    input {
+      @apply appearance-none border-none;
+    }
+
+    > * {
+      @apply col-start-1 row-start-1 transition-all duration-200 ease-in-out;
+    }
+
+    .swap-on,
+    .swap-indeterminate,
+    input:indeterminate ~ .swap-on {
+      @apply opacity-0;
+    }
+
+    input:is(:checked, :indeterminate) {
+      & ~ .swap-off {
+        @apply opacity-0;
+      }
+    }
+
+    input:checked ~ .swap-on,
+    input:indeterminate ~ .swap-indeterminate {
+      @apply opacity-100 backface-visible;
+    }
+  }
+
+  .swap-rotate {
+    .swap-on,
+    input:indeterminate ~ .swap-on {
+      @apply rotate-45;
+    }
+    input:is(:checked, :indeterminate) ~ .swap-on,
+    &.swap-active .swap-on {
+      @apply rotate-0;
+    }
+    input:is(:checked, :indeterminate) ~ .swap-off,
+    &.swap-active .swap-off {
+      @apply -rotate-45;
     }
   }
 }

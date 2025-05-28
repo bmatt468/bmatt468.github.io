@@ -1,0 +1,17 @@
+---
+export interface Props {
+  name: string;
+  link?: string;
+}
+
+const { name } = Astro.props;
+---
+
+<li class="relative w-full">
+  <a
+    href="#"
+    class="group flex items-center justify-center p-2 text-sm font-medium text-gray-500 hover:text-gray-900"
+  >
+    {name}
+  </a>
+</li>
