@@ -1,14 +1,17 @@
 ---
 export interface Props {
   id: string;
+  linkId?: string;
 }
 
-const { id } = Astro.props;
+const { id, linkId, ...attrs } = Astro.props;
 ---
 
-<div
-  class="flex min-h-screen items-center justify-center"
+{linkId && <span id={linkId} />}
+<section
+  class="flex min-h-screen items-center justify-center p-2"
   id={id}
+  {...attrs}
 >
   <slot />
-</div>
+</section>

@@ -19,12 +19,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h1
             id="hero-title"
             class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
+            data-speed="clamp(2)"
           >
             Hello, I'm Benjamin!
           </h1>
           <p
             id="hero-subtitle"
             class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
+            data-speed="clamp(1.75)"
           >
             Full-stack engineer &amp; engineering leader
           </p>
@@ -32,7 +34,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </LandingGsapBox>
 
-      <LandingGsapBox id="gsapBoxResume">
+      <LandingGsapBox
+        id="gsapBoxResume"
+        linkId="resume"
+      >
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -47,7 +52,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </LandingGsapBox>
 
-      <LandingGsapBox id="gsapBoxAbout">
+      <LandingGsapBox
+        id="gsapBoxAbout"
+        linkId="about"
+      >
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -62,7 +70,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </LandingGsapBox>
 
-      <LandingGsapBox id="gsapBoxSkills">
+      <LandingGsapBox
+        id="gsapBoxSkills"
+        linkId="skills"
+      >
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -77,7 +88,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </LandingGsapBox>
 
-      <LandingGsapBox id="gsapBoxExperience">
+      <LandingGsapBox
+        id="gsapBoxExperience"
+        linkId="experience"
+      >
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -92,7 +106,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </LandingGsapBox>
 
-      <LandingGsapBox id="gsapBoxProjects">
+      <LandingGsapBox
+        id="gsapBoxProjects"
+        linkId="projects"
+      >
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -107,7 +124,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </LandingGsapBox>
 
-      <LandingGsapBox id="gsapBoxContact">
+      <LandingGsapBox
+        id="gsapBoxContact"
+        linkId="contact"
+      >
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"

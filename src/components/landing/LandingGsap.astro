@@ -4,40 +4,30 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import { SplitText } from 'gsap/SplitText';
 
+  import * as utils from './gsap-extensions/utils';
+
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
   ////////////////////////////
   // BOOTSTRAP              //
   ////////////////////////////
 
-  // Helper Function for Progress Item Background
-  gsap.core.Timeline.prototype.registerProgressItemOnTimeline = function (
-    target: string
-  ): GSAPTimeline {
-    return this.to(
-      target,
-      {
-        '--scaleBackground': 1,
-        duration: 1,
-      },
-      0
-    );
-  };
+  utils.boostrapGsapExtensions();
 
   // Bind ScrollSmoother
-  // ScrollSmoother.create({
-  //   smooth: 1,
-  //   effects: true,
-  // });
+  const smoothScroller = ScrollSmoother.create({
+    smooth: 1,
+    effects: true,
+  });
 
   // Register Timelines
   const heroTimeline = gsap.timeline({ paused: true });
-  const resumeTimeline = registerBoxTimeline('gsapBoxResume');
-  const aboutTimeline = registerBoxTimeline('gsapBoxAbout');
-  const skillsTimeline = registerBoxTimeline('gsapBoxSkills');
-  const experienceTimeline = registerBoxTimeline('gsapBoxExperience');
-  const projectsTimeline = registerBoxTimeline('gsapBoxProjects');
-  const contactTimeline = registerBoxTimeline('gsapBoxContact');
+  const resumeTimeline = utils.registerBoxTimeline('gsapBoxResume');
+  const aboutTimeline = utils.registerBoxTimeline('gsapBoxAbout');
+  const skillsTimeline = utils.registerBoxTimeline('gsapBoxSkills');
+  const experienceTimeline = utils.registerBoxTimeline('gsapBoxExperience');
+  const projectsTimeline = utils.registerBoxTimeline('gsapBoxProjects');
+  const contactTimeline = utils.registerBoxTimeline('gsapBoxContact');
 
   // Store reference to the static background div and ensure it has got the correct base color
   const background = document.querySelector('#landing-background');
@@ -48,16 +38,39 @@
   ////////////////////////////
   // NAVIGATION BAR         //
   ////////////////////////////
+
+  // Ensure Initial CSS Variable is Set
   gsap.set('.progress-link', {
     '--scaleBackground': 0,
   });
 
+  // Bind Each Section to their Respective Timeline
   resumeTimeline.registerProgressItemOnTimeline('#progressLinkResume');
   aboutTimeline.registerProgressItemOnTimeline('#progressLinkAbout');
   skillsTimeline.registerProgressItemOnTimeline('#progressLinkSkills');
   experienceTimeline.registerProgressItemOnTimeline('#progressLinkExperience');
   projectsTimeline.registerProgressItemOnTimeline('#progressLinkProjects');
   contactTimeline.registerProgressItemOnTimeline('#progressLinkContact');
+
+  // Bind AutoScroll Behavior to the Navigation Links
+  document
+    .querySelectorAll<HTMLAnchorElement>('a.progress-link-anchor')
+    .forEach((a) => {
+      a.addEventListener('click', (e) => {
+        if (e) {
+          e.preventDefault();
+        }
+
+        gsap.to(smoothScroller, {
+          scrollTop: Math.min(
+            ScrollTrigger.maxScroll(window),
+            smoothScroller.offset(a.hash, 'top')
+          ),
+          duration: 1.25,
+          ease: 'power1.inOut',
+        });
+      });
+    });
 
   ////////////////////////////
   // FIRST BOX (HERO)       //
@@ -131,28 +144,4 @@
     },
     0
   );
-
-  function registerBoxTimeline(
-    gsapBoxId: string,
-    start: string = 'top bottom',
-    end: string = 'top top'
-  ): GSAPTimeline {
-    if (gsapBoxId[0] !== '#') {
-      gsapBoxId = '#' + gsapBoxId;
-    }
-
-    return gsap.timeline({
-      scrollTrigger: {
-        trigger: gsapBoxId,
-        start: start,
-        end: end,
-        scrub: true,
-        markers: true,
-        onEnter: () => console.log(`[${gsapBoxId}] Entered viewport`),
-        onLeave: () => console.log(`[${gsapBoxId}] Reached top`),
-        onEnterBack: () => console.log(`[${gsapBoxId}] Re-entered from below`),
-        onLeaveBack: () => console.log(`[${gsapBoxId}] Left viewport downward`),
-      },
-    });
-  }
 </script>
