@@ -1,5 +1,6 @@
 ---
 import LandingGsap from '../components/landing/LandingGsap.astro';
+import LandingGsapBox from '../components/landing/LandingGsapBox.astro';
 import LandingProgressBar from '../components/landing/LandingProgressBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
@@ -13,10 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
   <div id="smooth-wrapper">
     <div id="smooth-content">
-      <div
-        id="gsapBox1"
-        class="flex h-screen items-center justify-center bg-transparent p-2"
-      >
+      <LandingGsapBox id="gsapBoxHero">
         <div class="text-center">
           <h1
             id="hero-title"
@@ -32,12 +30,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
           <LandingProgressBar />
         </div>
-      </div>
+      </LandingGsapBox>
 
-      <div
-        class="flex h-screen items-center justify-center"
-        id="gsapBoxResume"
-      >
+      <LandingGsapBox id="gsapBoxResume">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -50,12 +45,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Subtext
           </p>
         </div>
-      </div>
+      </LandingGsapBox>
 
-      <div
-        class="flex h-screen items-center justify-center"
-        id="gsapBoxAbout"
-      >
+      <LandingGsapBox id="gsapBoxAbout">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -68,11 +60,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Subtext
           </p>
         </div>
-      </div>
-      <div
-        class="flex h-screen items-center justify-center"
-        id="gsapBoxSkills"
-      >
+      </LandingGsapBox>
+
+      <LandingGsapBox id="gsapBoxSkills">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -85,11 +75,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Subtext
           </p>
         </div>
-      </div>
-      <div
-        class="flex h-screen items-center justify-center"
-        id="gsapBoxExperience"
-      >
+      </LandingGsapBox>
+
+      <LandingGsapBox id="gsapBoxExperience">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -102,11 +90,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Subtext
           </p>
         </div>
-      </div>
-      <div
-        class="flex h-screen items-center justify-center"
-        id="gsapBoxProjects"
-      >
+      </LandingGsapBox>
+
+      <LandingGsapBox id="gsapBoxProjects">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -119,11 +105,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Subtext
           </p>
         </div>
-      </div>
-      <div
-        class="flex h-screen items-center justify-center"
-        id="gsapBoxContact"
-      >
+      </LandingGsapBox>
+
+      <LandingGsapBox id="gsapBoxContact">
         <div class="text-center">
           <h1
             class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
@@ -136,7 +120,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Subtext
           </p>
         </div>
-      </div>
+      </LandingGsapBox>
     </div>
   </div>
 </BaseLayout>

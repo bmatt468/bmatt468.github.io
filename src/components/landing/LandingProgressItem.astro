@@ -7,10 +7,13 @@ export interface Props {
 const { name } = Astro.props;
 ---
 
-<li class="relative w-full">
+<li
+  id={'progressLink' + name}
+  class="progress-link relative w-full before:absolute before:top-0 before:left-0 before:-z-10 before:h-full before:w-full before:origin-left before:scale-x-(--scaleBackground) before:bg-cyan-400 before:content-['_']"
+>
   <a
     href="#"
-    class="flex items-center justify-center p-2 text-sm font-medium text-gray-500 before:content-['_'] hover:text-gray-900"
+    class="flex items-center justify-center p-2 text-sm font-medium text-gray-500 hover:text-gray-900"
   >
     {name}
   </a>

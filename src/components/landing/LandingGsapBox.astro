@@ -1,0 +1,14 @@
+---
+export interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div
+  class="flex min-h-screen items-center justify-center"
+  id={id}
+>
+  <slot />
+</div>

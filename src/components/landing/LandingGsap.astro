@@ -10,12 +10,25 @@
   // BOOTSTRAP              //
   ////////////////////////////
 
+  // Helper Function for Progress Item Background
+  gsap.core.Timeline.prototype.registerProgressItemOnTimeline = function (
+    target: string
+  ): GSAPTimeline {
+    return this.to(
+      target,
+      {
+        '--scaleBackground': 1,
+        duration: 1,
+      },
+      0
+    );
+  };
+
   // Bind ScrollSmoother
-  ScrollSmoother.create({
-    smooth: 1,
-    effects: true,
-    smoothTouch: 0.01,
-  });
+  // ScrollSmoother.create({
+  //   smooth: 1,
+  //   effects: true,
+  // });
 
   // Register Timelines
   const heroTimeline = gsap.timeline({ paused: true });
@@ -31,6 +44,20 @@
   gsap.set(background, {
     backgroundColor: 'rgb(240, 171, 252)', // Tailwind's bg-fuchsia-300
   });
+
+  ////////////////////////////
+  // NAVIGATION BAR         //
+  ////////////////////////////
+  gsap.set('.progress-link', {
+    '--scaleBackground': 0,
+  });
+
+  resumeTimeline.registerProgressItemOnTimeline('#progressLinkResume');
+  aboutTimeline.registerProgressItemOnTimeline('#progressLinkAbout');
+  skillsTimeline.registerProgressItemOnTimeline('#progressLinkSkills');
+  experienceTimeline.registerProgressItemOnTimeline('#progressLinkExperience');
+  projectsTimeline.registerProgressItemOnTimeline('#progressLinkProjects');
+  contactTimeline.registerProgressItemOnTimeline('#progressLinkContact');
 
   ////////////////////////////
   // FIRST BOX (HERO)       //
@@ -92,7 +119,7 @@
       duration: 1,
       ease: 'none',
     },
-    'startAboutTimeline'
+    0
   );
 
   skillsTimeline.addLabel('startSkillsTimeline').to(
@@ -102,7 +129,7 @@
       duration: 1,
       ease: 'none',
     },
-    'startSkillsTimeline'
+    0
   );
 
   function registerBoxTimeline(
