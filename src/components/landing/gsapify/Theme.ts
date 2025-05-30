@@ -1,3 +1,5 @@
+import {colors} from "@components/landing/gsapify/Colors.ts";
+
 interface ThemeMap {
   [key: string]: ThemeTuple;
 }
@@ -20,32 +22,32 @@ class Theme {
     this.dataTheme = DataTheme.Light;
     this.sectionBackgrounds = {
       hero: {
-        light: '#000000', //abbey-100
-        dark: '#000000', //abbey-1050
+        light: colors.get('abbey-100'),
+        dark: colors.get('abbey-1050'),
       },
       resume: {
-        light: '#000000', //slate-100
-        dark: '#000000', // bismark-950
+        light: colors.get('slate-100'),
+        dark: colors.get('bismark-950'),
       },
       about: {
-        light: '#000000', //gray-200
-        dark: '#000000', //abbey-1000
+        light: colors.get('abbey-200'),
+        dark: colors.get('abbey-1000'),
       },
       skills: {
-        light: '#000000', //abbey-50
-        dark: '#000000', //abbey-950
+        light: colors.get('abbey-50'),
+        dark: colors.get('abbey-950'),
       },
       experience: {
-        light: '#000000', //abbey-100
-        dark: '#000000', //abbey-1050
+        light: colors.get('abbey-200'),
+        dark: colors.get('abbey-1050'),
       },
       projects: {
-        light: '#000000', //slate-100
-        dark: '#000000', //bismark-950
+        light: colors.get('abbey-50'),
+        dark: colors.get('bismark-950'),
       },
       contact: {
-        light: '#000000', //gray-200
-        dark: '#000000', //abbey-1000
+        light: colors.get('abbey-300'),
+        dark: colors.get('abbey-1000'),
       },
     };
   }

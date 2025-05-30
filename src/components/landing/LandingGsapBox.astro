@@ -2,7 +2,7 @@
 export interface Props {
   id: string;
   linkId?: string;
-  classes?: string[];
+  classes?: string;
 }
 
 const { id, linkId, classes, ...rest } = Astro.props;
@@ -11,7 +11,6 @@ const { id, linkId, classes, ...rest } = Astro.props;
 {linkId && <span id={linkId} />}
 <section
   class="flex min-h-screen items-center justify-center p-2"
-  class:list={[classes]}
   id={id}
   {...rest}
 >

@@ -27,6 +27,8 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         onLeaveBack: () =>
           logger.logTimelineEvent(id, 'Left viewport downward'),
       },
+      onStart: () => logger.logTimelineEvent(id, 'Timeline started'),
+      onComplete: () => logger.logTimelineEvent(id, 'Timeline completed'),
     });
 
     super(id, timeline);
