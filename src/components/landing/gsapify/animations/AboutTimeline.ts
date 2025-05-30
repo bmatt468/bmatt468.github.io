@@ -12,7 +12,7 @@ export class AboutTimeline extends BoxBoundTimeline {
 
   shiftBackground(): void {
     this.timeline.addLabel('shiftBackground').to(
-      background.elem,
+      '.background-colorable',
       {
         backgroundColor: 'oklch(0.493 0.061 223.7)',
         duration: 1,

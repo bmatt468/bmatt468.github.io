@@ -1,4 +1,6 @@
 ---
+import {Icon} from "astro-icon/components";
+
 export interface Props {
   name: string;
   link?: string;
@@ -13,8 +15,9 @@ const { name } = Astro.props;
 >
   <a
     href={'#' + name.toLowerCase()}
-    class="progress-link-anchor flex items-center justify-center p-2 text-sm font-medium text-gray-500 hover:text-gray-900"
+    class="progress-link-anchor flex items-center justify-center py-2 px-1 text-sm leading-none font-medium text-gray-500 hover:text-gray-900"
   >
-    {name}
+    <span class="hidden md:block">{name}</span>
+    <Icon name="skill-icons:astro" class="text-sm block md:hidden" />
   </a>
 </li>

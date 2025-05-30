@@ -17,7 +17,11 @@ class Background {
 
   setColor(color: string) {
     gsap.set(this.elem, {
-      backgroundColor: color, // Tailwind's bg-fuchsia-300
+      backgroundColor: color,
+    });
+
+    gsap.set('#hero-links', {
+      backgroundColor: color,
     });
   }
 }
