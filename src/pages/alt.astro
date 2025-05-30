@@ -26,7 +26,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   >
     <LandingProgressBar />
     <div
-      class="fixed -z-50 h-screen w-full bg-cyan-400"
+      class="fixed -z-50 h-screen w-full"
       id="landing-background"
     >
     </div>
@@ -36,17 +36,24 @@ import BaseLayout from '@layouts/BaseLayout.astro';
           <div class="text-center">
             <h1
               id="hero-title"
-              class="text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
+              class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
               data-speed="clamp(2)"
             >
               Hello, I'm Benjamin!
             </h1>
             <p
               id="hero-subtitle"
-              class="my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
+              class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
               data-speed="clamp(1.75)"
             >
               Full-stack engineer &amp; engineering leader
+            </p>
+            <p
+              id="hero-subsubtitle"
+              class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
+              data-speed="clamp(1.75)"
+            >
+              🚧 Still Under construction 🚧
             </p>
             <!--<LandingProgressBar />-->
           </div>
@@ -65,7 +72,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p
               class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
             >
-              Subtext
+              I'm going to put my resume here
             </p>
           </div>
         </LandingGsapBox>
@@ -83,7 +90,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p
               class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
             >
-              Subtext
+              I'm going to talk about me here
             </p>
           </div>
         </LandingGsapBox>
@@ -101,7 +108,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p
               class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
             >
-              Subtext
+              I'm going to talk about what I know here
             </p>
           </div>
         </LandingGsapBox>
@@ -119,7 +126,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p
               class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
             >
-              Subtext
+              I'm going to talk about what I've done here
             </p>
           </div>
         </LandingGsapBox>
@@ -137,7 +144,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p
               class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
             >
-              Subtext
+              I'm going to talk more about what I've done here
             </p>
           </div>
         </LandingGsapBox>
@@ -155,7 +162,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             <p
               class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
             >
-              Subtext
+              I'm going to talk about how you can talk to me here
             </p>
           </div>
         </LandingGsapBox>

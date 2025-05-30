@@ -10,6 +10,7 @@ import { initNavigation } from './Navigation.ts';
 
 function launch(): void {
   // create all the timelines
+  let heroTimeline = new animations.HeroTimeline();
   let resumeTimeline = new animations.ResumeTimeline();
   let aboutTimeline = new animations.AboutTimeline();
   let skillsTimeline = new animations.SkillsTimeline();
@@ -26,6 +27,7 @@ function launch(): void {
   contactTimeline.registerNavigationAnimation('#progressLinkContact');
 
   // register animations
+  heroTimeline.init();
   resumeTimeline.init();
   aboutTimeline.init();
   skillsTimeline.init();
@@ -43,7 +45,7 @@ function launch(): void {
 async function init(): Promise<void> {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
   getScrollSmoother();
-  background.setColor('oklch(0.431 0.017 248.216)');
+  background.setColor('oklch(0.757 0.016 235.458)');
   initNavigation();
 }
 
