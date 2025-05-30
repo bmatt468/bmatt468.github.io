@@ -13,10 +13,19 @@ export abstract class BaseTimeline {
       {
         '--scaleBackground': 1,
         duration: 1,
+        delay: 0.25,
         ease: 'none',
       },
       0
     );
+  }
+
+  shiftColorables(color: string): void {
+    this.timeline.to('.background-colorable', {
+      backgroundColor: color,
+      duration: 1,
+      ease: 'none',
+    });
   }
 
   abstract init(): void;

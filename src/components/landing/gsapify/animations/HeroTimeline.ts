@@ -52,10 +52,5 @@ export class HeroTimeline extends BaseTimeline {
         delay: 0.65,
       })
       .reverse(0);
-
-    gsap.to('#hero-subsubtitle', {
-      autoAlpha: 1,
-      delay: 2,
-    });
   }
 }
