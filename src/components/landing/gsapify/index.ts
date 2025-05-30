@@ -28,6 +28,14 @@ function launch(): void {
   experienceTimeline.registerNavigationAnimation('#progressLinkExperience');
   projectsTimeline.registerNavigationAnimation('#progressLinkProjects');
   contactTimeline.registerNavigationAnimation('#progressLinkContact');
+
+  // register animations
+  resumeTimeline.init();
+  aboutTimeline.init();
+  skillsTimeline.init();
+  experienceTimeline.init();
+  projectsTimeline.init();
+  contactTimeline.init();
 }
 
 /**
@@ -39,7 +47,7 @@ function launch(): void {
 function init(): void {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
   getScrollSmoother();
-  background.setColor('rgb(240, 171, 252)');
+  background.setColor('oklch(0.431 0.017 248.216)');
 }
 
 export const gsapify = {
