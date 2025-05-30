@@ -9,10 +9,6 @@ import { SplitText } from 'gsap/SplitText';
 import { initNavigation } from './Navigation.ts';
 
 function launch(): void {
-  // bootstrap what we need to get moving
-  init();
-  initNavigation();
-
   // create all the timelines
   let resumeTimeline = new animations.ResumeTimeline();
   let aboutTimeline = new animations.AboutTimeline();
@@ -44,12 +40,14 @@ function launch(): void {
  * - ensure that ScrollSmoother is initialized
  * - set the base background color to avoid splash of white
  */
-function init(): void {
+async function init(): Promise<void> {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
   getScrollSmoother();
   background.setColor('oklch(0.431 0.017 248.216)');
+  initNavigation();
 }
 
 export const gsapify = {
+  init,
   launch,
 };

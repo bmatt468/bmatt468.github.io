@@ -12,7 +12,14 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ['linkedin', 'github', 'blog', 'external-link', 'code-braces-box'],
+        mdi: [
+          'linkedin',
+          'github',
+          'blog',
+          'external-link',
+          'code-braces-box',
+          'loading',
+        ],
         'skill-icons': [
           'alpinejs-dark',
           'alpinejs-light',

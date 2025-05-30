@@ -1,8 +1,26 @@
 <script>
+  import { gsap } from 'gsap';
+
   import { gsapify } from './gsapify';
 
   function gsapification(): void {
-    // gsapify.launch();
+    // clean fade content and launch GSAP goodness into the world
+    gsapify.init().then(() => {
+      gsap
+        .timeline({
+          onComplete: () => {
+            gsapify.launch();
+          },
+        })
+        .to('#loading-icon', {
+          autoAlpha: 0,
+          duration: 0.5,
+        })
+        .to('#landing-container', {
+          autoAlpha: 1,
+          duration: 0.5,
+        });
+    });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
