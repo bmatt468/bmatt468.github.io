@@ -1,0 +1,31 @@
+<script>
+  import { gsap } from 'gsap';
+
+  import { gsapify } from './gsapify';
+
+  function gsapification(): void {
+    // clean fade content and launch GSAP goodness into the world
+    document.fonts.ready.then(() => {
+      gsapify.init().then(() => {
+        gsap
+          .timeline({
+            onComplete: () => {
+              gsapify.launch();
+            },
+          })
+          .to('#loading-icon', {
+            autoAlpha: 0,
+            duration: 0.5,
+          })
+          .to('#landing-container', {
+            autoAlpha: 1,
+            duration: 0.5,
+          });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('load', gsapification, false);
+  });
+</script>

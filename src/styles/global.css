@@ -7,51 +7,53 @@
 @theme inline {
   --color-brm-standard-text: var(--color-abbey-1000);
   --color-brm-light-text: var(--color-abbey-800);
+
+  --font-sans: InterVariable, sans-serif;
 }
 
 /*Light Theme*/
-@plugin "daisyui/theme" {
-  name: 'light';
+/*@plugin "daisyui/theme" {*/
+/*  name: 'light';*/
 
-  --color-primary: var(--color-puerto-rico);
-  --color-primary-content: var(--color-puerto-rico-800);
+/*  --color-primary: var(--color-puerto-rico);*/
+/*  --color-primary-content: var(--color-puerto-rico-800);*/
 
-  --color-secondary: var(--color-bismark);
-  --color-secondary-content: var(--color-bismark-50);
+/*  --color-secondary: var(--color-bismark);*/
+/*  --color-secondary-content: var(--color-bismark-50);*/
 
-  --color-accent: var(--color-shakespeare);
-  --color-accent-content: var(--color-shakespeare-950);
+/*  --color-accent: var(--color-shakespeare);*/
+/*  --color-accent-content: var(--color-shakespeare-950);*/
 
-  --color-base-100: var(--color-abbey-50);
-  --color-base-200: var(--color-abbey-100);
-  --color-base-300: var(--color-abbey-200);
-  --color-base-content: var(--color-abbey-1000);
+/*  --color-base-100: var(--color-neutral-100);*/
+/*  --color-base-200: var(--color-neutral-200);*/
+/*  --color-base-300: var(--color-neutral-300);*/
+/*  --color-base-content: var(--color-neutral-700);*/
 
-  --color-neutral: var(--color-abbey-1100);
-  --color-neutral-content: var(--color-abbey-400);
-}
+/*  --color-neutral: var(--color-abbey-1100);*/
+/*  --color-neutral-content: var(--color-abbey-400);*/
+/*}*/
 
 /* Dark Theme*/
-@plugin "daisyui/theme" {
-  name: 'dark';
+/*@plugin "daisyui/theme" {*/
+/*  name: 'dark';*/
 
-  --color-primary: var(--color-puerto-rico);
-  --color-primary-content: var(--color-puerto-rico-700);
+/*  --color-primary: var(--color-puerto-rico);*/
+/*  --color-primary-content: var(--color-puerto-rico-700);*/
 
-  --color-secondary: var(--color-bismark);
-  --color-secondary-content: var(--color-bismark-300);
+/*  --color-secondary: var(--color-bismark);*/
+/*  --color-secondary-content: var(--color-bismark-300);*/
 
-  --color-accent: var(--color-shakespeare);
-  --color-accent-content: var(--color-shakespeare-700);
+/*  --color-accent: var(--color-shakespeare);*/
+/*  --color-accent-content: var(--color-shakespeare-700);*/
 
-  --color-base-100: var(--color-abbey-950);
-  --color-base-200: var(--color-abbey-1000);
-  --color-base-300: var(--color-abbey-1050);
-  --color-base-content: var(--color-abbey-50);
+/*  --color-base-100: var(--color-neutral-800);*/
+/*  --color-base-200: var(--color-neutral-900);*/
+/*  --color-base-300: var(--color-neutral-950);*/
+/*  --color-base-content: var(--color-neutral-50);*/
 
-  --color-neutral: var(--color-abbey-1100);
-  --color-neutral-content: var(--color-abbey-400);
-}
+/*  --color-neutral: var(--color-abbey-1100);*/
+/*  --color-neutral-content: var(--color-abbey-400);*/
+/*}*/
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -63,6 +65,50 @@
       @variant dark {
         stroke: var(--color-abbey-100);
       }
+    }
+  }
+
+  .swap {
+    @apply relative inline-grid cursor-pointer place-content-center align-middle select-none;
+
+    input {
+      @apply appearance-none border-none;
+    }
+
+    > * {
+      @apply col-start-1 row-start-1 transition-all duration-200 ease-in-out;
+    }
+
+    .swap-on,
+    .swap-indeterminate,
+    input:indeterminate ~ .swap-on {
+      @apply opacity-0;
+    }
+
+    input:is(:checked, :indeterminate) {
+      & ~ .swap-off {
+        @apply opacity-0;
+      }
+    }
+
+    input:checked ~ .swap-on,
+    input:indeterminate ~ .swap-indeterminate {
+      @apply opacity-100 backface-visible;
+    }
+  }
+
+  .swap-rotate {
+    .swap-on,
+    input:indeterminate ~ .swap-on {
+      @apply rotate-45;
+    }
+    input:is(:checked, :indeterminate) ~ .swap-on,
+    &.swap-active .swap-on {
+      @apply rotate-0;
+    }
+    input:is(:checked, :indeterminate) ~ .swap-off,
+    &.swap-active .swap-off {
+      @apply -rotate-45;
     }
   }
 }
