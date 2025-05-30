@@ -1,127 +1,70 @@
 <script>
   import { gsap } from 'gsap';
-  import { ScrollSmoother } from 'gsap/ScrollSmoother';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { SplitText } from 'gsap/SplitText';
 
-  import * as utils from './gsap-extensions/utils';
+  import { gsapify } from './gsapify';
 
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+  function gsapification(): void {
+    gsapify.launch();
 
-  ////////////////////////////
-  // BOOTSTRAP              //
-  ////////////////////////////
+    // // Register Timelines
+    // const resumeTimeline = gsapify.utils.registerBoxTimeline('gsapBoxResume');
+    // const aboutTimeline = gsapify.utils.registerBoxTimeline('gsapBoxAbout');
+    // const skillsTimeline = gsapify.utils.registerBoxTimeline('gsapBoxSkills');
+    // const experienceTimeline =
+    //   gsapify.utils.registerBoxTimeline('gsapBoxExperience');
+    // const projectsTimeline =
+    //   gsapify.utils.registerBoxTimeline('gsapBoxProjects');
+    // const contactTimeline = gsapify.utils.registerBoxTimeline('gsapBoxContact');
+    //
+    // gsapify.navBar.registerNavItemAnimations(
+    //   '#gsapBoxResumeTimeline',
+    //   '#progressLinkResume'
+    // );
+    // gsapify.navBar.registerNavItemAnimations(
+    //   '#gsapBoxAboutTimeline',
+    //   '#progressLinkAbout'
+    // );
+    // gsapify.navBar.registerNavItemAnimations(
+    //   '#gsapBoxSkillsTimeline',
+    //   '#progressLinkSkills'
+    // );
+    // gsapify.navBar.registerNavItemAnimations(
+    //   '#gsapBoxExperienceTimeline',
+    //   '#progressLinkExperience'
+    // );
+    // gsapify.navBar.registerNavItemAnimations(
+    //   '#gsapBoxProjectsTimeline',
+    //   '#progressLinkProjects'
+    // );
+    // gsapify.navBar.registerNavItemAnimations(
+    //   '#gsapBoxContactTimeline',
+    //   '#progressLinkContact'
+    // );
+    //
+    // gsapify.heroAnimations.register();
+    //
+    // aboutTimeline.addLabel('startAboutTimeline').to(
+    //   gsapify.background,
+    //   {
+    //     backgroundColor: 'rgb(255, 0, 0)',
+    //     duration: 1,
+    //     ease: 'none',
+    //   },
+    //   0
+    // );
+    //
+    // skillsTimeline.addLabel('startSkillsTimeline').to(
+    //   gsapify.background,
+    //   {
+    //     backgroundColor: 'rgb(0, 0, 255)',
+    //     duration: 1,
+    //     ease: 'none',
+    //   },
+    //   0
+    // );
+  }
 
-  utils.boostrapGsapExtensions();
-
-  // Bind ScrollSmoother
-  const smoother = utils.smootherSingleton();
-
-  // Register Timelines
-  const heroTimeline = gsap.timeline({ paused: true });
-  const resumeTimeline = utils.registerBoxTimeline('gsapBoxResume');
-  const aboutTimeline = utils.registerBoxTimeline('gsapBoxAbout');
-  const skillsTimeline = utils.registerBoxTimeline('gsapBoxSkills');
-  const experienceTimeline = utils.registerBoxTimeline('gsapBoxExperience');
-  const projectsTimeline = utils.registerBoxTimeline('gsapBoxProjects');
-  const contactTimeline = utils.registerBoxTimeline('gsapBoxContact');
-
-  // Store reference to the static background div and ensure it has got the correct base color
-  const background = document.querySelector('#landing-background');
-  gsap.set(background, {
-    backgroundColor: 'rgb(240, 171, 252)', // Tailwind's bg-fuchsia-300
+  document.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('load', gsapification, false);
   });
-
-  ////////////////////////////
-  // NAVIGATION BAR         //
-  ////////////////////////////
-
-  // Ensure Initial CSS Variable is Set
-  gsap.set('.progress-link', {
-    '--scaleBackground': 0,
-  });
-
-  // Bind Each Section to their Respective Timeline
-  resumeTimeline.registerProgressItemOnTimeline('#progressLinkResume');
-  aboutTimeline.registerProgressItemOnTimeline('#progressLinkAbout');
-  skillsTimeline.registerProgressItemOnTimeline('#progressLinkSkills');
-  experienceTimeline.registerProgressItemOnTimeline('#progressLinkExperience');
-  projectsTimeline.registerProgressItemOnTimeline('#progressLinkProjects');
-  contactTimeline.registerProgressItemOnTimeline('#progressLinkContact');
-
-  // Bind AutoScroll Behavior to the Navigation Links
-  utils.registerNavigationLinks();
-
-  ////////////////////////////
-  // FIRST BOX (HERO)       //
-  ////////////////////////////
-
-  // Create SplitText Objects for Hero Text
-  SplitText.create('#hero-title', {
-    type: 'chars',
-    autoSplit: true,
-    smartWrap: true,
-    aria: 'auto',
-    onSplit: (self) => {
-      // Set invisible container to be visible
-      gsap.set('#hero-title', { autoAlpha: 1 });
-
-      // Execute title animation
-      gsap.from(self.chars, {
-        x: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power1.inOut',
-        stagger: 0.04,
-      });
-
-      // Execute the remainder of hero timeline
-      heroTimeline.play();
-    },
-  });
-
-  // Add hero subtitle and navigation links to the timeline
-  heroTimeline
-    .fromTo(
-      '#hero-subtitle',
-      { y: 15 },
-      {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1,
-        ease: 'power1.inOut',
-        delay: 0.75,
-      }
-    )
-    .fromTo(
-      '#hero-links',
-      { y: 15 },
-      {
-        y: 0,
-        autoAlpha: 1,
-        duration: 1,
-        ease: 'power1.inOut',
-        delay: -0.75,
-      }
-    );
-
-  aboutTimeline.addLabel('startAboutTimeline').to(
-    background,
-    {
-      backgroundColor: 'rgb(255, 0, 0)',
-      duration: 1,
-      ease: 'none',
-    },
-    0
-  );
-
-  skillsTimeline.addLabel('startSkillsTimeline').to(
-    background,
-    {
-      backgroundColor: 'rgb(0, 0, 255)',
-      duration: 1,
-      ease: 'none',
-    },
-    0
-  );
 </script>

@@ -1,8 +1,8 @@
 ---
-import LandingGsap from '../components/landing/LandingGsap.astro';
-import LandingGsapBox from '../components/landing/LandingGsapBox.astro';
-import LandingProgressBar from '../components/landing/LandingProgressBar.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import LandingGsap from '@components/landing/LandingGsap.astro';
+import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
+import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
@@ -18,14 +18,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="text-center">
           <h1
             id="hero-title"
-            class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
+            class="text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
             data-speed="clamp(2)"
           >
             Hello, I'm Benjamin!
           </h1>
           <p
             id="hero-subtitle"
-            class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
+            class="my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
             data-speed="clamp(1.75)"
           >
             Full-stack engineer &amp; engineering leader
