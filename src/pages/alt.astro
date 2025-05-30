@@ -9,6 +9,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <BaseLayout>
   <LandingGsap />
+
   <div
     id="loading-icon"
     class="fixed -z-50 flex h-screen w-full items-center justify-center"
@@ -20,19 +21,25 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       />
     </span>
   </div>
+
   <main
     id="landing-container"
     class="invisible"
   >
     <LandingProgressBar />
+
     <div
       class="background-colorable fixed -z-50 h-screen w-full"
       id="landing-background"
     >
     </div>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <LandingGsapBox id="gsapBoxHero">
+        <LandingGsapBox
+          id="gsapBoxHero"
+          classes="bg-abbey-100 dark:bg-abbey-1050"
+        >
           <div class="text-center">
             <h1
               id="hero-title"
@@ -48,13 +55,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
             >
               Full-stack engineer &amp; engineering leader
             </p>
-            <!--<LandingProgressBar />-->
           </div>
         </LandingGsapBox>
 
         <LandingGsapBox
           id="gsapBoxResume"
           linkId="resume"
+          classes="bg-slate-100 dark:bg-bismark-950"
         >
           <div class="text-center">
             <h1
@@ -73,6 +80,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <LandingGsapBox
           id="gsapBoxAbout"
           linkId="about"
+          classes="bg-gray-200 dark:bg-abbey-1000"
         >
           <div class="text-center">
             <h1
@@ -91,6 +99,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <LandingGsapBox
           id="gsapBoxSkills"
           linkId="skills"
+          classes="bg-abbey-50 dark:bg-abbey-950"
         >
           <div class="text-center">
             <h1
@@ -109,6 +118,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <LandingGsapBox
           id="gsapBoxExperience"
           linkId="experience"
+          classes="bg-abbey-100 dark:bg-abbey-1050"
         >
           <div class="text-center">
             <h1
@@ -127,6 +137,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <LandingGsapBox
           id="gsapBoxProjects"
           linkId="projects"
+          classes="bg-slate-100 dark:bg-bismark-950"
         >
           <div class="text-center">
             <h1
@@ -145,6 +156,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <LandingGsapBox
           id="gsapBoxContact"
           linkId="contact"
+          classes="bg-gray-200 dark:bg-abbey-1000"
         >
           <div class="text-center">
             <h1

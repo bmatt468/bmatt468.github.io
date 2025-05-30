@@ -1,5 +1,7 @@
 import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
+import { logger } from '@components/landing/gsapify/Logger.ts';
 import { gsap } from 'gsap';
+import { color } from 'unist-util-visit-parents/do-not-use-color';
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
   public readonly triggerElem: string;
@@ -10,6 +12,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
     timelineStart: string = 'top bottom',
     timelineEnd: string = 'top top'
   ) {
+    logger.logInfo(id, 'Initializing timeline');
     let timeline = gsap.timeline({
       id: id,
       scrollTrigger: {
@@ -18,10 +21,11 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         end: timelineEnd,
         scrub: true,
         markers: true,
-        onEnter: () => console.log(`[${id}] Entered viewport`),
-        onLeave: () => console.log(`[${id}] Reached top`),
-        onEnterBack: () => console.log(`[${id}] Re-entered from below`),
-        onLeaveBack: () => console.log(`[${id}] Left viewport downward`),
+        onEnter: () => logger.logTimelineEvent(id, 'Entered viewport'),
+        onLeave: () => logger.logTimelineEvent(id, 'Reached top'),
+        onEnterBack: () => logger.logTimelineEvent(id, 'Re-entered from below'),
+        onLeaveBack: () =>
+          logger.logTimelineEvent(id, 'Left viewport downward'),
       },
     });
 

@@ -20,32 +20,32 @@ class Theme {
     this.dataTheme = DataTheme.Light;
     this.sectionBackgrounds = {
       hero: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //abbey-100
+        dark: '#000000', //abbey-1050
       },
       resume: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //slate-100
+        dark: '#000000', // bismark-950
       },
       about: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //gray-200
+        dark: '#000000', //abbey-1000
       },
       skills: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //abbey-50
+        dark: '#000000', //abbey-950
       },
       experience: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //abbey-100
+        dark: '#000000', //abbey-1050
       },
       projects: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //slate-100
+        dark: '#000000', //bismark-950
       },
       contact: {
-        light: '#000000',
-        dark: '#000000',
+        light: '#000000', //gray-200
+        dark: '#000000', //abbey-1000
       },
     };
   }

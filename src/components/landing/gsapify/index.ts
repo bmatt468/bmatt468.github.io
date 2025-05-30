@@ -1,5 +1,6 @@
 import { animations } from '@components/landing/gsapify/animations';
 import { background } from '@components/landing/gsapify/Background.ts';
+import { logger } from '@components/landing/gsapify/Logger.ts';
 import { getScrollSmoother } from '@components/landing/gsapify/ScrollSmoother.ts';
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
@@ -52,4 +53,5 @@ async function init(): Promise<void> {
 export const gsapify = {
   init,
   launch,
+  logger,
 };
