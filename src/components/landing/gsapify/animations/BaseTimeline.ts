@@ -7,11 +7,16 @@ export abstract class BaseTimeline {
     this.timeline = timeline;
   }
 
-  protected registerNavigationAnimation(target: string): void {
-    this.timeline.to(target, {
-      '--scaleBackground': 1,
-      duration: 1,
-    });
+  registerNavigationAnimation(target: string): void {
+    this.timeline.to(
+      target,
+      {
+        '--scaleBackground': 1,
+        duration: 1,
+        ease: 'none',
+      },
+      0
+    );
   }
 
   abstract init(): void;

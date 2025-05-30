@@ -1,13 +1,12 @@
 import { animations } from '@components/landing/gsapify/animations';
+import { background } from '@components/landing/gsapify/Background.ts';
 import { getScrollSmoother } from '@components/landing/gsapify/ScrollSmoother.ts';
 import { gsap } from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
-import * as heroAnimations from './heroAnimations';
 import { initNavigation } from './Navigation.ts';
-import * as navBar from './Navigation.ts';
 
 function launch(): void {
   // bootstrap what we need to get moving
@@ -21,6 +20,14 @@ function launch(): void {
   let experienceTimeline = new animations.ExperienceTimeline();
   let projectsTimeline = new animations.ProjectsTimeline();
   let contactTimeline = new animations.ContactTimeline();
+
+  // add animations to the navigation bar
+  resumeTimeline.registerNavigationAnimation('#progressLinkResume');
+  aboutTimeline.registerNavigationAnimation('#progressLinkAbout');
+  skillsTimeline.registerNavigationAnimation('#progressLinkSkills');
+  experienceTimeline.registerNavigationAnimation('#progressLinkExperience');
+  projectsTimeline.registerNavigationAnimation('#progressLinkProjects');
+  contactTimeline.registerNavigationAnimation('#progressLinkContact');
 }
 
 /**
@@ -32,12 +39,8 @@ function launch(): void {
 function init(): void {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
   getScrollSmoother();
-  gsap.set(background, {
-    backgroundColor: 'rgb(240, 171, 252)', // Tailwind's bg-fuchsia-300
-  });
+  background.setColor('rgb(240, 171, 252)');
 }
-
-export const background = document.querySelector('#landing-background');
 
 export const gsapify = {
   launch,
