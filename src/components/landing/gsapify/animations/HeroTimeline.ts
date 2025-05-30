@@ -1,15 +1,15 @@
-import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
+import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
 import { timelineRegistry } from '@components/landing/gsapify/animations/TimelineRegistry.ts';
 import { gsap } from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 
-export class HeroTimeline extends BaseTimeline {
+export class HeroTimeline extends BoxBoundTimeline {
   private titleSplit: SplitText;
   private subtitleSplit: SplitText;
 
   constructor() {
     let timeline = gsap.timeline({});
-    super('heroTimeline', timeline);
+    super('heroTimeline', '#gsapBoxHero', 'bottom bottom', 'bottom top');
     timelineRegistry.register(this);
 
     // create the splits

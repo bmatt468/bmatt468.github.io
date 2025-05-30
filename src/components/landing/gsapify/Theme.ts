@@ -1,4 +1,4 @@
-import {colors} from "@components/landing/gsapify/Colors.ts";
+import { colors } from '@components/landing/gsapify/Colors.ts';
 
 interface ThemeMap {
   [key: string]: ThemeTuple;
