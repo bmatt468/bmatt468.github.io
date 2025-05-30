@@ -25,6 +25,13 @@
     });
   }
 
+  // if ('scrollRestoration' in history) {
+  //   history.scrollRestoration = 'manual';
+  // }
+  // window.scrollTo(0, 0);
+
+  window.history.scrollRestoration = 'auto';
+
   document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', gsapification, false);
   });

@@ -1,7 +1,6 @@
 import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
 import { logger } from '@components/landing/gsapify/Logger.ts';
 import { gsap } from 'gsap';
-import { color } from 'unist-util-visit-parents/do-not-use-color';
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
   public readonly triggerElem: string;

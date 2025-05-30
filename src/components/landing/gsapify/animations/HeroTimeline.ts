@@ -8,7 +8,6 @@ export class HeroTimeline extends BoxBoundTimeline {
   private subtitleSplit: SplitText;
 
   constructor() {
-    let timeline = gsap.timeline({});
     super('heroTimeline', '#gsapBoxHero', 'bottom bottom', 'bottom top');
     timelineRegistry.register(this);
 

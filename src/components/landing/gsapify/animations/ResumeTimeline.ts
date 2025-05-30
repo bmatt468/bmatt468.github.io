@@ -1,6 +1,4 @@
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
-import { background } from '@components/landing/gsapify/Background.ts';
-import { logger } from '@components/landing/gsapify/Logger.ts';
 import { theme } from '@components/landing/gsapify/Theme.ts';
 
 export class ResumeTimeline extends BoxBoundTimeline {
