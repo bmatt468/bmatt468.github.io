@@ -16,30 +16,6 @@ function launch(): void {
   // run the hero animations
   const heroTimeline: HeroTimeline = timelineRegistry.get('heroTimeline');
   heroTimeline.animateText();
-
-  // create all the timelines
-  // let heroTimeline = new animations.HeroTimeline();
-  // let resumeTimeline = new animations.ResumeTimeline();
-  // let aboutTimeline = new animations.AboutTimeline();
-  // let skillsTimeline = new animations.SkillsTimeline();
-  // let experienceTimeline = new animations.ExperienceTimeline();
-  // let projectsTimeline = new animations.ProjectsTimeline();
-  // let contactTimeline = new animations.ContactTimeline();
-  // add animations to the navigation bar
-  // resumeTimeline.registerNavigationAnimation('#progressLinkResume');
-  // aboutTimeline.registerNavigationAnimation('#progressLinkAbout');
-  // skillsTimeline.registerNavigationAnimation('#progressLinkSkills');
-  // experienceTimeline.registerNavigationAnimation('#progressLinkExperience');
-  // projectsTimeline.registerNavigationAnimation('#progressLinkProjects');
-  // contactTimeline.registerNavigationAnimation('#progressLinkContact');
-  // register animations
-  // heroTimeline.init();
-  // resumeTimeline.init();
-  // aboutTimeline.init();
-  // skillsTimeline.init();
-  // experienceTimeline.init();
-  // projectsTimeline.init();
-  // contactTimeline.init();
 }
 
 function initTimelines(): void {
