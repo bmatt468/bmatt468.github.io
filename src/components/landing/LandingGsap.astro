@@ -7,30 +7,19 @@
     // clean fade content and launch GSAP goodness into the world
     document.fonts.ready.then(() => {
       gsapify.init().then(() => {
-        gsap
-          .timeline({
-            onComplete: () => {
-              gsapify.launch();
-            },
-          })
-          .to('#loading-icon', {
-            autoAlpha: 0,
-            duration: 0.5,
-          })
-          .to('#landing-container', {
-            autoAlpha: 1,
-            duration: 0.5,
-          });
+        gsap.to('#loading-icon', {
+          autoAlpha: 0,
+          duration: 0.5,
+        });
+        gsap.to('#landing-container', {
+          autoAlpha: 1,
+          duration: 0.5,
+          delay: 0.5,
+        });
+        gsapify.launch();
       });
     });
   }
-
-  // if ('scrollRestoration' in history) {
-  //   history.scrollRestoration = 'manual';
-  // }
-  // window.scrollTo(0, 0);
-
-  window.history.scrollRestoration = 'auto';
 
   document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', gsapification, false);

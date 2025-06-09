@@ -4,7 +4,7 @@ const log = console.log;
 
 class Logger {
   shouldLog(): boolean {
-    return true;
+    return false;
   }
 
   logInfo(caller: string, message: string): void {
