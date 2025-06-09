@@ -1,6 +1,7 @@
-import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
-import { logger } from '@components/landing/gsapify/Logger.ts';
-import { gsap } from 'gsap';
+import {BaseTimeline} from '@components/landing/gsapify/animations/BaseTimeline.ts';
+import {logger} from '@components/landing/gsapify/Logger.ts';
+import {gsap} from 'gsap';
+import {NavigationStatus} from "@components/landing/gsapify/Navigation.ts";
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
   public readonly triggerElem: string;
@@ -36,4 +37,22 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
   }
 
   abstract init(): void;
+
+  getNavigationStatus(): NavigationStatus {
+    const progress = this.timeline.scrollTrigger?.progress;
+
+    if (progress === undefined) {
+      throw new Error(`${this.timeline.id} has no scrollTrigger`);
+    }
+
+    if (progress === 0) {
+      return NavigationStatus.NotStarted;
+    }
+
+    if (progress === 1) {
+      return NavigationStatus.Complete;
+    }
+
+    return NavigationStatus.InProgress;
+  }
 }

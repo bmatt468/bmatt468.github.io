@@ -1,177 +1,155 @@
 ---
-import { Icon } from 'astro-icon/components';
-
-import LandingGsap from '@components/landing/LandingGsap.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
+import LandingLayout from '@layouts/LandingLayout.astro';
+import GsapSmoothScroll from "../components/ui/GsapSmoothScroll.astro";
 ---
 
-<BaseLayout>
-  <LandingGsap />
+<LandingLayout>
+    <LandingProgressBar/>
 
   <div
-    id="loading-icon"
-    class="fixed -z-50 flex h-screen w-full items-center justify-center"
+    class="background-colorable fixed -z-50 h-screen w-full"
+    id="landing-background"
   >
-    <span class="animate-pulse">
-      <Icon
-        name="mdi:loading"
-        class="size-16 animate-spin"
-      />
-    </span>
   </div>
 
-  <main
-    id="landing-container"
-    class="invisible"
-  >
-    <LandingProgressBar />
-
-    <div
-      class="background-colorable fixed -z-50 h-screen w-full"
-      id="landing-background"
+  <GsapSmoothScroll>
+    <span id="#" class="hidden"/>
+    <LandingGsapBox
+      id="gsapBoxHero"
+      classes="bg-abbey-100 dark:bg-abbey-1050"
     >
-    </div>
-
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <LandingGsapBox
-          id="gsapBoxHero"
-          classes="bg-abbey-100 dark:bg-abbey-1050"
+      <div class="text-center">
+        <h1
+          id="hero-title"
+          class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
+          data-speed="clamp(2)"
         >
-          <div class="text-center">
-            <h1
-              id="hero-title"
-              class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
-              data-speed="clamp(2)"
-            >
-              Hello, I'm Benjamin!
-            </h1>
-            <p
-              id="hero-subtitle"
-              class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
-              data-speed="clamp(1.75)"
-            >
-              Full-stack engineer &amp; engineering leader
-            </p>
-          </div>
-        </LandingGsapBox>
-
-        <LandingGsapBox
-          id="gsapBoxResume"
-          linkId="resume"
-          classes="bg-slate-100 dark:bg-bismark-950"
+          Hello, I'm Benjamin!
+        </h1>
+        <p
+          id="hero-subtitle"
+          class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
+          data-speed="clamp(1.75)"
         >
-          <div class="text-center">
-            <h1
-              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              Resume
-            </h1>
-            <p
-              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-            >
-              I'm going to put my resume here
-            </p>
-          </div>
-        </LandingGsapBox>
-
-        <LandingGsapBox
-          id="gsapBoxAbout"
-          linkId="about"
-          classes="bg-gray-200 dark:bg-abbey-1000"
-        >
-          <div class="text-center">
-            <h1
-              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              About
-            </h1>
-            <p
-              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-            >
-              I'm going to talk about me here
-            </p>
-          </div>
-        </LandingGsapBox>
-
-        <LandingGsapBox
-          id="gsapBoxSkills"
-          linkId="skills"
-          classes="bg-abbey-50 dark:bg-abbey-950"
-        >
-          <div class="text-center">
-            <h1
-              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              Skills
-            </h1>
-            <p
-              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-            >
-              I'm going to talk about what I know here
-            </p>
-          </div>
-        </LandingGsapBox>
-
-        <LandingGsapBox
-          id="gsapBoxExperience"
-          linkId="experience"
-          classes="bg-abbey-100 dark:bg-abbey-1050"
-        >
-          <div class="text-center">
-            <h1
-              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              Experience
-            </h1>
-            <p
-              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-            >
-              I'm going to talk about what I've done here
-            </p>
-          </div>
-        </LandingGsapBox>
-
-        <LandingGsapBox
-          id="gsapBoxProjects"
-          linkId="projects"
-          classes="bg-slate-100 dark:bg-bismark-950"
-        >
-          <div class="text-center">
-            <h1
-              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              Projects
-            </h1>
-            <p
-              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-            >
-              I'm going to talk more about what I've done here
-            </p>
-          </div>
-        </LandingGsapBox>
-
-        <LandingGsapBox
-          id="gsapBoxContact"
-          linkId="contact"
-          classes="bg-gray-200 dark:bg-abbey-1000"
-        >
-          <div class="text-center">
-            <h1
-              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
-            >
-              Contact
-            </h1>
-            <p
-              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
-            >
-              I'm going to talk about how you can talk to me here
-            </p>
-          </div>
-        </LandingGsapBox>
+          Full-stack engineer &amp; engineering leader
+        </p>
       </div>
-    </div>
-  </main>
-</BaseLayout>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxResume"
+      linkId="resume"
+      classes="bg-slate-100 dark:bg-bismark-950"
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Resume
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to put my resume here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxAbout"
+      linkId="about"
+      classes="bg-gray-200 dark:bg-abbey-1000"
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          About
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about me here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxSkills"
+      linkId="skills"
+      classes="bg-abbey-50 dark:bg-abbey-950"
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Skills
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about what I know here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxExperience"
+      linkId="experience"
+      classes="bg-abbey-100 dark:bg-abbey-1050"
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Experience
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about what I've done here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxProjects"
+      linkId="projects"
+      classes="bg-slate-100 dark:bg-bismark-950"
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Projects
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk more about what I've done here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxContact"
+      linkId="contact"
+      classes="bg-gray-200 dark:bg-abbey-1000"
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Contact
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about how you can talk to me here
+        </p>
+      </div>
+    </LandingGsapBox>
+  </GsapSmoothScroll>
+</LandingLayout>

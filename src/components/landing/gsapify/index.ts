@@ -10,7 +10,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
-import { initNavigation } from './Navigation.ts';
+import {initNavigation, processBackNavigation, processForwardNavigation} from './Navigation.ts';
 
 function launch(): void {
   // run the hero animations
@@ -46,6 +46,24 @@ function initTimelines(): void {
   contactTimeline.init();
 }
 
+function bindKeyHandlers(): void {
+  window.addEventListener('keydown', (event: KeyboardEvent) => {
+    switch (event.key) {
+      case 'ArrowUp':
+      case 'ArrowLeft':
+        event.preventDefault();
+        processBackNavigation();
+        break;
+
+      case 'ArrowDown':
+      case 'ArrowRight':
+        event.preventDefault();
+        processForwardNavigation();
+        break;
+    }
+  });
+}
+
 /**
  * Initialize the GSAP implementation.
  * - register the plugins we need to use across the gsap implementation
@@ -60,6 +78,7 @@ async function init(): Promise<void> {
   background.setColor('oklch(0.757 0.016 235.458)');
   initNavigation();
   initTimelines();
+  bindKeyHandlers();
 }
 
 export const gsapify = {

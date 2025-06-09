@@ -4,7 +4,7 @@ class TimelineRegistry {
   private timelines = new Map<string, BaseTimeline>();
 
   register(timeline: BaseTimeline, failsafe: boolean = true): void {
-    if (failsafe && this.exists(timeline.id)) {
+    if (failsafe && this.has(timeline.id)) {
       throw new Error(`${timeline.id} already registered`);
     }
 
@@ -12,7 +12,7 @@ class TimelineRegistry {
   }
 
   get<T extends BaseTimeline>(id: string): T {
-    if (!this.exists(id)) {
+    if (!this.has(id)) {
       throw new Error(`${id} has not been registered`);
     }
 
@@ -23,7 +23,7 @@ class TimelineRegistry {
     return this.timelines.get(id) as T | undefined;
   }
 
-  exists(id: string): boolean {
+  has(id: string): boolean {
     return this.timelines.has(id);
   }
 

@@ -5,17 +5,17 @@ import LandingProgressItem from './LandingProgressItem.astro';
 <nav
   aria-label="Sections"
   id="hero-links"
-  class="background-colorable fixed top-0 z-50 w-full"
+  class="background-colorable fixed top-0 z-50 w-full hidden"
 >
   <ol
     role="list"
     class="flex divide-x divide-gray-300 overflow-hidden rounded-b-md border border-gray-300"
   >
-    <LandingProgressItem name="Resume" />
-    <LandingProgressItem name="About" />
-    <LandingProgressItem name="Skills" />
-    <LandingProgressItem name="Experience" />
-    <LandingProgressItem name="Projects" />
-    <LandingProgressItem name="Contact" />
+    <LandingProgressItem name="Resume" icon="qlementine-icons:resume-16" />
+    <LandingProgressItem name="About" icon="mdi:about" />
+    <LandingProgressItem name="Skills" icon="mdi:code-block-tags" />
+    <LandingProgressItem name="Experience" icon="mdi:work" />
+    <LandingProgressItem name="Projects" icon="mdi:roadmap" />
+    <LandingProgressItem name="Contact" icon="mdi:contact" />
   </ol>
 </nav>
