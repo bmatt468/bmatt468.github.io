@@ -1,12 +1,12 @@
 ---
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
+import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import LandingLayout from '@layouts/LandingLayout.astro';
-import GsapSmoothScroll from "../components/ui/GsapSmoothScroll.astro";
 ---
 
 <LandingLayout>
-    <LandingProgressBar/>
+  <LandingProgressBar />
 
   <div
     class="background-colorable fixed -z-50 h-screen w-full"
@@ -15,7 +15,10 @@ import GsapSmoothScroll from "../components/ui/GsapSmoothScroll.astro";
   </div>
 
   <GsapSmoothScroll>
-    <span id="#" class="hidden"/>
+    <span
+      id="#"
+      class="hidden"
+    ></span>
     <LandingGsapBox
       id="gsapBoxHero"
       classes="bg-abbey-100 dark:bg-abbey-1050"

@@ -10,7 +10,11 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
-import {initNavigation, processBackNavigation, processForwardNavigation} from './Navigation.ts';
+import {
+  initNavigation,
+  processBackNavigation,
+  processForwardNavigation,
+} from './Navigation.ts';
 
 function launch(): void {
   // run the hero animations

@@ -62,12 +62,12 @@ export class HeroTimeline extends BoxBoundTimeline {
     } else {
       tl.to(this.titleSelector, {
         autoAlpha: 1,
-        duration: .25,
+        duration: 0.25,
         ease: 'power1.inOut',
       });
       tl.to(
         this.subtitleSelector,
-        { autoAlpha: 1, duration: .25, ease: 'power1.inOut' },
+        { autoAlpha: 1, duration: 0.25, ease: 'power1.inOut' },
         '<'
       );
     }

@@ -1,7 +1,7 @@
-import {BaseTimeline} from '@components/landing/gsapify/animations/BaseTimeline.ts';
-import {logger} from '@components/landing/gsapify/Logger.ts';
-import {gsap} from 'gsap';
-import {NavigationStatus} from "@components/landing/gsapify/Navigation.ts";
+import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
+import { logger } from '@components/landing/gsapify/Logger.ts';
+import { NavigationStatus } from '@components/landing/gsapify/Navigation.ts';
+import { gsap } from 'gsap';
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
   public readonly triggerElem: string;
