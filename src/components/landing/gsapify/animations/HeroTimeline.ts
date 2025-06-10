@@ -1,5 +1,6 @@
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
 import { gsap } from 'gsap';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { SplitText } from 'gsap/SplitText';
 
 export class HeroTimeline extends BoxBoundTimeline {
@@ -31,6 +32,8 @@ export class HeroTimeline extends BoxBoundTimeline {
   init() {}
 
   animateText(): void {
+    gsap.registerPlugin(DrawSVGPlugin);
+
     const initialTimelineProgress = this.timeline.scrollTrigger?.progress ?? -1;
 
     const tl = gsap.timeline({ paused: true });
@@ -40,7 +43,8 @@ export class HeroTimeline extends BoxBoundTimeline {
     if (initialTimelineProgress === 0) {
       gsap.set(this.titleSelector, { autoAlpha: 1 });
       gsap.set(this.subtitleSelector, { autoAlpha: 1 });
-      // tl.
+      gsap.set('#hero-logo', { autoAlpha: 1 });
+
       tl.from(this.titleSplit.chars, {
         x: 50,
         autoAlpha: 0,
@@ -59,6 +63,32 @@ export class HeroTimeline extends BoxBoundTimeline {
         },
         '<+.25'
       );
+
+      tl.fromTo(
+        '#m',
+        {
+          drawSVG: '50% 50%',
+        },
+        {
+          duration: 2,
+          drawSVG: '0% 100%',
+          ease: 'sine.inOut',
+        },
+        '<'
+      );
+
+      tl.fromTo(
+        '#b',
+        {
+          drawSVG: '50% 50%',
+        },
+        {
+          duration: 2,
+          drawSVG: '0% 100%',
+          ease: 'sine.inOut',
+        },
+        '<'
+      );
     } else {
       tl.to(this.titleSelector, {
         autoAlpha: 1,
@@ -67,6 +97,11 @@ export class HeroTimeline extends BoxBoundTimeline {
       });
       tl.to(
         this.subtitleSelector,
+        { autoAlpha: 1, duration: 0.25, ease: 'power1.inOut' },
+        '<'
+      );
+      tl.to(
+        '#hero-logo',
         { autoAlpha: 1, duration: 0.25, ease: 'power1.inOut' },
         '<'
       );

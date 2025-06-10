@@ -1,10 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import LandingLayout from '@layouts/LandingLayout.astro';
+
+import space1 from '../images/space/space1.jpg';
 ---
 
 <LandingLayout>
@@ -17,6 +20,17 @@ import LandingLayout from '@layouts/LandingLayout.astro';
   </div>
 
   <GsapSmoothScroll>
+    <div
+      class="absolute top-0 -z-10 h-[120svh] w-full overflow-hidden"
+      data-speed="clamp(.1)"
+    >
+      <Image
+        src={space1}
+        alt=""
+        class="h-full w-full max-w-none object-cover object-bottom"
+      />
+    </div>
+
     <LandingGsapBox
       id="gsapBoxHero"
       classes="bg-abbey-100 dark:bg-abbey-1050 flex-col h-full"
@@ -37,22 +51,23 @@ import LandingLayout from '@layouts/LandingLayout.astro';
           Full-stack engineer &amp; engineering leader
         </p>
       </div>
-      <div
-        class="z-10"
-        id="rocket"
-      >
+      <div>
         <Icon
-          name="space/rocket"
-          width="8rem"
-          height="8rem"
+          name="logos/logo2"
+          width="6rem"
+          height="6rem"
+          id="hero-logo"
+          class="invisible"
         />
       </div>
     </LandingGsapBox>
 
+    <div class="background-transparent h-[100dvh]"></div>
+
     <LandingGsapBox
       id="gsapBoxResume"
       linkId="resume"
-      classes="bg-slate-100 dark:bg-bismark-950"
+      classes=""
     >
       <div class="text-center">
         <h1
@@ -71,7 +86,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxAbout"
       linkId="about"
-      classes="bg-gray-200 dark:bg-abbey-1000"
+      classes=""
     >
       <div class="text-center">
         <h1
@@ -90,7 +105,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxSkills"
       linkId="skills"
-      classes="bg-abbey-50 dark:bg-abbey-950"
+      classes=""
     >
       <div class="text-center">
         <h1
@@ -109,7 +124,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxExperience"
       linkId="experience"
-      classes="bg-abbey-100 dark:bg-abbey-1050"
+      classes=""
     >
       <div class="text-center">
         <h1
@@ -128,7 +143,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxProjects"
       linkId="projects"
-      classes="bg-slate-100 dark:bg-bismark-950"
+      classes=""
     >
       <div class="text-center">
         <h1
@@ -147,7 +162,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxContact"
       linkId="contact"
-      classes="bg-gray-200 dark:bg-abbey-1000"
+      classes=""
     >
       <div class="text-center">
         <h1
