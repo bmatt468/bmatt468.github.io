@@ -6,6 +6,7 @@ import { background } from '@components/landing/gsapify/Background.ts';
 import { logger } from '@components/landing/gsapify/Logger.ts';
 import { getScrollSmoother } from '@components/landing/gsapify/ScrollSmoother.ts';
 import { gsap } from 'gsap';
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -77,7 +78,7 @@ function bindKeyHandlers(): void {
  * - create all the timelines to prevent FOUC
  */
 async function init(): Promise<void> {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, DrawSVGPlugin);
   getScrollSmoother();
   background.setColor('oklch(0.757 0.016 235.458)');
   initNavigation();

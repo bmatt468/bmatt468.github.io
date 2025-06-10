@@ -10,7 +10,8 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
     id: string,
     triggerElem: string,
     timelineStart: string = 'top bottom',
-    timelineEnd: string = 'top top'
+    timelineEnd: string = 'top top',
+    pin: boolean = false
   ) {
     logger.logInfo(id, 'Initializing timeline');
     let timeline = gsap.timeline({
@@ -21,6 +22,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         end: timelineEnd,
         scrub: true,
         markers: true,
+        pin: pin,
         onEnter: () => logger.logTimelineEvent(id, 'Entered viewport'),
         onLeave: () => logger.logTimelineEvent(id, 'Reached top'),
         onEnterBack: () => logger.logTimelineEvent(id, 'Re-entered from below'),
