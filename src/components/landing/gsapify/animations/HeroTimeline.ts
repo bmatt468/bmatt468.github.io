@@ -31,7 +31,6 @@ export class HeroTimeline extends BoxBoundTimeline {
 
   init() {
     this.timeline.vars.onStart = () => {
-      console.log('going');
       gsap.getById('hero-build')?.timeScale(10);
     };
 
@@ -53,6 +52,17 @@ export class HeroTimeline extends BoxBoundTimeline {
         duration: 0.25,
       },
       -1
+    );
+
+    this.timeline.to(
+      "[data-icon='space/rocketflame']",
+      {
+        x: 5,
+        duration: 1.25,
+        repeat: 10,
+        yoyo: true,
+      },
+      '<'
     );
   }
 

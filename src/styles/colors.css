@@ -1,5 +1,5 @@
 @theme {
-  --color-abbey: oklch(0.431 0.017 248.216);
+  /*--color-abbey: oklch(0.431 0.017 248.216);*/
   --color-abbey-50: oklch(0.972 0.003 228.784);
   --color-abbey-100: oklch(0.928 0.005 214.329);
   --color-abbey-200: oklch(0.86 0.009 232.385);
@@ -15,7 +15,7 @@
   --color-abbey-1050: oklch(0.2 0.009 248.183);
   --color-abbey-1100: oklch(0.17 0.009 248.183);
 
-  --color-bismark: oklch(0.493 0.061 223.7);
+  /*--color-bismark: oklch(0.493 0.061 223.7);*/
   --color-bismark-50: oklch(0.977 0.007 197.035);
   --color-bismark-100: oklch(0.937 0.018 205.316);
   --color-bismark-200: oklch(0.875 0.033 213.372);
@@ -28,7 +28,7 @@
   --color-bismark-900: oklch(0.365 0.033 230.479);
   --color-bismark-950: oklch(0.271 0.028 236.672);
 
-  --color-jellybean: oklch(0.56 0.092 223.095);
+  /*--color-jellybean: oklch(0.56 0.092 223.095);*/
   --color-jellybean-50: oklch(0.977 0.012 209.805);
   --color-jellybean-100: oklch(0.945 0.03 204.5);
   --color-jellybean-200: oklch(0.892 0.053 208.089);
@@ -41,7 +41,7 @@
   --color-jellybean-900: oklch(0.375 0.049 229.628);
   --color-jellybean-950: oklch(0.283 0.041 231.532);
 
-  --color-shakespeare: oklch(0.703 0.135 226.319);
+  /*--color-shakespeare: oklch(0.703 0.135 226.319);*/
   --color-shakespeare-50: oklch(0.981 0.013 221.423);
   --color-shakespeare-100: oklch(0.959 0.026 221.57);
   --color-shakespeare-200: oklch(0.918 0.057 217.324);
@@ -54,7 +54,7 @@
   --color-shakespeare-900: oklch(0.424 0.078 227.161);
   --color-shakespeare-950: oklch(0.316 0.057 229.261);
 
-  --color-java: oklch(0.744 0.123 199.576);
+  /*--color-java: oklch(0.744 0.123 199.576);*/
   --color-java-50: oklch(0.983 0.016 192.092);
   --color-java-100: oklch(0.956 0.038 194.522);
   --color-java-200: oklch(0.919 0.069 196.023);
@@ -67,7 +67,7 @@
   --color-java-900: oklch(0.402 0.056 214.628);
   --color-java-950: oklch(0.306 0.045 216.075);
 
-  --color-puerto-rico: oklch(0.769 0.138 176.846);
+  /*--color-puerto-rico: oklch(0.769 0.138 176.846);*/
   --color-puerto-rico-50: oklch(0.985 0.017 174.075);
   --color-puerto-rico-100: oklch(0.955 0.055 177.798);
   --color-puerto-rico-200: oklch(0.918 0.103 176.503);
