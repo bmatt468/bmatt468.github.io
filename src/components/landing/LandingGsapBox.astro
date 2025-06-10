@@ -10,7 +10,10 @@ const { id, linkId, classes, ...rest } = Astro.props;
 
 {linkId && <span id={linkId} />}
 <section
-  class="landing-box flex min-h-screen items-center justify-center p-2"
+  class:list={[
+    'landing-box flex min-h-screen items-center justify-center overflow-hidden p-2',
+    classes,
+  ]}
   id={id}
   {...rest}
 >

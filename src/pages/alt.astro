@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
@@ -15,29 +17,35 @@ import LandingLayout from '@layouts/LandingLayout.astro';
   </div>
 
   <GsapSmoothScroll>
-    <span
-      id="#"
-      class="hidden"
-    ></span>
     <LandingGsapBox
       id="gsapBoxHero"
-      classes="bg-abbey-100 dark:bg-abbey-1050"
+      classes="bg-abbey-100 dark:bg-abbey-1050 flex-col h-full"
     >
-      <div class="text-center">
+      <div class="flex grow flex-col justify-center text-center">
         <h1
           id="hero-title"
           class="invisible text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
-          data-speed="clamp(2)"
+          data-speed="clamp(-.1)"
         >
           Hello, I'm Benjamin!
         </h1>
         <p
           id="hero-subtitle"
           class="invisible my-4 text-xl font-medium tracking-widest text-pretty text-gray-500 uppercase sm:text-3xl"
-          data-speed="clamp(1.75)"
+          data-speed="clamp(-.1)"
         >
           Full-stack engineer &amp; engineering leader
         </p>
+      </div>
+      <div
+        class="z-10"
+        id="rocket"
+      >
+        <Icon
+          name="space/rocket"
+          width="8rem"
+          height="8rem"
+        />
       </div>
     </LandingGsapBox>
 
