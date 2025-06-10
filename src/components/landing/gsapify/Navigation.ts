@@ -44,7 +44,6 @@ function processNavigation(forward: boolean = true): void {
 
   sections.forEach((section) => {
     const top = section.getBoundingClientRect().top;
-    console.log(top);
 
     if (Math.round(top) < 0 && (priorTop === null || top > priorTop)) {
       priorTop = top;
