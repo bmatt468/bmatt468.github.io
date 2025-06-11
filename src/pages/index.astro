@@ -63,7 +63,7 @@ import space1 from '../images/space/space1.jpg';
       </div>
     </LandingGsapBox>
 
-    <div class="bg-dark-primary relative -top-4 -z-10 pt-4">
+    <div class="bg-dark-primary relative -top-4 -z-10 pt-4 pb-8">
       <Icon
         name="space/rocketflame"
         width="8rem"
@@ -73,9 +73,25 @@ import space1 from '../images/space/space1.jpg';
     </div>
 
     <div
-      class="background-transparent h-[100dvh]"
-      data-speed="clamp(1.15)"
+      class="background-transparent h-[100dvh] relative -top-8"
     >
+      <div class="grid grid-cols-2">
+        <span class="overflow-hidden">
+          <Icon
+            name="space/rockettrail-left-16_9"
+            color="var(--color-dark-primary)"
+            class="w-[50svw] h-auto"
+          />
+        </span>
+
+        <span class="overflow-hidden">
+          <Icon
+            name="space/rockettrail-right-16_9"
+            color="var(--color-dark-primary)"
+            class="w-[50svw] h-auto"
+          />
+        </span>
+      </div>
     </div>
 
     <LandingGsapBox

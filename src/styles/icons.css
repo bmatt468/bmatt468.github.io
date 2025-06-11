@@ -1,0 +1,29 @@
+@layer components {
+  [data-icon='logos/logo'] {
+    .b {
+      stroke: var(--logo-stroke-b);
+    }
+
+    .m {
+      stroke: var(--logo-stroke-m);
+    }
+  }
+
+  [data-icon='space/rocketflame'] {
+    #body {
+      fill: var(--color-tertiary);
+    }
+
+    #fins {
+      color: var(--color-primary);
+    }
+
+    #flame {
+      color: var(--color-amber-700);
+    }
+  }
+
+  [data-icon='space/rockettrail'] {
+
+  }
+}

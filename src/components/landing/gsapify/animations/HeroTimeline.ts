@@ -179,6 +179,51 @@ export class HeroTimeline extends BoxBoundTimeline {
       '40%+=.05'
     );
 
+    // cleanup trails
+    tl.set(
+      "[data-icon='space/rockettrail-left-16_9']",
+      {
+        transformBox: 'view-box',
+        transformOrigin: 'right top',
+      },
+      'start'
+    );
+
+    tl.set(
+      "[data-icon='space/rockettrail-right-16_9']",
+      {
+        transformBox: 'view-box',
+        transformOrigin: 'left top',
+      },
+      'start'
+    );
+
+    tl.to("[data-icon='space/rockettrail-left-16_9']", {
+      duration: .5,
+      rotation: 15,
+      autoAlpha: 0,
+      ease: 'sine.inOut',
+      onStart: () => {
+        logger.logProgressEvent('left trail', `start`, tl.progress(), true);
+      },
+      onComplete: () => {
+        logger.logProgressEvent('left trail', `end`, tl.progress(), true);
+      },
+    }, '50%');
+
+    tl.to("[data-icon='space/rockettrail-right-16_9']", {
+      duration: .5,
+      rotation: -15,
+      autoAlpha: 0,
+      ease: 'sine.inOut',
+      onStart: () => {
+        logger.logProgressEvent('right trail', `start`, tl.progress(), true);
+      },
+      onComplete: () => {
+        logger.logProgressEvent('right trail', `end`, tl.progress(), true);
+      },
+    }, '50%');
+
     this.timeline.add(tl);
   }
 

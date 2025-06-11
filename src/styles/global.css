@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './colors.css';
 @import './landing.css';
+@import './icons.css';
 @plugin "@tailwindcss/typography";
 
 @theme inline {
@@ -46,30 +47,6 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer components {
-  [data-icon='logos/logo'] {
-    .b {
-      stroke: var(--logo-stroke-b);
-    }
-
-    .m {
-      stroke: var(--logo-stroke-m);
-    }
-  }
-
-  [data-icon='space/rocketflame'] {
-    #body {
-      fill: var(--color-tertiary);
-    }
-
-    #fins {
-      color: var(--color-primary);
-    }
-
-    #flame {
-      color: var(--color-amber-700);
-    }
-  }
-
   .swap {
     @apply relative inline-grid cursor-pointer place-content-center align-middle select-none;
 
