@@ -1,0 +1,29 @@
+<script>
+  import { gsap } from 'gsap';
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+
+  gsap.registerPlugin(DrawSVGPlugin);
+
+  gsap.set(
+    '#b, #m',
+    {
+      drawSVG: '50% 50%',
+    },
+  );
+
+  gsap.set(
+    "[data-icon='logos/logo']",
+    {
+      autoAlpha: 1,
+    },
+  );
+
+  gsap.to(
+    '#b, #m',
+    {
+      duration: 2,
+      drawSVG: '0% 100%',
+      ease: 'sine.inOut',
+    },
+  );
+</script>
