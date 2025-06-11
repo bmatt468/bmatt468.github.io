@@ -31,35 +31,31 @@ export class HeroTimeline extends BoxBoundTimeline {
 
   init() {
     this.timeline.vars.onStart = () => {
-      gsap.getById('hero-build')?.timeScale(10);
+      const buildTl = gsap.getById('hero-build');
+      if (buildTl && buildTl.isActive()) {
+        buildTl.timeScale(10).seek(buildTl.duration());
+      }
     };
 
     this.timeline.to(
-      '#m',
+      '#m, #b',
       {
         drawSVG: '50% 50%',
         autoAlpha: 0,
         duration: 0.25,
       },
-      -1
-    );
-
-    this.timeline.to(
-      '#b',
-      {
-        drawSVG: '50% 50%',
-        autoAlpha: 0,
-        duration: 0.25,
-      },
-      -1
+      0
     );
 
     this.timeline.to(
       "[data-icon='space/rocketflame']",
       {
-        x: 5,
-        duration: 1.25,
-        repeat: 10,
+        keyframes: {
+          xPercent: [0, 10, 0, -10],
+          easeEach: 'none',
+        },
+        repeat: 1,
+        duration: 0.25,
         yoyo: true,
       },
       '<'
@@ -71,7 +67,11 @@ export class HeroTimeline extends BoxBoundTimeline {
 
     const initialTimelineProgress = this.timeline.scrollTrigger?.progress ?? -1;
 
-    const tl = gsap.timeline({ id: 'hero-build', paused: true });
+    const tl = gsap.timeline({
+      id: 'hero-build',
+      paused: true,
+      autoRemoveChildren: true,
+    });
 
     // if the position is 0, then the timeline is at the top of the page and should do full build.
     // otherwise, only fade in the text

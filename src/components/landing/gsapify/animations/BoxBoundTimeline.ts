@@ -21,7 +21,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         start: timelineStart,
         end: timelineEnd,
         scrub: true,
-        markers: false,
+        markers: true,
         pin: pin,
         onEnter: () => logger.logTimelineEvent(id, 'Entered viewport'),
         onLeave: () => logger.logTimelineEvent(id, 'Reached top'),
