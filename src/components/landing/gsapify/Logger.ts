@@ -14,6 +14,22 @@ class Logger {
     }
   }
 
+  logProgressEvent(
+    caller: string,
+    message: string,
+    position: number,
+    force: boolean = false
+  ): void {
+    if (this.shouldLog() || force) {
+      log(
+        chalk.magenta(`🪜 ${b('[%s]')} %s\n` + `⌖ %s`),
+        caller,
+        message,
+        position
+      );
+    }
+  }
+
   logTimelineEvent(
     timeline: string,
     message: string,

@@ -1,5 +1,6 @@
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
 import { ScrollTriggerWorker } from '@components/landing/gsapify/animations/ScrollTriggerWorker.ts';
+import { colors } from '@components/landing/gsapify/Colors.ts';
 import { logger } from '@components/landing/gsapify/Logger.ts';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
@@ -12,7 +13,7 @@ export class HeroTimeline extends BoxBoundTimeline {
   private subtitleSelector: string = '#hero-subtitle';
 
   constructor() {
-    super('heroTimeline', '#gsapBoxHero', 'bottom bottom', 'bottom top');
+    super('heroTimeline', '#gsapBoxHero', 'bottom bottom', 'bottom -100px');
 
     // create the splits
     this.titleSplit = SplitText.create(this.titleSelector, {
@@ -40,54 +41,145 @@ export class HeroTimeline extends BoxBoundTimeline {
     };
 
     const worker = new ScrollTriggerWorker(this);
+    const tl = worker.timeline;
 
-    worker.timeline.to(
+    // logo fadeout
+    tl.to(
       '#m, #b',
       {
         drawSVG: '50% 50%',
         autoAlpha: 0,
-        duration: 0.43,
+        duration: 0.25,
         onStart: () => {
-          logger.logTimelineEvent('test', 'Start', true);
-          console.log(`icon fade start at ${worker.timeline.progress()}`);
+          logger.logProgressEvent(
+            'hero logo',
+            `start fade`,
+            tl.progress(),
+            true
+          );
         },
         onComplete: () => {
-          console.log(`icon fade end at ${worker.timeline.progress()}`);
+          logger.logProgressEvent('hero logo', `end fade`, tl.progress(), true);
         },
       },
-      '10%+=.02'
+      'start'
     );
 
-    // innerTl.to(
-    //   "[data-icon='space/rocketflame']",
-    //   {
-    //     keyframes: {
-    //       xPercent: [0, 10, 0, -10],
-    //       easeEach: 'none',
-    //     },
-    //     repeat: 1,
-    //     duration: 0.25,
-    //     yoyo: true,
-    //   },
-    //   '<'
-    // );
+    // rocket movement
+    tl.to(
+      "[data-icon='space/rocketflame']",
+      {
+        keyframes: {
+          xPercent: [0, 10, 0, -10],
+          easeEach: 'none',
+          duration: 0.25,
+        },
+        repeat: 1,
+        yoyo: true,
+      },
+      'start'
+    );
 
-    this.timeline.add(worker.timeline);
+    // rocket flame color and movement
+    tl.set(
+      "[data-icon='space/rocketflame'] #flame",
+      {
+        transformBox: 'view-box',
+        transformOrigin: 'center top',
+      },
+      'start'
+    );
 
-    //
-    // this.timeline.to(
-    //   "[data-icon='space/rocketflame']",
-    //   {
-    //     keyframes: {
-    //       xPercent: [0, 10, 0, -10],
-    //       easeEach: 'none',
-    //     },
-    //     repeat: 1,
-    //     duration: 0.25,
-    //     yoyo: true,
-    //   },
-    //   '<'
-    // );
+    tl.to(
+      "[data-icon='space/rocketflame'] #flame",
+      {
+        keyframes: {
+          rotation: [0, 5, -5, 5, -5],
+          fill: [
+            colors.get('amber-700'),
+            colors.get('orange-700'),
+            colors.get('amber-700'),
+            colors.get('orange-700'),
+            colors.get('amber-700'),
+            colors.get('orange-700'),
+          ],
+        },
+        repeat: 1,
+        yoyo: true,
+      },
+      'start'
+    );
+
+    // explode subtitle
+    tl.to(
+      this.subtitleSplit.chars,
+      {
+        physics2D: {
+          velocity: gsap.utils.distribute({
+            base: 600,
+            amount: 600,
+            from: 'edges',
+          }),
+          angle: gsap.utils.distribute({
+            base: -140,
+            amount: 100,
+            from: 'start',
+          }),
+        },
+        stagger: {
+          amount: 0.1,
+          from: 'center',
+        },
+        duration: 0.1,
+        autoAlpha: 0,
+        onStart: () => {
+          logger.logProgressEvent(
+            'subtitle split',
+            `start`,
+            tl.progress(),
+            true
+          );
+        },
+        onComplete: () => {
+          logger.logProgressEvent('subtitle split', `end`, tl.progress(), true);
+        },
+      },
+      '40%'
+    );
+
+    // explode title
+    tl.to(
+      this.titleSplit.chars,
+      {
+        physics2D: {
+          velocity: gsap.utils.distribute({
+            base: 600,
+            amount: 600,
+            from: 'edges',
+          }),
+          angle: gsap.utils.distribute({
+            base: -140,
+            amount: 100,
+            from: 'start',
+          }),
+        },
+        stagger: {
+          amount: 0.1,
+          from: 'center',
+        },
+        duration: 0.1,
+        autoAlpha: 0,
+        onStart: () => {
+          logger.logProgressEvent('title split', `start`, tl.progress(), true);
+        },
+        onComplete: () => {
+          logger.logProgressEvent('title split', `end`, tl.progress(), true);
+        },
+      },
+      '40%+=.05'
+    );
+
+    this.timeline.add(tl);
   }
 
   animateText(): void {
