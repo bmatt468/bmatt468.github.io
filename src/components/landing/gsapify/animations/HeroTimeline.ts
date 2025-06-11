@@ -1,4 +1,6 @@
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
+import { ScrollTriggerWorker } from '@components/landing/gsapify/animations/ScrollTriggerWorker.ts';
+import { logger } from '@components/landing/gsapify/Logger.ts';
 import { gsap } from 'gsap';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { SplitText } from 'gsap/SplitText';
@@ -37,29 +39,55 @@ export class HeroTimeline extends BoxBoundTimeline {
       }
     };
 
-    this.timeline.to(
+    const worker = new ScrollTriggerWorker(this);
+
+    worker.timeline.to(
       '#m, #b',
       {
         drawSVG: '50% 50%',
         autoAlpha: 0,
-        duration: 0.25,
+        duration: 0.43,
+        onStart: () => {
+          logger.logTimelineEvent('test', 'Start', true);
+          console.log(`icon fade start at ${worker.timeline.progress()}`);
+        },
+        onComplete: () => {
+          console.log(`icon fade end at ${worker.timeline.progress()}`);
+        },
       },
-      0
+      '10%+=.02'
     );
 
-    this.timeline.to(
-      "[data-icon='space/rocketflame']",
-      {
-        keyframes: {
-          xPercent: [0, 10, 0, -10],
-          easeEach: 'none',
-        },
-        repeat: 1,
-        duration: 0.25,
-        yoyo: true,
-      },
-      '<'
-    );
+    // innerTl.to(
+    //   "[data-icon='space/rocketflame']",
+    //   {
+    //     keyframes: {
+    //       xPercent: [0, 10, 0, -10],
+    //       easeEach: 'none',
+    //     },
+    //     repeat: 1,
+    //     duration: 0.25,
+    //     yoyo: true,
+    //   },
+    //   '<'
+    // );
+
+    this.timeline.add(worker.timeline);
+
+    //
+    // this.timeline.to(
+    //   "[data-icon='space/rocketflame']",
+    //   {
+    //     keyframes: {
+    //       xPercent: [0, 10, 0, -10],
+    //       easeEach: 'none',
+    //     },
+    //     repeat: 1,
+    //     duration: 0.25,
+    //     yoyo: true,
+    //   },
+    //   '<'
+    // );
   }
 
   animateText(): void {
