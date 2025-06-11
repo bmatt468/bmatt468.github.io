@@ -1,21 +1,24 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
-import LogoBuildGsap from "../components/common/LogoBuildGsap.astro";
+
+import LogoBuildGsap from '@components/common/LogoBuildGsap.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-  <LogoBuildGsap/>
-  <main class="flex min-h-screen flex-col p-2 pl-4 sm:pl-16 justify-center bg-dark-primary">
-    <div class="w-full grow flex flex-col justify-center">
+  <LogoBuildGsap />
+  <main
+    class="bg-dark-primary flex min-h-screen flex-col justify-center p-2 pl-4 sm:pl-16"
+  >
+    <div class="flex w-full grow flex-col justify-center">
       <p class="text-tertiary text-base/8 font-semibold">404</p>
       <h1
-        class="text-primary text-4xl font-semibold tracking-tight sm:text-6xl md:text-7xl my-2"
+        class="text-primary my-2 text-4xl font-semibold tracking-tight sm:text-6xl md:text-7xl"
       >
         Page not found
       </h1>
       <p
-        class="text-secondary text-sm sm:text-base md:text-lg font-medium tracking-widest text-pretty uppercase"
+        class="text-secondary text-sm font-medium tracking-widest text-pretty uppercase sm:text-base md:text-lg"
       >
         Sorry, we couldn’t find the page you’re looking for.
       </p>
@@ -23,7 +26,7 @@ import LogoBuildGsap from "../components/common/LogoBuildGsap.astro";
         <a
           href={Astro.site}
           class="text-primary text-sm/7 font-semibold"
-        ><span aria-hidden="true">&larr;</span> Back to home</a
+          ><span aria-hidden="true">&larr;</span> Back to home</a
         >
       </div>
     </div>
@@ -31,7 +34,7 @@ import LogoBuildGsap from "../components/common/LogoBuildGsap.astro";
     <Icon
       name="logos/logo"
       id="logo"
-      class="invisible size-[4rem] sm:size-[6rem] place-self-center justify-self-end"
+      class="invisible size-[4rem] place-self-center justify-self-end sm:size-[6rem]"
     />
   </main>
 </BaseLayout>
