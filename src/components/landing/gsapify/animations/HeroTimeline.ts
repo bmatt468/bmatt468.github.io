@@ -201,9 +201,8 @@ export class HeroTimeline extends BoxBoundTimeline {
     tl.to(
       "[data-icon='space/rockettrail-left-16_9']",
       {
-        duration: 0.5,
-        rotation: 15,
-        autoAlpha: 0,
+        duration: 1,
+        rotation: 20,
         ease: 'sine.inOut',
         onStart: () => {
           logger.logProgressEvent('left trail', `start`, tl.progress(), true);
@@ -212,15 +211,14 @@ export class HeroTimeline extends BoxBoundTimeline {
           logger.logProgressEvent('left trail', `end`, tl.progress(), true);
         },
       },
-      '50%'
+      'start'
     );
 
     tl.to(
       "[data-icon='space/rockettrail-right-16_9']",
       {
-        duration: 0.5,
-        rotation: -15,
-        autoAlpha: 0,
+        duration: 1,
+        rotation: -20,
         ease: 'sine.inOut',
         onStart: () => {
           logger.logProgressEvent('right trail', `start`, tl.progress(), true);
@@ -229,8 +227,19 @@ export class HeroTimeline extends BoxBoundTimeline {
           logger.logProgressEvent('right trail', `end`, tl.progress(), true);
         },
       },
-      '50%'
+      'start'
     );
+
+    // final fades
+    tl.set('#hero-spacer', {
+      margin: 0,
+    }, '90%');
+
+    tl.to('.hero-final-fade', {
+      autoAlpha: 0,
+      duration: .1,
+      ease: 'sine.inOut',
+    }, '90%');
 
     this.timeline.add(tl);
   }
