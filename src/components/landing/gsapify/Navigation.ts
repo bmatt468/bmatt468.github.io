@@ -2,6 +2,12 @@ import { getScrollSmoother } from '@components/landing/gsapify/ScrollSmoother.ts
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+enum NavigationStatus {
+  NotStarted,
+  InProgress,
+  Complete,
+}
+
 function init() {
   gsap.set('.progress-link', {
     '--scaleBackground': 0,
@@ -29,4 +35,47 @@ function init() {
     });
 }
 
-export { init as initNavigation };
+function processNavigation(forward: boolean = true): void {
+  const sections = document.querySelectorAll('.landing-box');
+  let priorTop: number | null = null;
+  let nextTop: number | null = null;
+  let priorEl = null;
+  let nextEl = null;
+
+  sections.forEach((section) => {
+    const top = section.getBoundingClientRect().top;
+
+    if (Math.round(top) < 0 && (priorTop === null || top > priorTop)) {
+      priorTop = top;
+      priorEl = section;
+    }
+
+    if (Math.round(top) > 0 && (nextTop === null || top < nextTop)) {
+      nextTop = top;
+      nextEl = section;
+    }
+  });
+
+  const smoother = getScrollSmoother();
+
+  if ((forward && nextEl) || (!forward && priorEl)) {
+    const el = forward ? nextEl : priorEl;
+
+    smoother.scrollTo(el, true);
+  }
+}
+
+function processBackNavigation(): void {
+  processNavigation(false);
+}
+
+function processForwardNavigation(): void {
+  processNavigation();
+}
+
+export {
+  init as initNavigation,
+  processForwardNavigation,
+  processBackNavigation,
+  NavigationStatus,
+};

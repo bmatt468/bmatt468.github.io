@@ -1,5 +1,5 @@
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
-import { background } from '@components/landing/gsapify/Background.ts';
+import { theme } from '@components/landing/gsapify/Theme.ts';
 
 export class AboutTimeline extends BoxBoundTimeline {
   constructor() {
@@ -7,18 +7,6 @@ export class AboutTimeline extends BoxBoundTimeline {
   }
 
   init(): void {
-    this.shiftBackground();
-  }
-
-  shiftBackground(): void {
-    this.timeline.addLabel('shiftBackground').to(
-      background.elem,
-      {
-        backgroundColor: 'oklch(0.493 0.061 223.7)',
-        duration: 1,
-        ease: 'none',
-      },
-      0
-    );
+    this.shiftColorables(theme.getSectionBackground('about'));
   }
 }

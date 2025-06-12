@@ -28,11 +28,13 @@
     "@astrojs/sitemap": "^3.4.0",
     "@astrojs/ts-plugin": "^1.10.4",
     "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/qlementine-icons": "^1.2.6",
     "@iconify-json/skill-icons": "^1.2.0",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.7.13",
     "astro-icon": "^1.1.5",
+    "chalk": "^5.4.1",
     "gsap": "^3.13.0",
     "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3"
@@ -40,7 +42,6 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@typescript-eslint/parser": "^8.32.1",
-    "daisyui": "^5.0.35",
     "eslint": "^9.26.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",

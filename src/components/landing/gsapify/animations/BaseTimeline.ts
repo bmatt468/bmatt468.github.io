@@ -1,3 +1,5 @@
+import { timelineRegistry } from '@components/landing/gsapify/animations/TimelineRegistry.ts';
+
 export abstract class BaseTimeline {
   public timeline: gsap.core.Timeline;
   public readonly id: string;
@@ -5,6 +7,7 @@ export abstract class BaseTimeline {
   protected constructor(id: string, timeline: gsap.core.Timeline) {
     this.id = id;
     this.timeline = timeline;
+    timelineRegistry.register(this);
   }
 
   registerNavigationAnimation(target: string): void {
@@ -12,6 +15,19 @@ export abstract class BaseTimeline {
       target,
       {
         '--scaleBackground': 1,
+        duration: 1,
+        delay: 0.25,
+        ease: 'none',
+      },
+      0
+    );
+  }
+
+  shiftColorables(color: string): void {
+    this.timeline.to(
+      '.background-colorable',
+      {
+        backgroundColor: color,
         duration: 1,
         ease: 'none',
       },

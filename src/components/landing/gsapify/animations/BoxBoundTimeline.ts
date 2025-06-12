@@ -1,4 +1,6 @@
 import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
+import { logger } from '@components/landing/gsapify/Logger.ts';
+import { NavigationStatus } from '@components/landing/gsapify/Navigation.ts';
 import { gsap } from 'gsap';
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
@@ -8,8 +10,10 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
     id: string,
     triggerElem: string,
     timelineStart: string = 'top bottom',
-    timelineEnd: string = 'top top'
+    timelineEnd: string = 'top top',
+    pin: boolean = false
   ) {
+    logger.logInfo(id, 'Initializing timeline');
     let timeline = gsap.timeline({
       id: id,
       scrollTrigger: {
@@ -17,12 +21,16 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         start: timelineStart,
         end: timelineEnd,
         scrub: true,
-        markers: true,
-        onEnter: () => console.log(`[${id}] Entered viewport`),
-        onLeave: () => console.log(`[${id}] Reached top`),
-        onEnterBack: () => console.log(`[${id}] Re-entered from below`),
-        onLeaveBack: () => console.log(`[${id}] Left viewport downward`),
+        markers: false,
+        pin: pin,
+        onEnter: () => logger.logTimelineEvent(id, 'Entered viewport'),
+        onLeave: () => logger.logTimelineEvent(id, 'Reached top'),
+        onEnterBack: () => logger.logTimelineEvent(id, 'Re-entered from below'),
+        onLeaveBack: () =>
+          logger.logTimelineEvent(id, 'Left viewport downward'),
       },
+      onStart: () => logger.logTimelineEvent(id, 'Timeline started'),
+      onComplete: () => logger.logTimelineEvent(id, 'Timeline completed'),
     });
 
     super(id, timeline);
@@ -31,4 +39,22 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
   }
 
   abstract init(): void;
+
+  getNavigationStatus(): NavigationStatus {
+    const progress = this.timeline.scrollTrigger?.progress;
+
+    if (progress === undefined) {
+      throw new Error(`${this.timeline.id} has no scrollTrigger`);
+    }
+
+    if (progress === 0) {
+      return NavigationStatus.NotStarted;
+    }
+
+    if (progress === 1) {
+      return NavigationStatus.Complete;
+    }
+
+    return NavigationStatus.InProgress;
+  }
 }

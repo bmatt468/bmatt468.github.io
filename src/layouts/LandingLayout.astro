@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import LandingGsap from '@components/landing/LandingGsap.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <LandingGsap />
+
+  <div
+    id="loading-icon"
+    class="fixed -z-50 flex h-screen w-full items-center justify-center"
+  >
+    <span class="animate-pulse">
+      <Icon
+        name="mdi:loading"
+        class="size-16 animate-spin"
+      />
+    </span>
+  </div>
+
+  <main
+    id="landing-container"
+    class="invisible"
+  >
+    <slot />
+  </main>
+</BaseLayout>

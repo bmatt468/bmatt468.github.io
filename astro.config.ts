@@ -13,13 +13,19 @@ export default defineConfig({
     icon({
       include: {
         mdi: [
-          'linkedin',
-          'github',
+          'about',
           'blog',
-          'external-link',
+          'code-block-tags',
           'code-braces-box',
+          'contact',
+          'external-link',
+          'github',
+          'linkedin',
           'loading',
+          'roadmap',
+          'work',
         ],
+        'qlementine-icons': ['resume-16'],
         'skill-icons': [
           'alpinejs-dark',
           'alpinejs-light',

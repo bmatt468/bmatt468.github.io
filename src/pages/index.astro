@@ -1,58 +1,216 @@
 ---
-import Contact from '@components/landing/Contact.astro';
-import ExperienceTimeline from '@components/landing/ExperienceTimeline.astro';
-import ContentSection from '@components/ui/ContentSection.astro';
-import Footer from '@components/ui/Footer.astro';
-import Header from '@components/ui/Header.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+
+import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
+import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
+import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
+import LandingLayout from '@layouts/LandingLayout.astro';
+
+import space1 from '../images/space/space1.jpg';
 ---
 
-<BaseLayout>
-  <Header />
+<LandingLayout>
+  <LandingProgressBar />
 
-  <!--begin hero-->
-  <div class="hero landing-hero min-h-screen">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Hello there,</h1>
-        <h1 class="text-5xl font-bold">I'm Benjamin!</h1>
-        <p class="hidden">General Kenobi...</p>
-        <p class="py-6">
-          I am a full-stack engineer and engineering leader with over a decade
-          of experience. Come see what I've been up to!
+  <div
+    class="background-colorable fixed -z-50 h-screen w-full"
+    id="landing-background"
+  >
+  </div>
+
+  <GsapSmoothScroll>
+    <div
+      class="absolute top-0 -z-40 h-[120svh] w-full overflow-hidden"
+      data-speed="clamp(.1)"
+    >
+      <Image
+        src={space1}
+        alt=""
+        class="h-full w-full max-w-none object-cover object-bottom"
+      />
+    </div>
+
+    <LandingGsapBox
+      id="gsapBoxHero"
+      classes="bg-dark-primary flex-col overflow-visible border-b-10 border-b-dark-primary box-content hero-final-fade"
+    >
+      <div class="z-10 flex grow flex-col justify-center text-center">
+        <h1
+          id="hero-title"
+          class="text-primary invisible text-5xl font-semibold tracking-tight sm:text-7xl"
+          data-speed="clamp(-.1)"
+        >
+          Hello, I'm Benjamin!
+        </h1>
+        <p
+          id="hero-subtitle"
+          class="text-secondary invisible my-4 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
+          data-speed="clamp(-.1)"
+        >
+          Full-stack engineer &amp; engineering leader
         </p>
-        <!--<a-->
-        <!--  class="btn btn-primary"-->
-        <!--  href="#skills"-->
-        <!--&gt;-->
-        <!--  Learn More-->
-        <!--</a>-->
-        <a
-          class="btn btn-primary"
-          href="/assets/resume-2025.pdf"
-          target="_blank"
-          >My Resume
-        </a>
+      </div>
+
+      <div data-speed="clamp(.75)">
+        <Icon
+          name="logos/logo"
+          width="6rem"
+          height="6rem"
+          id="hero-logo"
+          class="invisible mb-[4rem]"
+        />
+      </div>
+    </LandingGsapBox>
+
+    <hr
+      id="hero-spacer"
+      class="bg-dark-primary hero-final-fade -m-[4px] -mb-[2px] h-[5.5rem] border-none"
+    />
+
+    <div
+      class="relative h-[100svh] bg-transparent"
+      data-speed="1"
+    >
+      <div class="absolute -top-[5rem] right-0 left-0 isolate z-40 mx-auto">
+        <Icon
+          name="space/rocketflame"
+          width="4rem"
+          height="8rem"
+          class="place-self-center"
+        />
+      </div>
+      <div class="hero-final-fade grid grid-cols-2">
+        <span class="overflow-hidden">
+          <Icon
+            name="space/rockettrail-left-16_9"
+            color="var(--color-dark-primary)"
+            class="h-auto w-[50svw]"
+          />
+        </span>
+
+        <span class="overflow-hidden">
+          <Icon
+            name="space/rockettrail-right-16_9"
+            color="var(--color-dark-primary)"
+            class="h-auto w-[50svw]"
+          />
+        </span>
       </div>
     </div>
-  </div>
-  <!--end hero-->
 
-  <ContentSection
-    id="skills"
-    classes={['landing-skills']}
-  >
-    <!--<h2>Skills</h2>-->
-  </ContentSection>
+    <LandingGsapBox
+      id="gsapBoxResume"
+      linkId="resume"
+      classes=""
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Resume
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to put my resume here
+        </p>
+      </div>
+    </LandingGsapBox>
 
-  <ExperienceTimeline />
+    <LandingGsapBox
+      id="gsapBoxAbout"
+      linkId="about"
+      classes=""
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          About
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about me here
+        </p>
+      </div>
+    </LandingGsapBox>
 
-  <!--begin freelance-->
-  <ContentSection classes={['landing-freelance']}>
-    <!--<h2>Freelance</h2>-->
-  </ContentSection>
-  <!--end freelance-->
+    <LandingGsapBox
+      id="gsapBoxSkills"
+      linkId="skills"
+      classes=""
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Skills
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about what I know here
+        </p>
+      </div>
+    </LandingGsapBox>
 
-  <Contact />
-  <Footer />
-</BaseLayout>
+    <LandingGsapBox
+      id="gsapBoxExperience"
+      linkId="experience"
+      classes=""
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Experience
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about what I've done here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxProjects"
+      linkId="projects"
+      classes=""
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Projects
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk more about what I've done here
+        </p>
+      </div>
+    </LandingGsapBox>
+
+    <LandingGsapBox
+      id="gsapBoxContact"
+      linkId="contact"
+      classes=""
+    >
+      <div class="text-center">
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+        >
+          Contact
+        </h1>
+        <p
+          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
+          I'm going to talk about how you can talk to me here
+        </p>
+      </div>
+    </LandingGsapBox>
+  </GsapSmoothScroll>
+</LandingLayout>

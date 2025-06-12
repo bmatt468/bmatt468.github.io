@@ -1,73 +1,52 @@
 @import 'tailwindcss';
 @import './colors.css';
 @import './landing.css';
+@import './icons.css';
 @plugin "@tailwindcss/typography";
-@plugin "daisyui";
 
 @theme inline {
-  --color-brm-standard-text: var(--color-abbey-1000);
-  --color-brm-light-text: var(--color-abbey-800);
-
   --font-sans: InterVariable, sans-serif;
+
+  --color-abbey: oklch(0.431 0.017 248.21);
+  --color-abbey-light: oklch(0.631 0.017 248.21);
+  --color-abbey-dark: oklch(0.231 0.017 248.21);
+  --color-abbey-white: oklch(0.928 0.005 214.329);
+  --color-abbey-black: oklch(0.2 0.009 248.183);
+
+  --color-bismark: oklch(0.493 0.061 223.7);
+  --color-bismark-light: oklch(0.693 0.061 223.7);
+  --color-bismark-dark: oklch(0.3265 0.061 223.7);
+
+  --color-jellybean: oklch(0.56 0.092 223.095);
+  --color-jellybean-light: oklch(0.76 0.092 223.095);
+  --color-jellybean-dark: oklch(0.4942 0.092 223.095);
+
+  --color-shakespeare: oklch(0.703 0.1347 226.29);
+  --color-shakespeare-light: oklch(0.797 0.1347 226.29);
+  --color-shakespeare-dark: oklch(0.5407 0.1097 231.55);
+
+  --color-java: oklch(0.744 0.123 199.576);
+  --color-java-light: oklch(0.844 0.123 199.576);
+  --color-java-dark: oklch(0.544 0.123 199.576);
+
+  --color-puerto-rico: oklch(0.769 0.138 176.846);
+  --color-puerto-rico-light: oklch(0.869 0.138 176.846);
+  --color-puerto-rico-dark: oklch(0.669 0.1197 182.11);
+
+  --color-primary: var(--color-abbey-white);
+  --color-secondary: var(--color-puerto-rico);
+  --color-tertiary: var(--color-jellybean);
+
+  --color-dark-primary: var(--color-abbey-black);
+  --color-dark-secondary: var(--color-abbey-dark);
+
+  --logo-stroke-b: var(--color-primary);
+  --logo-stroke-m: var(--color-secondary);
 }
-
-/*Light Theme*/
-/*@plugin "daisyui/theme" {*/
-/*  name: 'light';*/
-
-/*  --color-primary: var(--color-puerto-rico);*/
-/*  --color-primary-content: var(--color-puerto-rico-800);*/
-
-/*  --color-secondary: var(--color-bismark);*/
-/*  --color-secondary-content: var(--color-bismark-50);*/
-
-/*  --color-accent: var(--color-shakespeare);*/
-/*  --color-accent-content: var(--color-shakespeare-950);*/
-
-/*  --color-base-100: var(--color-neutral-100);*/
-/*  --color-base-200: var(--color-neutral-200);*/
-/*  --color-base-300: var(--color-neutral-300);*/
-/*  --color-base-content: var(--color-neutral-700);*/
-
-/*  --color-neutral: var(--color-abbey-1100);*/
-/*  --color-neutral-content: var(--color-abbey-400);*/
-/*}*/
-
-/* Dark Theme*/
-/*@plugin "daisyui/theme" {*/
-/*  name: 'dark';*/
-
-/*  --color-primary: var(--color-puerto-rico);*/
-/*  --color-primary-content: var(--color-puerto-rico-700);*/
-
-/*  --color-secondary: var(--color-bismark);*/
-/*  --color-secondary-content: var(--color-bismark-300);*/
-
-/*  --color-accent: var(--color-shakespeare);*/
-/*  --color-accent-content: var(--color-shakespeare-700);*/
-
-/*  --color-base-100: var(--color-neutral-800);*/
-/*  --color-base-200: var(--color-neutral-900);*/
-/*  --color-base-300: var(--color-neutral-950);*/
-/*  --color-base-content: var(--color-neutral-50);*/
-
-/*  --color-neutral: var(--color-abbey-1100);*/
-/*  --color-neutral-content: var(--color-abbey-400);*/
-/*}*/
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer components {
-  [data-icon='logos/logo'] {
-    .b {
-      stroke: var(--color-abbey-700);
-
-      @variant dark {
-        stroke: var(--color-abbey-100);
-      }
-    }
-  }
-
   .swap {
     @apply relative inline-grid cursor-pointer place-content-center align-middle select-none;
 

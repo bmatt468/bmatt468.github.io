@@ -4,27 +4,31 @@
   import { gsapify } from './gsapify';
 
   function gsapification(): void {
-    // clean fade content and launch GSAP goodness into the world
+    // even though we know scripts are loaded, hold until the DOM has knowledge
+    // of all the fonts
     document.fonts.ready.then(() => {
+      // run necessary bootstrapping, then fade out the loading icons
       gsapify.init().then(() => {
-        gsap
-          .timeline({
-            onComplete: () => {
-              gsapify.launch();
-            },
-          })
-          .to('#loading-icon', {
-            autoAlpha: 0,
-            duration: 0.5,
-          })
+        let tl = gsap.timeline({ paused: true });
+
+        tl.to('#loading-icon', {
+          autoAlpha: 0,
+          duration: 0.5,
+        })
           .to('#landing-container', {
             autoAlpha: 1,
             duration: 0.5,
+          })
+          .then(() => {
+            gsapify.launch();
           });
+
+        tl.resume();
       });
     });
   }
 
+  // prevent GSAP until we know we've got scrips loaded
   document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', gsapification, false);
   });
