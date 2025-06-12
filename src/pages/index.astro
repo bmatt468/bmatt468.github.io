@@ -35,7 +35,7 @@ import space1 from '../images/space/space1.jpg';
       id="gsapBoxHero"
       classes="bg-dark-primary flex-col overflow-visible border-b-10 border-b-dark-primary box-content hero-final-fade"
     >
-      <div class="flex grow flex-col justify-center text-center z-10">
+      <div class="z-10 flex grow flex-col justify-center text-center">
         <h1
           id="hero-title"
           class="text-primary invisible text-5xl font-semibold tracking-tight sm:text-7xl"
@@ -63,10 +63,16 @@ import space1 from '../images/space/space1.jpg';
       </div>
     </LandingGsapBox>
 
-    <hr id="hero-spacer" class="h-[5.5rem] bg-dark-primary border-none -m-[4px] -mb-[2px] hero-final-fade" />
+    <hr
+      id="hero-spacer"
+      class="bg-dark-primary hero-final-fade -m-[4px] -mb-[2px] h-[5.5rem] border-none"
+    />
 
-    <div class="bg-transparent relative h-[100svh]" data-speed="1">
-      <div class="absolute isolate -top-[5rem] left-0 right-0 mx-auto z-40">
+    <div
+      class="relative h-[100svh] bg-transparent"
+      data-speed="1"
+    >
+      <div class="absolute -top-[5rem] right-0 left-0 isolate z-40 mx-auto">
         <Icon
           name="space/rocketflame"
           width="4rem"
@@ -74,7 +80,7 @@ import space1 from '../images/space/space1.jpg';
           class="place-self-center"
         />
       </div>
-      <div class="grid grid-cols-2 hero-final-fade">
+      <div class="hero-final-fade grid grid-cols-2">
         <span class="overflow-hidden">
           <Icon
             name="space/rockettrail-left-16_9"

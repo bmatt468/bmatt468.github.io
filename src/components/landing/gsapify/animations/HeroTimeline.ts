@@ -231,15 +231,23 @@ export class HeroTimeline extends BoxBoundTimeline {
     );
 
     // final fades
-    tl.set('#hero-spacer', {
-      margin: 0,
-    }, '90%');
+    tl.set(
+      '#hero-spacer',
+      {
+        margin: 0,
+      },
+      '90%'
+    );
 
-    tl.to('.hero-final-fade', {
-      autoAlpha: 0,
-      duration: .1,
-      ease: 'sine.inOut',
-    }, '90%');
+    tl.to(
+      '.hero-final-fade',
+      {
+        autoAlpha: 0,
+        duration: 0.1,
+        ease: 'sine.inOut',
+      },
+      '90%'
+    );
 
     this.timeline.add(tl);
   }

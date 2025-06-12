@@ -44,7 +44,9 @@ export class ScrollTriggerWorker {
     this.addWorkerLabel('start', 0);
     this.addWorkerLabel('end', 1);
 
-    this.addTenthsLabels();
+    if (baseCategory === WorkerLabelCategory.Tenths) {
+      this.addTenthsLabels();
+    }
   }
 
   addFifthsLabels(): void {
