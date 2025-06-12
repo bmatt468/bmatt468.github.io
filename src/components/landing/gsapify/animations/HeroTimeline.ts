@@ -50,11 +50,7 @@ export class HeroTimeline extends BoxBoundTimeline {
         drawSVG: '50% 50% live',
         duration: 0.25,
         onStart: () => {
-          logger.logProgressEvent(
-            'hero logo',
-            `start fade`,
-            tl.progress()
-          );
+          logger.logProgressEvent('hero logo', `start fade`, tl.progress());
         },
         onComplete: () => {
           logger.logProgressEvent('hero logo', `end fade`, tl.progress());
@@ -69,11 +65,7 @@ export class HeroTimeline extends BoxBoundTimeline {
         autoAlpha: 0,
         duration: 0.25,
         onStart: () => {
-          logger.logProgressEvent(
-            'hero logo',
-            `start fade`,
-            tl.progress()
-          );
+          logger.logProgressEvent('hero logo', `start fade`, tl.progress());
         },
         onComplete: () => {
           logger.logProgressEvent('hero logo', `end fade`, tl.progress());
