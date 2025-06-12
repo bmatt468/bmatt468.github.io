@@ -13,11 +13,12 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
-import {
-  initNavigation,
-  processBackNavigation,
-  processForwardNavigation,
-} from './Navigation.ts';
+// TODO: Revisit
+// import {
+//   initNavigation,
+//   processBackNavigation,
+//   processForwardNavigation,
+// } from './Navigation.ts';
 
 function launch(): void {
   // run the hero animations
@@ -35,6 +36,7 @@ function initTimelines(): void {
   const projectsTimeline = new animations.ProjectsTimeline();
   const contactTimeline = new animations.ContactTimeline();
 
+  // TODO: Revisit
   // add animations to the navigation bar
   // resumeTimeline.registerNavigationAnimation('#progressLinkResume');
   // aboutTimeline.registerNavigationAnimation('#progressLinkAbout');
@@ -93,7 +95,7 @@ async function init(): Promise<void> {
   background.setColor('oklch(0.757 0.016 235.458)');
   // initNavigation();
   initTimelines();
-  // bindKeyHandlers();
+  bindKeyHandlers();
 }
 
 export const gsapify = {
