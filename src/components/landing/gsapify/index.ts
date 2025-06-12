@@ -36,12 +36,12 @@ function initTimelines(): void {
   const contactTimeline = new animations.ContactTimeline();
 
   // add animations to the navigation bar
-  resumeTimeline.registerNavigationAnimation('#progressLinkResume');
-  aboutTimeline.registerNavigationAnimation('#progressLinkAbout');
-  skillsTimeline.registerNavigationAnimation('#progressLinkSkills');
-  experienceTimeline.registerNavigationAnimation('#progressLinkExperience');
-  projectsTimeline.registerNavigationAnimation('#progressLinkProjects');
-  contactTimeline.registerNavigationAnimation('#progressLinkContact');
+  // resumeTimeline.registerNavigationAnimation('#progressLinkResume');
+  // aboutTimeline.registerNavigationAnimation('#progressLinkAbout');
+  // skillsTimeline.registerNavigationAnimation('#progressLinkSkills');
+  // experienceTimeline.registerNavigationAnimation('#progressLinkExperience');
+  // projectsTimeline.registerNavigationAnimation('#progressLinkProjects');
+  // contactTimeline.registerNavigationAnimation('#progressLinkContact');
 
   // register animations
   heroTimeline.init();
@@ -54,21 +54,22 @@ function initTimelines(): void {
 }
 
 function bindKeyHandlers(): void {
-  window.addEventListener('keydown', (event: KeyboardEvent) => {
-    switch (event.key) {
-      case 'ArrowUp':
-      case 'ArrowLeft':
-        event.preventDefault();
-        processBackNavigation();
-        break;
-
-      case 'ArrowDown':
-      case 'ArrowRight':
-        event.preventDefault();
-        processForwardNavigation();
-        break;
-    }
-  });
+  // TODO: Revisit
+  // window.addEventListener('keydown', (event: KeyboardEvent) => {
+  //   switch (event.key) {
+  //     case 'ArrowUp':
+  //     case 'ArrowLeft':
+  //       event.preventDefault();
+  //       processBackNavigation();
+  //       break;
+  //
+  //     case 'ArrowDown':
+  //     case 'ArrowRight':
+  //       event.preventDefault();
+  //       processForwardNavigation();
+  //       break;
+  //   }
+  // });
 }
 
 /**
@@ -90,9 +91,9 @@ async function init(): Promise<void> {
   );
   getScrollSmoother();
   background.setColor('oklch(0.757 0.016 235.458)');
-  initNavigation();
+  // initNavigation();
   initTimelines();
-  bindKeyHandlers();
+  // bindKeyHandlers();
 }
 
 export const gsapify = {
