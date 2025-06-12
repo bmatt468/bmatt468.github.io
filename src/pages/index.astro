@@ -7,6 +7,7 @@ import LandingProgressBar from '@components/landing/LandingProgressBar.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import LandingLayout from '@layouts/LandingLayout.astro';
 
+import Logo from '../assets/logos/logo.svg';
 import space1 from '../images/space/space1.jpg';
 ---
 
@@ -53,10 +54,8 @@ import space1 from '../images/space/space1.jpg';
       </div>
 
       <div data-speed="clamp(.75)">
-        <Icon
-          name="logos/logo"
-          width="6rem"
-          height="6rem"
+        <Logo
+          style="width: 6rem; height: 6rem"
           id="hero-logo"
           class="invisible mb-[4rem]"
         />
@@ -72,12 +71,10 @@ import space1 from '../images/space/space1.jpg';
       class="relative h-[100svh] bg-transparent"
       data-speed="1"
     >
-      <div class="absolute -top-[5rem] right-0 left-0 isolate z-40 mx-auto">
+      <div class="absolute -top-[5rem] left-[calc(50%-32px)] z-40 mx-auto">
         <Icon
           name="space/rocketflame"
-          width="4rem"
-          height="8rem"
-          class="place-self-center"
+          style="width: 4rem; height: 8rem"
         />
       </div>
       <div class="hero-final-fade grid grid-cols-2">

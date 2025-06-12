@@ -7,6 +7,7 @@ function get(): ScrollSmoother {
     return ScrollSmoother.create({
       smooth: 1,
       effects: true,
+      normalizeScroll: true,
     });
   }
 

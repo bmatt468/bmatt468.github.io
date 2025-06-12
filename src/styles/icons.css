@@ -9,6 +9,14 @@
     }
   }
 
+  .ff-logo-b {
+    stroke: var(--logo-stroke-b);
+  }
+
+  .ff-logo-m {
+    stroke: var(--logo-stroke-m);
+  }
+
   [data-icon='space/rocketflame'] {
     #body {
       fill: var(--color-tertiary);
@@ -21,6 +29,18 @@
     #flame {
       color: var(--color-amber-700);
     }
+  }
+
+  path.ff-rocket-flame-body {
+    color: var(--color-tertiary);
+  }
+
+  path.ff-rocket-flame-fins {
+    color: var(--color-primary);
+  }
+
+  path.ff-rocket-flame-flame {
+    color: var(--color-amber-700);
   }
 
   [data-icon='space/rockettrail'] {
