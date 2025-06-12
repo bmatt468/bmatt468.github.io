@@ -53,12 +53,11 @@ export class HeroTimeline extends BoxBoundTimeline {
           logger.logProgressEvent(
             'hero logo',
             `start fade`,
-            tl.progress(),
-            true
+            tl.progress()
           );
         },
         onComplete: () => {
-          logger.logProgressEvent('hero logo', `end fade`, tl.progress(), true);
+          logger.logProgressEvent('hero logo', `end fade`, tl.progress());
         },
       },
       'start'
@@ -73,12 +72,11 @@ export class HeroTimeline extends BoxBoundTimeline {
           logger.logProgressEvent(
             'hero logo',
             `start fade`,
-            tl.progress(),
-            true
+            tl.progress()
           );
         },
         onComplete: () => {
-          logger.logProgressEvent('hero logo', `end fade`, tl.progress(), true);
+          logger.logProgressEvent('hero logo', `end fade`, tl.progress());
         },
       },
       'start'
@@ -160,7 +158,7 @@ export class HeroTimeline extends BoxBoundTimeline {
           );
         },
         onComplete: () => {
-          logger.logProgressEvent('subtitle split', `end`, tl.progress(), true);
+          logger.logProgressEvent('subtitle split', `end`, tl.progress());
         },
       },
       '40%'
@@ -189,10 +187,10 @@ export class HeroTimeline extends BoxBoundTimeline {
         duration: 0.1,
         autoAlpha: 0,
         onStart: () => {
-          logger.logProgressEvent('title split', `start`, tl.progress(), true);
+          logger.logProgressEvent('title split', `start`, tl.progress());
         },
         onComplete: () => {
-          logger.logProgressEvent('title split', `end`, tl.progress(), true);
+          logger.logProgressEvent('title split', `end`, tl.progress());
         },
       },
       '40%+=.05'
@@ -224,10 +222,10 @@ export class HeroTimeline extends BoxBoundTimeline {
         rotation: 20,
         ease: 'sine.inOut',
         onStart: () => {
-          logger.logProgressEvent('left trail', `start`, tl.progress(), true);
+          logger.logProgressEvent('left trail', `start`, tl.progress());
         },
         onComplete: () => {
-          logger.logProgressEvent('left trail', `end`, tl.progress(), true);
+          logger.logProgressEvent('left trail', `end`, tl.progress());
         },
       },
       'start'
@@ -240,10 +238,10 @@ export class HeroTimeline extends BoxBoundTimeline {
         rotation: -20,
         ease: 'sine.inOut',
         onStart: () => {
-          logger.logProgressEvent('right trail', `start`, tl.progress(), true);
+          logger.logProgressEvent('right trail', `start`, tl.progress());
         },
         onComplete: () => {
-          logger.logProgressEvent('right trail', `end`, tl.progress(), true);
+          logger.logProgressEvent('right trail', `end`, tl.progress());
         },
       },
       'start'

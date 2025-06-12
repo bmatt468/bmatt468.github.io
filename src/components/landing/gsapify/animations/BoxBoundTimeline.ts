@@ -1,5 +1,4 @@
 import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
-import { logger } from '@components/landing/gsapify/Logger.ts';
 import { NavigationStatus } from '@components/landing/gsapify/Navigation.ts';
 import { gsap } from 'gsap';
 
@@ -13,7 +12,6 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
     timelineEnd: string = 'top top',
     pin: boolean = false
   ) {
-    logger.logInfo(id, 'Initializing timeline');
     let timeline = gsap.timeline({
       id: id,
       scrollTrigger: {
@@ -23,14 +21,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         scrub: true,
         markers: false,
         pin: pin,
-        onEnter: () => logger.logTimelineEvent(id, 'Entered viewport'),
-        onLeave: () => logger.logTimelineEvent(id, 'Reached top'),
-        onEnterBack: () => logger.logTimelineEvent(id, 'Re-entered from below'),
-        onLeaveBack: () =>
-          logger.logTimelineEvent(id, 'Left viewport downward'),
       },
-      onStart: () => logger.logTimelineEvent(id, 'Timeline started'),
-      onComplete: () => logger.logTimelineEvent(id, 'Timeline completed'),
     });
 
     super(id, timeline);
