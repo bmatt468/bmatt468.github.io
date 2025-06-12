@@ -4,6 +4,7 @@ export interface Metadata {
   description?: string;
   image?: string;
   site?: string;
+  sitemap?: string;
 }
 
 // Experience Types
