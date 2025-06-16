@@ -5,6 +5,7 @@ import { theme } from '@components/landing/gsapify/Theme.ts';
 export class ResumeTimeline extends BoxBoundTimeline {
   constructor() {
     super('resumeTimeline', '#gsapBoxResume', {
+      end: 'top -100px',
       markers: true,
     });
   }
