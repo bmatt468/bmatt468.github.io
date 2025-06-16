@@ -2,26 +2,42 @@ import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimelin
 import { NavigationStatus } from '@components/landing/gsapify/Navigation.ts';
 import { gsap } from 'gsap';
 
+export interface BoxBoundTimelineConfig {
+  start?: string;
+  end?: string;
+  markers?: boolean;
+  pin?: string | boolean;
+  pinReparent?: boolean;
+}
+
+const defaultBoxBoundTimelineConfig: Required<BoxBoundTimelineConfig> = {
+  start: 'top bottom',
+  end: 'top top',
+  markers: false,
+  pin: false,
+  pinReparent: false,
+};
+
 export abstract class BoxBoundTimeline extends BaseTimeline {
   public readonly triggerElem: string;
 
   protected constructor(
     id: string,
     triggerElem: string,
-    timelineStart: string = 'top bottom',
-    timelineEnd: string = 'top top',
-    markers: boolean = false,
-    pin: boolean = false
+    timelineStart?: BoxBoundTimelineConfig
   ) {
+    const config = { ...defaultBoxBoundTimelineConfig, ...timelineStart };
+
     let timeline = gsap.timeline({
       id: id,
       scrollTrigger: {
         trigger: triggerElem,
-        start: timelineStart,
-        end: timelineEnd,
+        start: config.start,
+        end: config.end,
         scrub: true,
-        markers: markers,
-        pin: pin,
+        markers: config.markers,
+        pin: config.pin,
+        pinReparent: config.pinReparent,
       },
     });
 

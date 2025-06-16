@@ -13,7 +13,10 @@ export class HeroTimeline extends BoxBoundTimeline {
   private subtitleSelector: string = '#hero-subtitle';
 
   constructor() {
-    super('heroTimeline', '#gsapBoxHero', 'bottom bottom', 'bottom -100px');
+    super('heroTimeline', '#gsapBoxHero', {
+      start: 'bottom bottom',
+      end: 'bottom -110px',
+    });
 
     // create the splits
     this.titleSplit = SplitText.create(this.titleSelector, {
@@ -243,15 +246,23 @@ export class HeroTimeline extends BoxBoundTimeline {
       '90%'
     );
 
-    tl.to(
-      '.hero-final-fade',
+    tl.set(
+      `${this.titleSelector}, ${this.subtitleSelector}`,
       {
-        autoAlpha: 0,
-        duration: 0.1,
-        ease: 'sine.inOut',
+        display: 'none',
       },
-      '90%'
+      'end'
     );
+
+    // tl.to(
+    //   '.hero-final-fade',
+    //   {
+    //     autoAlpha: 0,
+    //     duration: 0.1,
+    //     ease: 'sine.inOut',
+    //   },
+    //   '90%'
+    // );
 
     this.timeline.add(tl);
   }

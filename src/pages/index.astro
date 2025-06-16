@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
@@ -35,19 +36,21 @@ import LandingHero from '../components/landing/LandingHero.astro';
     <LandingGsapBox
       id="gsapBoxResume"
       linkId="resume"
-      classes=""
+      classes="bg-dark-primary py-[4rem] box-content"
     >
       <div class="text-center">
         <h1
-          class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
         >
           Resume
         </h1>
-        <p
-          class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        <a
+          href={new URL('assets/resume-2025.pdf', Astro.site)}
+          target="_blank"
+          class="text-secondary hover:text-secondary-light my-4 text-xl font-medium tracking-widest text-pretty uppercase underline sm:text-3xl"
         >
-          I'm going to put my resume here
-        </p>
+          Yours for the keeping!
+        </a>
       </div>
     </LandingGsapBox>
 

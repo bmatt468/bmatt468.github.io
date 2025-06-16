@@ -35,6 +35,7 @@
 
   --color-primary: var(--color-abbey-white);
   --color-secondary: var(--color-puerto-rico);
+  --color-secondary-light: var(--color-puerto-rico-light);
   --color-tertiary: var(--color-jellybean);
 
   --color-dark-primary: var(--color-abbey-black);
