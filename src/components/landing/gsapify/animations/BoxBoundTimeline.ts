@@ -10,6 +10,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
     triggerElem: string,
     timelineStart: string = 'top bottom',
     timelineEnd: string = 'top top',
+    markers: boolean = false,
     pin: boolean = false
   ) {
     let timeline = gsap.timeline({
@@ -19,7 +20,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         start: timelineStart,
         end: timelineEnd,
         scrub: true,
-        markers: false,
+        markers: markers,
         pin: pin,
       },
     });
