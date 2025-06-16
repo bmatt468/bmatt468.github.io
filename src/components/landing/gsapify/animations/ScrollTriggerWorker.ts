@@ -88,8 +88,7 @@ export class ScrollTriggerWorker {
           label,
           this.timeline.progress(),
           this.parent.id,
-          this.parent.timeline.progress(),
-          true
+          this.parent.timeline.progress()
         );
       },
       undefined,

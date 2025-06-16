@@ -1,12 +1,12 @@
 ---
-import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 
-import Logo from '@assets/logos/logo.svg';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import Space1 from '@images/space/space1.jpg';
 import LandingLayout from '@layouts/LandingLayout.astro';
+
+import LandingHero from '../components/landing/LandingHero.astro';
 ---
 
 <LandingLayout>
@@ -30,71 +30,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
       />
     </div>
 
-    <LandingGsapBox
-      id="gsapBoxHero"
-      classes="bg-dark-primary flex-col overflow-visible border-b-10 border-b-dark-primary box-content hero-final-fade"
-    >
-      <div
-        id="hero-titles"
-        class="z-10 flex grow flex-col justify-center text-center"
-        data-speed="clamp(-.1)"
-      >
-        <h1
-          id="hero-title"
-          class="text-primary invisible text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          Hello, I'm Benjamin!
-        </h1>
-        <p
-          id="hero-subtitle"
-          class="text-secondary invisible my-4 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
-        >
-          Full-stack engineer &amp; engineering leader
-        </p>
-      </div>
-
-      <div data-speed="clamp(.75)">
-        <Logo
-          style="width: 6rem; height: 6rem"
-          id="hero-logo"
-          class="invisible mb-[4rem]"
-        />
-      </div>
-    </LandingGsapBox>
-
-    <hr
-      id="hero-spacer"
-      class="bg-dark-primary hero-final-fade -my-[4px] -mb-[2px] h-[5.5rem] border-none"
-    />
-
-    <div
-      class="relative h-[100svh] bg-transparent"
-      data-speed="1"
-    >
-      <div class="absolute -top-[5rem] left-[calc(50%-32px)] z-40 mx-auto">
-        <Icon
-          name="space/rocketflame"
-          style="width: 4rem; height: 8rem"
-        />
-      </div>
-      <div class="hero-final-fade grid grid-cols-2">
-        <span class="overflow-hidden">
-          <Icon
-            name="space/rockettrail-left-16_9"
-            color="var(--color-dark-primary)"
-            class="h-auto w-[50svw]"
-          />
-        </span>
-
-        <span class="overflow-hidden">
-          <Icon
-            name="space/rockettrail-right-16_9"
-            color="var(--color-dark-primary)"
-            class="h-auto w-[50svw]"
-          />
-        </span>
-      </div>
-    </div>
+    <LandingHero />
 
     <LandingGsapBox
       id="gsapBoxResume"

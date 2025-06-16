@@ -142,12 +142,7 @@ export class HeroTimeline extends BoxBoundTimeline {
         duration: 0.1,
         autoAlpha: 0,
         onStart: () => {
-          logger.logProgressEvent(
-            'subtitle split',
-            `start`,
-            tl.progress(),
-            true
-          );
+          logger.logProgressEvent('subtitle split', `start`, tl.progress());
         },
         onComplete: () => {
           logger.logProgressEvent('subtitle split', `end`, tl.progress());
