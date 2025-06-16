@@ -3,6 +3,7 @@ import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimelin
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
 import { ContactTimeline } from '@components/landing/gsapify/animations/ContactTimeline.ts';
 import { ExperienceTimeline } from '@components/landing/gsapify/animations/ExperienceTimeline.ts';
+import { FooterTimeline } from '@components/landing/gsapify/animations/FooterTimeline.ts';
 import { HeroTimeline } from '@components/landing/gsapify/animations/HeroTimeline.ts';
 import { ProjectsTimeline } from '@components/landing/gsapify/animations/ProjectsTimeline.ts';
 import { ResumeTimeline } from '@components/landing/gsapify/animations/ResumeTimeline.ts';
@@ -15,6 +16,7 @@ export const animations = {
   BoxBoundTimeline,
   ContactTimeline,
   ExperienceTimeline,
+  FooterTimeline,
   HeroTimeline,
   ProjectsTimeline,
   ResumeTimeline,

@@ -24,15 +24,16 @@ export abstract class BaseTimeline {
   }
 
   shiftColorables(color: string): void {
-    this.timeline.to(
-      '.background-colorable',
-      {
-        backgroundColor: color,
-        duration: 1,
-        ease: 'none',
-      },
-      0
-    );
+    // TODO: Revisit
+    // this.timeline.to(
+    //   '.background-colorable',
+    //   {
+    //     backgroundColor: color,
+    //     duration: 1,
+    //     ease: 'none',
+    //   },
+    //   0
+    // );
   }
 
   abstract init(): void;

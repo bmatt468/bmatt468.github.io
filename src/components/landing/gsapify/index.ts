@@ -35,6 +35,7 @@ function initTimelines(): void {
   const experienceTimeline = new animations.ExperienceTimeline();
   const projectsTimeline = new animations.ProjectsTimeline();
   const contactTimeline = new animations.ContactTimeline();
+  const footerTimeline = new animations.FooterTimeline();
 
   // TODO: Revisit
   // add animations to the navigation bar
@@ -53,6 +54,7 @@ function initTimelines(): void {
   experienceTimeline.init();
   projectsTimeline.init();
   contactTimeline.init();
+  footerTimeline.init();
 }
 
 function bindKeyHandlers(): void {
