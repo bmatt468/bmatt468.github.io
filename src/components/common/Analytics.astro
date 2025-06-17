@@ -2,7 +2,7 @@
 const {
   expected = Astro.site.hostname,
   actual = new URL(Astro.request.url).hostname,
-} = Astro.props
+} = Astro.props;
 ---
 
 <meta
