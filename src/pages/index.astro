@@ -30,10 +30,27 @@ import LandingLayout from '@layouts/LandingLayout.astro';
 
     <LandingHero />
 
+    <div
+      class="flex h-[50svh] items-center justify-center overflow-hidden p-2 bg-dark-primary"
+    >
+      <div class="text-center">
+        <h1
+          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
+        >
+          🚧 Coming soon! 🚧
+        </h1>
+        <p
+          class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"
+        >
+          Pardon the mess! Code is still being slung 😊
+        </p>
+      </div>
+    </div>
+
     <LandingGsapBox
       id="gsapBoxResume"
       linkId="resume"
-      classes="bg-dark-primary py-[4rem] box-content"
+      classes="bg-dark-primary py-[4rem] box-content hidden"
     >
       <div class="text-center">
         <h1
@@ -54,7 +71,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxAbout"
       linkId="about"
-      classes=""
+      classes="hidden"
     >
       <div class="text-center">
         <h1
@@ -73,7 +90,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxSkills"
       linkId="skills"
-      classes=""
+      classes="hidden"
     >
       <div class="text-center">
         <h1
@@ -92,7 +109,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxExperience"
       linkId="experience"
-      classes="bg-dark-primary py-[4rem] box-content"
+      classes="bg-dark-primary py-[4rem] box-content hidden"
     >
       <div class="text-center">
         <h1
@@ -111,7 +128,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <LandingGsapBox
       id="gsapBoxProjects"
       linkId="projects"
-      classes="bg-dark-primary py-[4rem] box-content"
+      classes="bg-dark-primary py-[4rem] box-content hidden"
     >
       <div class="text-center">
         <h1

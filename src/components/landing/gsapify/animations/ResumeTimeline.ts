@@ -5,12 +5,12 @@ export class ResumeTimeline extends BoxBoundTimeline {
   constructor() {
     super('resumeTimeline', '#gsapBoxResume', {
       end: 'top -100px',
-      markers: true,
+      markers: false,
     });
   }
 
   init(): void {
-    const worker = new ScrollTriggerWorker(this, true);
+    const worker = new ScrollTriggerWorker(this, false);
     const tl = worker.timeline;
 
     this.timeline.add(tl);
