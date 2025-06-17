@@ -10,7 +10,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
   <div
     id="loading-icon"
-    class="fixed -z-50 flex h-screen w-full items-center justify-center"
+    class="text-primary fixed -z-50 flex h-screen w-full items-center justify-center"
   >
     <span class="animate-pulse">
       <Icon
@@ -22,7 +22,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
   <main
     id="landing-container"
-    class="invisible"
+    class="invisible max-w-screen overflow-hidden"
   >
     <slot />
   </main>

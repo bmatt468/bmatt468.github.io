@@ -1,7 +1,22 @@
 import { BaseTimeline } from '@components/landing/gsapify/animations/BaseTimeline.ts';
-import { logger } from '@components/landing/gsapify/Logger.ts';
 import { NavigationStatus } from '@components/landing/gsapify/Navigation.ts';
 import { gsap } from 'gsap';
+
+export interface BoxBoundTimelineConfig {
+  start?: string;
+  end?: string;
+  markers?: boolean;
+  pin?: string | boolean;
+  pinReparent?: boolean;
+}
+
+const defaultBoxBoundTimelineConfig: Required<BoxBoundTimelineConfig> = {
+  start: 'top bottom',
+  end: 'top top',
+  markers: false,
+  pin: false,
+  pinReparent: false,
+};
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
   public readonly triggerElem: string;
@@ -9,28 +24,21 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
   protected constructor(
     id: string,
     triggerElem: string,
-    timelineStart: string = 'top bottom',
-    timelineEnd: string = 'top top',
-    pin: boolean = false
+    timelineStart?: BoxBoundTimelineConfig
   ) {
-    logger.logInfo(id, 'Initializing timeline');
+    const config = { ...defaultBoxBoundTimelineConfig, ...timelineStart };
+
     let timeline = gsap.timeline({
       id: id,
       scrollTrigger: {
         trigger: triggerElem,
-        start: timelineStart,
-        end: timelineEnd,
+        start: config.start,
+        end: config.end,
         scrub: true,
-        markers: false,
-        pin: pin,
-        onEnter: () => logger.logTimelineEvent(id, 'Entered viewport'),
-        onLeave: () => logger.logTimelineEvent(id, 'Reached top'),
-        onEnterBack: () => logger.logTimelineEvent(id, 'Re-entered from below'),
-        onLeaveBack: () =>
-          logger.logTimelineEvent(id, 'Left viewport downward'),
+        markers: config.markers,
+        pin: config.pin,
+        pinReparent: config.pinReparent,
       },
-      onStart: () => logger.logTimelineEvent(id, 'Timeline started'),
-      onComplete: () => logger.logTimelineEvent(id, 'Timeline completed'),
     });
 
     super(id, timeline);

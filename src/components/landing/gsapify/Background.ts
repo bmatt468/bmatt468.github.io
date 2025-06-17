@@ -20,9 +20,10 @@ class Background {
       backgroundColor: color,
     });
 
-    gsap.set('#hero-links', {
-      backgroundColor: color,
-    });
+    // TODO: Revisit
+    // gsap.set('#hero-links', {
+    //   backgroundColor: color,
+    // });
   }
 }
 

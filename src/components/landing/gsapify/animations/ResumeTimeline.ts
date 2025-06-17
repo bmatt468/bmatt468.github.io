@@ -1,12 +1,18 @@
 import { BoxBoundTimeline } from '@components/landing/gsapify/animations/BoxBoundTimeline.ts';
-import { theme } from '@components/landing/gsapify/Theme.ts';
+import { ScrollTriggerWorker } from '@components/landing/gsapify/animations/ScrollTriggerWorker.ts';
 
 export class ResumeTimeline extends BoxBoundTimeline {
   constructor() {
-    super('resumeTimeline', '#gsapBoxResume');
+    super('resumeTimeline', '#gsapBoxResume', {
+      end: 'top -100px',
+      markers: false,
+    });
   }
 
   init(): void {
-    this.shiftColorables(theme.getSectionBackground('resume'));
+    const worker = new ScrollTriggerWorker(this, false);
+    const tl = worker.timeline;
+
+    this.timeline.add(tl);
   }
 }

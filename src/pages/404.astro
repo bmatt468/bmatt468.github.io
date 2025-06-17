@@ -1,6 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
-
+import Logo from '@assets/logos/logo.svg';
 import LogoBuildGsap from '@components/common/LogoBuildGsap.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
@@ -12,13 +11,11 @@ import BaseLayout from '@layouts/BaseLayout.astro';
   >
     <div class="flex w-full grow flex-col justify-center">
       <p class="text-tertiary text-base/8 font-semibold">404</p>
-      <h1
-        class="text-primary my-2 text-4xl font-semibold tracking-tight sm:text-6xl md:text-7xl"
-      >
+      <h1 class="text-primary my-2 text-6xl font-semibold tracking-tight">
         Page not found
       </h1>
       <p
-        class="text-secondary text-sm font-medium tracking-widest text-pretty uppercase sm:text-base md:text-lg"
+        class="text-secondary text-lg font-medium tracking-widest text-pretty uppercase"
       >
         Sorry, we couldn’t find the page you’re looking for.
       </p>
@@ -31,10 +28,10 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <Icon
-      name="logos/logo"
-      id="logo"
-      class="invisible size-[4rem] place-self-center justify-self-end sm:size-[6rem]"
+    <Logo
+      style="width: 5rem; height: 5rem"
+      id="brm-logo"
+      class="invisible place-self-center justify-self-end"
     />
   </main>
 </BaseLayout>

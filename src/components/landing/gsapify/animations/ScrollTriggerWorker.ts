@@ -20,6 +20,7 @@ export class ScrollTriggerWorker {
   public readonly timeline: gsap.core.Timeline;
   public readonly parent: BoxBoundTimeline;
   public readonly style: WorkerLabelStyle;
+  private readonly labelForce: boolean;
   private labelStatus: Record<WorkerLabelCategory, boolean> = {
     Fifths: false,
     Tenths: false,
@@ -29,11 +30,13 @@ export class ScrollTriggerWorker {
 
   constructor(
     parent: BoxBoundTimeline,
+    labelForce: boolean = false,
     baseCategory: WorkerLabelCategory = WorkerLabelCategory.Tenths,
     style: WorkerLabelStyle = WorkerLabelStyle.Percentage
   ) {
     this.id = `${parent.id}-worker`;
     this.parent = parent;
+    this.labelForce = labelForce;
     this.style = style;
 
     this.timeline = gsap.timeline({
@@ -89,7 +92,7 @@ export class ScrollTriggerWorker {
           this.timeline.progress(),
           this.parent.id,
           this.parent.timeline.progress(),
-          true
+          this.labelForce
         );
       },
       undefined,

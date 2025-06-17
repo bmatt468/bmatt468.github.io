@@ -5,9 +5,10 @@ export interface Props extends Metadata {}
 
 const {
   title = 'Benjamin Matthews',
-  description = "Hi! I'm Benjamin, and welcome to my corner of the web. Come learn about what I'm up to currently!",
+  description = "Hi! I'm Benjamin; welcome to my corner of the web!",
   site = Astro.site,
-  // image = new URL('default-social.jpg', site),
+  image = new URL('assets/default-social.jpg', site),
+  sitemap = new URL('sitemap-index.xml', site),
 } = Astro.props;
 ---
 
@@ -27,7 +28,7 @@ const {
 <!-- Sitemap -->
 <link
   rel="sitemap"
-  href="/sitemap-index.xml"
+  href={sitemap}
 />
 
 <!-- Open Graph / Facebook -->
@@ -43,10 +44,10 @@ const {
   property="og:description"
   content={description}
 />
-<!--<meta-->
-<!--  property="og:image"-->
-<!--  content={image}-->
-<!--/>-->
+<meta
+  property="og:image"
+  content={image}
+/>
 <meta
   property="og:url"
   content={site}
@@ -73,7 +74,10 @@ const {
   name="twitter:description"
   content={description}
 />
-<!--<meta name="twitter:image" content={image}>-->
+<meta
+  name="twitter:image"
+  content={image}
+/>
 
 <!-- Canonical URL -->
 <link

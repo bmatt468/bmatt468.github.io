@@ -13,11 +13,12 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
-import {
-  initNavigation,
-  processBackNavigation,
-  processForwardNavigation,
-} from './Navigation.ts';
+// TODO: Revisit
+// import {
+//   initNavigation,
+//   processBackNavigation,
+//   processForwardNavigation,
+// } from './Navigation.ts';
 
 function launch(): void {
   // run the hero animations
@@ -33,8 +34,10 @@ function initTimelines(): void {
   const skillsTimeline = new animations.SkillsTimeline();
   const experienceTimeline = new animations.ExperienceTimeline();
   const projectsTimeline = new animations.ProjectsTimeline();
-  const contactTimeline = new animations.ContactTimeline();
+  // const contactTimeline = new animations.ContactTimeline();
+  const footerTimeline = new animations.FooterTimeline();
 
+  // TODO: Revisit
   // add animations to the navigation bar
   // resumeTimeline.registerNavigationAnimation('#progressLinkResume');
   // aboutTimeline.registerNavigationAnimation('#progressLinkAbout');
@@ -50,7 +53,8 @@ function initTimelines(): void {
   skillsTimeline.init();
   experienceTimeline.init();
   projectsTimeline.init();
-  contactTimeline.init();
+  // contactTimeline.init();
+  footerTimeline.init();
 }
 
 function bindKeyHandlers(): void {
@@ -93,7 +97,7 @@ async function init(): Promise<void> {
   background.setColor('oklch(0.757 0.016 235.458)');
   // initNavigation();
   initTimelines();
-  // bindKeyHandlers();
+  bindKeyHandlers();
 }
 
 export const gsapify = {

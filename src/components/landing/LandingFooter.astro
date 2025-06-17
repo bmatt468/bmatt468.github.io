@@ -1,0 +1,102 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import HighIronSvg from '@assets/logos/hic.svg';
+import FooterLogo from '@assets/logos/logo-footer.svg';
+
+const links = [
+  {
+    url: 'https://www.linkedin.com/in/benjaminrmatthews/',
+    description: 'Benjamin Matthews LinkedIn',
+    target: '_blank',
+    jsonifyIcon: 'mdi:linkedin',
+  },
+  {
+    url: 'https://github.com/bmatt468',
+    description: 'Benjamin Matthews GitHub',
+    target: '_blank',
+    jsonifyIcon: 'mdi:github',
+  },
+  {
+    url: new URL('assets/resume-2025.pdf', Astro.site).toString(),
+    description: 'Benjamin Matthews GitHub',
+    target: '_blank',
+    jsonifyIcon: 'qlementine-icons:resume-16',
+  },
+  {
+    url: 'https://www.highiron.co?utm_source=portfolio&utm_content=landingfooter',
+    description: 'High Iron',
+    target: '_blank',
+    isHic: true,
+  },
+];
+---
+
+<footer
+  id="landing-footer"
+  class="bg-dark-secondary text-primary flex w-full flex-col items-center justify-center px-2 py-8 md:px-8"
+>
+  <div class="mb-8">
+    <FooterLogo
+      id="landing-footer-logo"
+      style="width: 5rem; height: 5rem"
+    />
+  </div>
+
+  <div class="mb-8 flex items-center justify-center gap-x-8">
+    {
+      links.map((link) => (
+        <a
+          href={link.url}
+          target={link.target}
+          class="text-primary hover:text-secondary"
+        >
+          <span class="sr-only">{link.description}</span>
+          {link.jsonifyIcon && (
+            <Icon
+              class="size-7"
+              name={link.jsonifyIcon}
+            />
+          )}
+
+          {link.isHic && <HighIronSvg class="size-6.5" />}
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="grid w-full md:grid-cols-3">
+    <p class="mb-2 text-center text-xs md:mb-0 md:text-left">
+      Built with ❤️ in
+      <a
+        href="https://astro.build/"
+        target="_blank"
+        class="hover:text-secondary underline"
+        >Astro</a
+      >,
+      <a
+        href="https://tailwindcss.com/"
+        target="_blank"
+        class="hover:text-secondary underline"
+        >Tailwind</a
+      >, &amp;
+      <a
+        href="https://gsap.com/"
+        target="_blank"
+        class="hover:text-secondary underline"
+        >GSAP</a
+      >.
+    </p>
+    <p class="mb-2 text-center text-xs md:mb-0">
+      &copy;{new Date().getFullYear()} Benjamin R. Matthews
+    </p>
+    <p class="text-center text-xs md:text-right">
+      Photo credit <a
+        href="https://images.nasa.gov/"
+        target="_blank"
+        class="hover:text-secondary underline"
+        >NASA.</a
+      >
+    </p>
+  </div>
+</footer>
