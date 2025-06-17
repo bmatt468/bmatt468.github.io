@@ -18,6 +18,8 @@ jobs:
   checks:
     name: Run Pre-deployment Checks
     runs-on: ubuntu-latest
+    env:
+      APP_ENV: production
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -51,6 +53,8 @@ jobs:
     needs: build
     if: success()
     runs-on: ubuntu-latest
+    env:
+      APP_ENV: production
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
