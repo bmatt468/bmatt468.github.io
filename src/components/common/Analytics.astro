@@ -1,0 +1,16 @@
+---
+const {
+  expected = Astro.site.hostname,
+  actual = new URL(Astro.request.url).hostname,
+} = Astro.props
+---
+
+<meta
+  name="internal-expected"
+  content={expected}
+/>
+
+<meta
+  name="internal-actual"
+  content={actual}
+/>
