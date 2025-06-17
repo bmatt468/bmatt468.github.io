@@ -8,6 +8,7 @@ import LandingHero from '@components/landing/LandingHero.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import Resume from '@images/resume.svg';
 import Space1 from '@images/space/space1.jpg';
+import Space4 from '@images/space/space4.jpg';
 import LandingLayout from '@layouts/LandingLayout.astro';
 ---
 
@@ -18,6 +19,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <div
       class="absolute top-0 -z-40 h-[120svh] w-full overflow-hidden"
       data-speed="clamp(.1)"
+      id="landing-space-image-wrapper"
     >
       <Image
         src={Space1}
@@ -95,6 +97,17 @@ import LandingLayout from '@layouts/LandingLayout.astro';
         <span><Resume class="text-dark-secondary" /></span>
       </div>
     </LandingGsapBox>
+
+    <div class="bg-dark-primary h-[50svh] overflow-hidden">
+      <Image
+        src={Space4}
+        alt=""
+        class="w-full h-screen object-cover object-bottom"
+        decoding="sync"
+        loading="eager"
+        data-speed=".6"
+      />
+    </div>
 
     <LandingGsapBox
       id="gsapBoxAbout"
