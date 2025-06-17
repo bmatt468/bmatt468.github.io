@@ -36,6 +36,8 @@ jobs:
     needs: checks
     if: success()
     runs-on: ubuntu-latest
+    env:
+      APP_ENV: production
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4

@@ -1,16 +1,24 @@
 ---
-const {
-  expected = Astro.site?.hostname ?? '',
-  actual = new URL(Astro.request.url).hostname,
-} = Astro.props;
+import { appEnvironment } from '@scripts/AppEnvironment';
+
+const { shouldRenderAnalytics = appEnvironment.isProduction() } = Astro.props;
 ---
 
-<meta
-  name="internal-expected"
-  content={expected}
-/>
+<!-- Google Analytics -->
+<script
+  async
+  is:inline
+  src="https://www.googletagmanager.com/gtag/js?id=G-0369ZG7QWW"
+></script>
 
-<meta
-  name="internal-actual"
-  content={actual}
-/>
+<script define:vars={{ shouldRenderAnalytics }} is:inline>
+  if (shouldRenderAnalytics) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0369ZG7QWW');
+  }
+</script>

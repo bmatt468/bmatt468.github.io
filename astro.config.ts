@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
 
@@ -8,6 +8,16 @@ export default defineConfig({
   site: 'https://www.bmatt468.com',
   trailingSlash: 'ignore',
   output: 'static',
+
+  env: {
+    schema: {
+      APP_ENV: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: false,
+      }),
+    },
+  },
 
   integrations: [
     icon({
