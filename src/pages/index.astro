@@ -6,7 +6,7 @@ import LandingFooter from '@components/landing/LandingFooter.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingHero from '@components/landing/LandingHero.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
-import Resume from '@images/resume.svg';
+import LandingResume from '@components/landing/LandingResume.astro';
 import Space1 from '@images/space/space1.jpg';
 import Space4 from '@images/space/space4.jpg';
 import LandingLayout from '@layouts/LandingLayout.astro';
@@ -49,54 +49,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <!--  </div>-->
     <!--</div>-->
 
-    <LandingGsapBox
-      id="gsapBoxResume"
-      linkId="resume"
-      classes="bg-dark-primary box-content flex-col py-16 relative"
-      minHeightScreen={false}
-    >
-      <div class="z-10 text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          Resume
-        </h1>
-        <a
-          href={new URL('assets/resume-2025.pdf', Astro.site)}
-          target="_blank"
-          class="text-secondary hover:text-secondary-light my-4 text-xl font-medium tracking-widest text-pretty uppercase underline sm:text-3xl"
-        >
-          Yours for the keeping!
-        </a>
-
-        <p class="prose text-primary my-8 text-balance">
-          Care for a closer look at what I've done? Grab a copy of my resume!
-          You can find it at the link above, or
-          <a
-            href={new URL('assets/resume-2025.pdf', Astro.site)}
-            class="text-primary hover:text-secondary"
-            >right here</a
-          >!
-        </p>
-
-        <p class="prose text-primary my-8 text-balance">
-          Want to get in touch? <a
-            href="#contact"
-            class="text-primary hover:text-secondary gsap-scroll-anchor"
-            data-gsap-target="#contact"
-            >Contact me</a
-          > anytime! Otherwise, feel free to scroll on and see more about what I
-          do! 🚀
-        </p>
-      </div>
-
-      <div
-        class="absolute top-0 bottom-0 left-1/2 z-0 aspect-3/4 h-[120%] sm:left-2/3 md:left-3/4"
-        data-speed=".75"
-      >
-        <span><Resume class="text-dark-secondary" /></span>
-      </div>
-    </LandingGsapBox>
+    <LandingResume />
 
     <div class="bg-dark-primary h-[50svh] overflow-hidden">
       <Image
