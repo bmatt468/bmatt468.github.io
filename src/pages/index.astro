@@ -6,8 +6,8 @@ import LandingFooter from '@components/landing/LandingFooter.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingHero from '@components/landing/LandingHero.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
+import Resume from '@images/resume.svg';
 import Space1 from '@images/space/space1.jpg';
-import Space2 from '@images/space/space2.jpg';
 import LandingLayout from '@layouts/LandingLayout.astro';
 ---
 
@@ -30,29 +30,30 @@ import LandingLayout from '@layouts/LandingLayout.astro';
 
     <LandingHero />
 
-    <div
-      class="bg-dark-primary flex h-[50svh] items-center justify-center overflow-hidden p-2"
-    >
-      <div class="text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          🚧 Coming soon! 🚧
-        </h1>
-        <p
-          class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"
-        >
-          Pardon the mess! Code is still being slung 😊
-        </p>
-      </div>
-    </div>
+    <!--<div-->
+    <!--  class="bg-dark-primary flex h-[50svh] items-center justify-center overflow-hidden p-2"-->
+    <!--&gt;-->
+    <!--  <div class="text-center">-->
+    <!--    <h1-->
+    <!--      class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"-->
+    <!--    >-->
+    <!--      🚧 Coming soon! 🚧-->
+    <!--    </h1>-->
+    <!--    <p-->
+    <!--      class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"-->
+    <!--    >-->
+    <!--      Pardon the mess! Code is still being slung 😊-->
+    <!--    </p>-->
+    <!--  </div>-->
+    <!--</div>-->
 
     <LandingGsapBox
       id="gsapBoxResume"
       linkId="resume"
-      classes="bg-dark-primary py-[4rem] box-content hidden"
+      classes="bg-dark-primary box-content flex-col py-16 relative"
+      minHeightScreen={false}
     >
-      <div class="text-center">
+      <div class="z-10 text-center">
         <h1
           class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
         >
@@ -65,6 +66,33 @@ import LandingLayout from '@layouts/LandingLayout.astro';
         >
           Yours for the keeping!
         </a>
+
+        <p class="prose text-primary my-8 text-balance">
+          Care for a closer look at what I've done? Grab a copy of my resume!
+          You can find it at the link above, or
+          <a
+            href={new URL('assets/resume-2025.pdf', Astro.site)}
+            class="text-primary hover:text-secondary"
+            >right here</a
+          >!
+        </p>
+
+        <p class="prose text-primary my-8 text-balance">
+          Want to get in touch? <a
+            href="#contact"
+            class="text-primary hover:text-secondary gsap-scroll-anchor"
+            data-gsap-target="#contact"
+            >Contact me</a
+          > anytime! Otherwise, feel free to scroll on and see more about what I
+          do! 🚀
+        </p>
+      </div>
+
+      <div
+        class="absolute top-0 bottom-0 left-1/2 z-0 aspect-3/4 h-[120%] sm:left-2/3 md:left-3/4"
+        data-speed=".75"
+      >
+        <span><Resume class="text-dark-secondary" /></span>
       </div>
     </LandingGsapBox>
 
@@ -144,20 +172,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
       </div>
     </LandingGsapBox>
 
-    <div class="h-[110svh]">
-      <div class="absolute -z-10 h-[110svh] w-full overflow-hidden">
-        <Image
-          src={Space2}
-          alt=""
-          class="h-[140svh] w-full object-cover object-bottom"
-          decoding="sync"
-          loading="eager"
-          data-speed="clamp(auto)"
-        />
-      </div>
-
-      <LandingContact />
-    </div>
+    <LandingContact />
 
     <LandingFooter />
   </GsapSmoothScroll>

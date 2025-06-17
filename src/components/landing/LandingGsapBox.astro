@@ -1,18 +1,20 @@
 ---
 export interface Props {
   id: string;
+  minHeightScreen?: boolean;
   linkId?: string;
   classes?: string;
 }
 
-const { id, linkId, classes, ...rest } = Astro.props;
+const { id, minHeightScreen = true, linkId, classes, ...rest } = Astro.props;
 ---
 
 {linkId && <span id={linkId} />}
 <section
   class:list={[
-    'landing-box flex min-h-svh items-center justify-center overflow-hidden p-2',
+    'landing-box flex items-center justify-center overflow-hidden p-2',
     classes,
+    minHeightScreen ? 'min-h-svh' : '',
   ]}
   id={id}
   {...rest}

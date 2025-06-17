@@ -1,67 +1,85 @@
 ---
+import { Image } from 'astro:assets';
+
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
+import Space2 from '@images/space/space2.jpg';
 ---
 
-<LandingGsapBox
-  id="gsapBoxContact"
-  linkId="contact"
-  classes="h-[110svh]"
->
-  <div
-    class="bg-dark-secondary shadow-dark-secondary w-[95%] max-w-[650px] rounded-2xl p-4 text-center shadow-md sm:rounded-4xl sm:p-8 md:px-[4rem]"
-    data-speed="0.9"
-    data-lag="0.1"
-  >
-    <h1 class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl">
-      Contact
-    </h1>
-    <p
-      class="text-secondary my-4 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
-    >
-      Don't be a stranger!
-    </p>
-
-    <p class="prose text-primary my-4 text-center text-balance">
-      Want to learn more about me? Chat about which coffee is best?<br
-        class="hidden sm:block"
-      />
-      (And why the answer to that question is definitively Ethiopian?)<br
-        class="hidden sm:block"
-      />
-      Feel free to reach out!
-    </p>
-
-    <p class="prose text-primary my-4 text-center text-balance">
-      You can reach me on <a
-        href="https://www.linkedin.com/in/benjaminrmatthews/"
-        target="_blank"
-        class="text-primary hover:text-secondary"
-        >LinkedIn</a
-      >, check out my <a
-        href="https://github.com/bmatt468"
-        target="_blank"
-        class="text-primary hover:text-secondary"
-        >GitHub</a
-      >
-      (including the <a
-        href="https://github.com/bmatt468/bmatt468.github.io"
-        target="_blank"
-        class="text-primary hover:text-secondary"
-        >source</a
-      > for this site 😄), or email me directly at <code
-        class="text-abbey-light">me@bmatt468.com</code
-      >
-    </p>
-
-    <p
-      class="text-secondary mt-8 text-center text-lg font-light tracking-wide text-balance"
-    >
-      Need an extra set of hands? Have a great idea? Check out <a
-        href="https://www.highiron.co?utm_source=portfolio&utm_content=landingcontact"
-        target="_blank"
-        class="text-primary hover:text-secondary"
-        >High Iron</a
-      >!
-    </p>
+<div class="h-[110svh]">
+  <div class="absolute -z-10 h-[110svh] w-full overflow-hidden">
+    <Image
+      src={Space2}
+      alt=""
+      class="h-[140svh] w-full object-cover object-bottom"
+      decoding="sync"
+      loading="eager"
+      data-speed="clamp(auto)"
+    />
   </div>
-</LandingGsapBox>
+
+  <LandingGsapBox
+    id="gsapBoxContact"
+    linkId="contact"
+    classes="h-[110svh]"
+  >
+    <div
+      class="bg-dark-secondary shadow-dark-secondary w-[95%] max-w-[650px] rounded-2xl p-4 text-center shadow-md sm:rounded-4xl sm:p-8 md:px-[4rem]"
+      data-speed="0.9"
+      data-lag="0.1"
+    >
+      <h1
+        class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
+      >
+        Contact
+      </h1>
+      <p
+        class="text-secondary my-4 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
+      >
+        Don't be a stranger!
+      </p>
+
+      <p class="prose text-primary my-4 text-center text-balance">
+        Want to learn more about me? Chat about which coffee is best?<br
+          class="hidden sm:block"
+        />
+        (And why the answer to that question is definitively Ethiopian?)<br
+          class="hidden sm:block"
+        />
+        Feel free to reach out!
+      </p>
+
+      <p class="prose text-primary my-4 text-center text-balance">
+        You can reach me on <a
+          href="https://www.linkedin.com/in/benjaminrmatthews/"
+          target="_blank"
+          class="text-primary hover:text-secondary"
+          >LinkedIn</a
+        >, check out my <a
+          href="https://github.com/bmatt468"
+          target="_blank"
+          class="text-primary hover:text-secondary"
+          >GitHub</a
+        >
+        (including the <a
+          href="https://github.com/bmatt468/bmatt468.github.io"
+          target="_blank"
+          class="text-primary hover:text-secondary"
+          >source</a
+        > for this site 😄), or email me directly at <code
+          class="text-abbey-light">me@bmatt468.com</code
+        >
+      </p>
+
+      <p
+        class="text-secondary mt-8 text-center text-lg font-light tracking-wide text-balance"
+      >
+        Need an extra set of hands? Have a great idea? Check out <a
+          href="https://www.highiron.co?utm_source=portfolio&utm_content=landingcontact"
+          target="_blank"
+          class="text-primary hover:text-secondary"
+          >High Iron</a
+        >!
+      </p>
+    </div>
+  </LandingGsapBox>
+</div>
