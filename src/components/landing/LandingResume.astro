@@ -10,9 +10,7 @@ import Resume from '@images/resume.svg';
   minHeightScreen={false}
 >
   <div class="z-10 text-center">
-    <h1
-      class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-    >
+    <h1 class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl">
       Resume
     </h1>
     <a
@@ -24,30 +22,31 @@ import Resume from '@images/resume.svg';
     </a>
 
     <p class="prose text-primary my-8 text-balance">
-      Care for a closer look at what I've done? Grab a copy of my resume!
-      You can find it at the link above, the button below, or
+      Care for a closer look at what I've done? Grab a copy of my resume! You
+      can find it at the link above, the button below, or
       <a
         href={new URL('assets/resume-2025.pdf', Astro.site)}
         target="_blank"
         class="text-primary hover:text-secondary"
-      >right here</a
+        >right here</a
       >!
     </p>
 
     <p class="prose text-primary my-8 text-balance">
       Want to get in touch? <a
-      href="#contact"
-      class="text-primary hover:text-secondary gsap-scroll-anchor"
-      data-gsap-target="#contact"
-    >Contact me</a
-    > anytime! Otherwise, feel free to scroll on and see more about what I
-      do! 🚀
+        href="#contact"
+        class="text-primary hover:text-secondary gsap-scroll-anchor"
+        data-gsap-target="#contact"
+        >Contact me</a
+      > anytime! Otherwise, feel free to scroll on and see more about what I do!
+      🚀
     </p>
 
     <a
       href={new URL('assets/resume-2025.pdf', Astro.site)}
       target="_blank"
-       class="rounded-md text-primary bg-tertiary hover:bg-jellybean-dark shadow-xs px-2.5 py-1.5 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2">
+      class="text-primary bg-tertiary hover:bg-jellybean-dark rounded-md px-2.5 py-1.5 text-sm font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2"
+    >
       My Resume
     </a>
   </div>
