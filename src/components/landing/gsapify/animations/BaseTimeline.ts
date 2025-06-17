@@ -34,6 +34,11 @@ export abstract class BaseTimeline {
     //   },
     //   0
     // );
+
+    // TODO: Suppress TS hint in a better way
+    if (color === 'purple') {
+      console.log(color);
+    }
   }
 
   abstract init(): void;

@@ -34,7 +34,7 @@ function initTimelines(): void {
   const skillsTimeline = new animations.SkillsTimeline();
   const experienceTimeline = new animations.ExperienceTimeline();
   const projectsTimeline = new animations.ProjectsTimeline();
-  const contactTimeline = new animations.ContactTimeline();
+  // const contactTimeline = new animations.ContactTimeline();
   const footerTimeline = new animations.FooterTimeline();
 
   // TODO: Revisit
@@ -53,7 +53,7 @@ function initTimelines(): void {
   skillsTimeline.init();
   experienceTimeline.init();
   projectsTimeline.init();
-  contactTimeline.init();
+  // contactTimeline.init();
   footerTimeline.init();
 }
 
