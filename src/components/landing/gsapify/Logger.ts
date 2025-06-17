@@ -1,15 +1,20 @@
+import { appEnvironment } from '@scripts/AppEnvironment.ts';
 import chalk from 'chalk';
 
 const log = console.log;
 const b = chalk.bold;
 
 class Logger {
-  shouldLog(): boolean {
-    return false;
+  shouldLog(force: boolean): boolean {
+    const defaultStatus = false;
+    const localLogAllowed = defaultStatus || force;
+    const isProduction = appEnvironment.isProduction();
+
+    return localLogAllowed && !isProduction;
   }
 
   logInfo(caller: string, message: string, force: boolean = false): void {
-    if (this.shouldLog() || force) {
+    if (this.shouldLog(force)) {
       log(chalk.bgCyan(`💡 ${b('[%s]')} %s`), caller, message);
     }
   }
@@ -20,7 +25,7 @@ class Logger {
     position: number,
     force: boolean = false
   ): void {
-    if (this.shouldLog() || force) {
+    if (this.shouldLog(force)) {
       log(
         chalk.magenta(`🪜 ${b('[%s]')} %s\n` + `⌖ %s`),
         caller,
@@ -35,7 +40,7 @@ class Logger {
     message: string,
     force: boolean = false
   ): void {
-    if (this.shouldLog() || force) {
+    if (this.shouldLog(force)) {
       log(chalk.blue(`⏰ ${b('[%s]')} %s`), timeline, message);
     }
   }
@@ -48,7 +53,7 @@ class Logger {
     parentPosition: number,
     force: boolean = false
   ): void {
-    if (this.shouldLog() || force) {
+    if (this.shouldLog(force)) {
       log(
         chalk.yellow(`🏷️ ${b('[%s]')} %s\n` + `⌖ %s\n` + `📦 ${b('[%s]')} %s`),
         worker,

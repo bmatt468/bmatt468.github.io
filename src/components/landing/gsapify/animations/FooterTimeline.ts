@@ -8,14 +8,14 @@ export class FooterTimeline extends BoxBoundTimeline {
 
   constructor() {
     super('footerTimeline', '#landing-footer', {
-      markers: false,
+      markers: true,
       start: 'top bottom',
       end: 'bottom bottom',
     });
   }
 
   init(): void {
-    const worker = new ScrollTriggerWorker(this, false);
+    const worker = new ScrollTriggerWorker(this, true);
     const tl = worker.timeline;
     const everything = `${this.logoSelector}, ${this.bSide}, ${this.mSide}`;
     const paths = `${this.bSide}, ${this.mSide}`;
