@@ -2,7 +2,6 @@ import type { HeroTimeline } from '@components/landing/gsapify/animations/HeroTi
 
 import { animations } from '@components/landing/gsapify/animations';
 import { timelineRegistry } from '@components/landing/gsapify/animations/TimelineRegistry.ts';
-import { background } from '@components/landing/gsapify/Background.ts';
 import { logger } from '@components/landing/gsapify/Logger.ts';
 import { getScrollSmoother } from '@components/landing/gsapify/ScrollSmoother.ts';
 import { gsap } from 'gsap';
@@ -13,12 +12,7 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 
-// TODO: Revisit
-// import {
-//   initNavigation,
-//   processBackNavigation,
-//   processForwardNavigation,
-// } from './Navigation.ts';
+import { handleGsapScrollAnchors } from './Navigation.ts';
 
 function launch(): void {
   // run the hero animations
@@ -94,7 +88,8 @@ async function init(): Promise<void> {
     Physics2DPlugin
   );
   getScrollSmoother();
-  background.setColor('oklch(0.757 0.016 235.458)');
+  handleGsapScrollAnchors();
+  // background.setColor('oklch(0.757 0.016 235.458)');
   // initNavigation();
   initTimelines();
   bindKeyHandlers();

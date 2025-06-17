@@ -5,9 +5,10 @@ import LandingContact from '@components/landing/LandingContact.astro';
 import LandingFooter from '@components/landing/LandingFooter.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
 import LandingHero from '@components/landing/LandingHero.astro';
+import LandingResume from '@components/landing/LandingResume.astro';
 import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import Space1 from '@images/space/space1.jpg';
-import Space2 from '@images/space/space2.jpg';
+import Space4 from '@images/space/space4.jpg';
 import LandingLayout from '@layouts/LandingLayout.astro';
 ---
 
@@ -18,6 +19,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     <div
       class="absolute top-0 -z-40 h-[120svh] w-full overflow-hidden"
       data-speed="clamp(.1)"
+      id="landing-space-image-wrapper"
     >
       <Image
         src={Space1}
@@ -29,6 +31,19 @@ import LandingLayout from '@layouts/LandingLayout.astro';
     </div>
 
     <LandingHero />
+
+    <LandingResume />
+
+    <div class="bg-dark-primary h-[50svh] overflow-hidden">
+      <Image
+        src={Space4}
+        alt=""
+        class="h-screen w-full object-cover object-bottom"
+        decoding="sync"
+        loading="eager"
+        data-speed=".6"
+      />
+    </div>
 
     <div
       class="bg-dark-primary flex h-[50svh] items-center justify-center overflow-hidden p-2"
@@ -46,27 +61,6 @@ import LandingLayout from '@layouts/LandingLayout.astro';
         </p>
       </div>
     </div>
-
-    <LandingGsapBox
-      id="gsapBoxResume"
-      linkId="resume"
-      classes="bg-dark-primary py-[4rem] box-content hidden"
-    >
-      <div class="text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          Resume
-        </h1>
-        <a
-          href={new URL('assets/resume-2025.pdf', Astro.site)}
-          target="_blank"
-          class="text-secondary hover:text-secondary-light my-4 text-xl font-medium tracking-widest text-pretty uppercase underline sm:text-3xl"
-        >
-          Yours for the keeping!
-        </a>
-      </div>
-    </LandingGsapBox>
 
     <LandingGsapBox
       id="gsapBoxAbout"
@@ -144,20 +138,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
       </div>
     </LandingGsapBox>
 
-    <div class="h-[110svh]">
-      <div class="absolute -z-10 h-[110svh] w-full overflow-hidden">
-        <Image
-          src={Space2}
-          alt=""
-          class="h-[140svh] w-full object-cover object-bottom"
-          decoding="sync"
-          loading="eager"
-          data-speed="clamp(auto)"
-        />
-      </div>
-
-      <LandingContact />
-    </div>
+    <LandingContact />
 
     <LandingFooter />
   </GsapSmoothScroll>

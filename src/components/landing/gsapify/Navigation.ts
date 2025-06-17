@@ -73,7 +73,37 @@ function processForwardNavigation(): void {
   processNavigation();
 }
 
+function handleGsapScrollAnchors(): void {
+  const smoother = getScrollSmoother();
+
+  document
+    .querySelectorAll<HTMLAnchorElement>('a.gsap-scroll-anchor')
+    .forEach((a) => {
+      a.addEventListener('click', (e) => {
+        if (e) {
+          e.preventDefault();
+        }
+
+        const target = a.dataset.gsapTarget;
+
+        if (!target) {
+          throw new Error(`no target element was found for ${a}`);
+        }
+
+        gsap.to(smoother, {
+          scrollTop: Math.min(
+            ScrollTrigger.maxScroll(window),
+            smoother.offset(target, 'top')
+          ),
+          duration: 1.25,
+          ease: 'power1.inOut',
+        });
+      });
+    });
+}
+
 export {
+  handleGsapScrollAnchors,
   init as initNavigation,
   processForwardNavigation,
   processBackNavigation,
