@@ -34,7 +34,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
 
     <LandingResume />
 
-    <div class="bg-dark-primary h-[50svh] overflow-hidden">
+    <div class="bg-dark-primary h-[50svh] overflow-hidden" id="resume-about-spacer">
       <Image
         src={Space4}
         alt=""
@@ -45,39 +45,44 @@ import LandingLayout from '@layouts/LandingLayout.astro';
       />
     </div>
 
-    <div
-      class="bg-dark-primary flex h-[50svh] items-center justify-center overflow-hidden p-2"
-    >
-      <div class="text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          🚧 Coming soon! 🚧
-        </h1>
-        <p
-          class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"
-        >
-          Pardon the mess! Code is still being slung 😊
-        </p>
-      </div>
-    </div>
+    <!--<div-->
+    <!--  class="bg-dark-primary flex h-[50svh] items-center justify-center overflow-hidden p-2"-->
+    <!--&gt;-->
+    <!--  <div class="text-center">-->
+    <!--    <h1-->
+    <!--      class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"-->
+    <!--    >-->
+    <!--      🚧 Coming soon! 🚧-->
+    <!--    </h1>-->
+    <!--    <p-->
+    <!--      class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"-->
+    <!--    >-->
+    <!--      Pardon the mess! Code is still being slung 😊-->
+    <!--    </p>-->
+    <!--  </div>-->
+    <!--</div>-->
 
     <LandingGsapBox
       id="gsapBoxAbout"
       linkId="about"
-      classes="hidden"
+      classes="p-2 py-8"
     >
-      <div class="text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          About
-        </h1>
-        <p
-          class="text-secondary my-4 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
-        >
-          I'm going to talk about me here
-        </p>
+      <div class="flex flex-row items-center justify-center">
+        <div class="text-center">
+          <h1
+            class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl sticky top-0"
+          >
+            About Me
+          </h1>
+          <p
+            class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"
+          >
+            My Passions, Projects, and Past
+          </p>
+          <p class="prose text-balance text-primary">
+            I have been been a software engineer for well over a decade. My passion is working with PHP; specifically the TALL stack (Tailwind, Alpine.js, Laravel, Livewire). I am as comfortable working in the cloud as I am slinging code; few things excite me more than learning something new!
+          </p>
+        </div>
       </div>
     </LandingGsapBox>
 

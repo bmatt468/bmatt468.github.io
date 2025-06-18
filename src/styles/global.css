@@ -34,11 +34,14 @@
   --color-puerto-rico-dark: oklch(0.669 0.1197 182.11);
 
   --color-primary: var(--color-abbey-white);
+
   --color-secondary: var(--color-puerto-rico);
   --color-secondary-light: var(--color-puerto-rico-light);
   --color-secondary-dark: var(--color-puerto-rico-dark);
+
   --color-tertiary: var(--color-jellybean);
   --color-tertiary-light: var(--color-jellybean-light);
+  --color-tertiary-dark: var(--color-jellybean-dark);
 
   --color-dark-primary: var(--color-abbey-black);
   --color-dark-secondary: var(--color-abbey-dark);
