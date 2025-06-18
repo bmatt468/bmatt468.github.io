@@ -8,7 +8,7 @@ export interface BoxBoundTimelineConfig {
   markers?: boolean;
   pin?: string | boolean;
   pinReparent?: boolean;
-  snap?: "labels" | "labelsDirectional" | number;
+  snap?: 'labels' | 'labelsDirectional' | number;
 }
 
 const defaultBoxBoundTimelineConfig: Required<BoxBoundTimelineConfig> = {

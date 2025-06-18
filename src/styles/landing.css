@@ -1,13 +1,13 @@
 @layer components {
   .about-content-passions-card {
-    @apply grid grid-rows-2 text-center text-primary bg-dark-secondary rounded-xl drop-shadow-md outline outline-tertiary-dark p-2;
+    @apply text-primary bg-dark-secondary outline-tertiary-dark grid grid-rows-2 rounded-xl p-2 text-center outline drop-shadow-md;
 
     p {
-      @apply text-tertiary font-medium uppercase tracking-widest text-sm sm:text-base;
+      @apply text-tertiary text-sm font-medium tracking-widest uppercase sm:text-base;
     }
 
     div {
-      @apply flex sm:justify-center justify-evenly sm:gap-x-2 overflow-hidden;
+      @apply flex justify-evenly overflow-hidden sm:justify-center sm:gap-x-2;
 
       svg {
         @apply size-8 sm:size-10;
