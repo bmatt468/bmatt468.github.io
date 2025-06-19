@@ -9,9 +9,13 @@ export class ResumeTimeline extends BoxBoundTimeline {
   init(): void {
     const worker = new ScrollTriggerWorker(this, false);
     const tl = worker.timeline;
-    tl.set('#landing-space-image-wrapper', {
-      autoAlpha: 0,
-    }, 'end');
+    tl.set(
+      '#landing-space-image-wrapper',
+      {
+        autoAlpha: 0,
+      },
+      'end'
+    );
     this.timeline.add(tl);
   }
 }
