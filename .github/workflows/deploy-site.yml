@@ -4,6 +4,8 @@ run-name: 'Deploy Site - ${{ github.event.release.name }}'
 on:
   release:
     types: [ published ]
+  workflow_dispatch:
+
 
 concurrency:
   group: deploy-site
