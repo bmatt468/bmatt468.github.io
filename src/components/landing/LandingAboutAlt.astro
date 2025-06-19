@@ -1,0 +1,53 @@
+---
+import Astronaut from '@assets/icons/astronaut.svg';
+import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
+---
+
+<LandingGsapBox
+  id="gsapBoxAbout"
+  linkId="about"
+  classes="bg-dark-primary box-content flex-col py-16 relative min-h-[50svh]"
+  minHeightScreen={false}
+>
+  <div class="z-10 text-center">
+    <h1 class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl">
+      About Me
+    </h1>
+
+    <p
+      class="text-secondary mb-8 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
+    >
+      And what I love
+    </p>
+
+    <p class="prose text-primary mb-8 text-center text-balance">
+      I have been a software engineer for well over a decade. My passion is
+      working with PHP&mdash;specifically the TALL stack (Tailwind, Alpine.js,
+      Laravel, Livewire)... however, I love working in all aspects of the
+      codebase and SDLC.
+    </p>
+
+    <p class="prose text-primary mb-8 text-center text-balance">
+      I am as comfortable working in the cloud as I am slinging code; few things
+      excite me more than learning something new! Currently I am working on
+      learning PyTorch and expanding my <a
+        href="https://www.highiron.co?utm_source=portfolio&utm_content=landingaboutme"
+        target="_blank"
+        class="text-primary hover:text-secondary"
+        >tech consultancy</a
+      >.
+    </p>
+
+    <p class="prose text-primary mb-8 text-center text-balance">
+      When I'm not in front of a screen, you'll probably find me on a run,
+      playing with my boys, or cooking.
+    </p>
+  </div>
+
+  <div
+    class="absolute top-0 right-1/4 bottom-0 z-0 aspect-3/4 h-[120%] sm:right-1/2 md:right-2/3"
+    data-speed=".75"
+  >
+    <span><Astronaut class="text-dark-secondary" /></span>
+  </div>
+</LandingGsapBox>

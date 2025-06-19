@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
+import LandingAboutAlt from '@components/landing/LandingAboutAlt.astro';
 import LandingContact from '@components/landing/LandingContact.astro';
 import LandingFooter from '@components/landing/LandingFooter.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
@@ -10,7 +11,6 @@ import GsapSmoothScroll from '@components/ui/GsapSmoothScroll.astro';
 import Space1 from '@images/space/space1.jpg';
 import Space4 from '@images/space/space4.jpg';
 import LandingLayout from '@layouts/LandingLayout.astro';
-import LandingAbout from "../components/landing/LandingAbout.astro";
 ---
 
 <LandingLayout>
@@ -66,38 +66,7 @@ import LandingAbout from "../components/landing/LandingAbout.astro";
     <!--  </div>-->
     <!--</div>-->
 
-    <!--<LandingAbout />-->
-
-    <LandingGsapBox
-      id="gsapBoxAbout"
-      linkId="about"
-      classes="p-2 py-8"
-    >
-      <div class="flex flex-row items-center justify-center">
-        <div class="text-center">
-          <h1
-            class="text-primary sticky top-0 text-5xl font-semibold tracking-tight sm:text-7xl"
-          >
-            About Me
-          </h1>
-          <p
-            class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"
-          >
-            My Passions, Projects, and Past
-          </p>
-          <p class="prose text-primary mb-4 text-center text-balance">
-            I have been a software engineer for well over a decade. My passion is
-            working with PHP&mdash;specifically the TALL stack (Tailwind, Alpine.js,
-            Laravel, Livewire)... however, I love working in all aspects of the
-            codebase and SDLC.
-          </p>
-          <p class="prose text-primary text-center text-balance">
-            I am as comfortable working in the cloud as I am slinging code; few things
-            excite me more than learning something new!
-          </p>
-        </div>
-      </div>
-    </LandingGsapBox>
+    <LandingAboutAlt />
 
     <LandingGsapBox
       id="gsapBoxSkills"
