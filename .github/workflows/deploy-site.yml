@@ -1,5 +1,5 @@
 name: Deploy Site
-run-name: 'Deploy Site - ${{ github.event.release.name }}'
+run-name: 'Deploy Site - ${{ github.ref_type }} - ${{ github.ref_name }} - ${{ github.sha }}'
 
 on:
   release:
