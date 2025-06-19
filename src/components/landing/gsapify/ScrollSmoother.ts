@@ -6,6 +6,7 @@ function get(): ScrollSmoother {
   if (!smoother) {
     return ScrollSmoother.create({
       smooth: 1,
+      smoothTouch: 0.5,
       effects: true,
     });
   }
