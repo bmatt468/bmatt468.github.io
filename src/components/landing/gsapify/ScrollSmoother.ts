@@ -9,6 +9,7 @@ function get(): ScrollSmoother {
       smoothTouch: 1,
       effects: true,
       normalizeScroll: true,
+      ignoreMobileResize: true,
     });
   }
 
