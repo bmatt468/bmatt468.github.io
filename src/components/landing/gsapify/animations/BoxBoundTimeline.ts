@@ -8,6 +8,7 @@ export interface BoxBoundTimelineConfig {
   markers?: boolean;
   pin?: string | boolean;
   pinReparent?: boolean;
+  snap?: 'labels' | 'labelsDirectional' | number;
 }
 
 const defaultBoxBoundTimelineConfig: Required<BoxBoundTimelineConfig> = {
@@ -16,6 +17,7 @@ const defaultBoxBoundTimelineConfig: Required<BoxBoundTimelineConfig> = {
   markers: false,
   pin: false,
   pinReparent: false,
+  snap: 0,
 };
 
 export abstract class BoxBoundTimeline extends BaseTimeline {
@@ -38,6 +40,7 @@ export abstract class BoxBoundTimeline extends BaseTimeline {
         markers: config.markers,
         pin: config.pin,
         pinReparent: config.pinReparent,
+        snap: config.snap,
       },
     });
 

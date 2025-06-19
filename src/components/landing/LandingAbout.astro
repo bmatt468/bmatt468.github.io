@@ -1,6 +1,9 @@
 ---
-import Resume from '@assets/icons/resume.svg';
+import About from '@assets/icons/about.svg';
+import AboutContent from '@components/landing/abouts/AboutContent.astro';
+import PassionsContent from '@components/landing/abouts/PassionsContent.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
+import Resume from '@images/resume.svg';
 ---
 
 <LandingGsapBox
@@ -22,15 +25,14 @@ import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
     </a>
 
     <p class="prose text-primary my-8 text-balance">
-      Care for a closer look at what I've done?&nbsp;🔎 Grab a copy of my
-      resume! You can find it at the link above&nbsp;👆, the button
-      below&nbsp;👇, or&nbsp;👉
+      Care for a closer look at what I've done? Grab a copy of my resume! You
+      can find it at the link above, the button below, or
       <a
         href={new URL('assets/resume-2025.pdf', Astro.site)}
         target="_blank"
         class="text-primary hover:text-secondary"
         >right here</a
-      >&nbsp;👈!
+      >!
     </p>
 
     <p class="prose text-primary my-8 text-balance">
@@ -57,5 +59,56 @@ import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
     data-speed=".75"
   >
     <span><Resume class="text-dark-secondary" /></span>
+  </div>
+</LandingGsapBox>
+
+<LandingGsapBox
+  id="gsapBoxAbout"
+  linkId="about"
+  classes="py-8 max-h-[100svh]"
+>
+  <div
+    id="about-container"
+    class="grid w-full max-w-[43rem] grid-rows-[min-content_min-content] self-stretch"
+  >
+    <div
+      id="about-titles"
+      class="place-self-center text-center"
+    >
+      <h1
+        id="about-title"
+        class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
+      >
+        About Me
+      </h1>
+      <p
+        id="about-subtitle"
+        class="text-secondary mt-2 text-xl font-medium tracking-widest uppercase sm:text-3xl"
+      >
+        And What I Do
+      </p>
+    </div>
+
+    <!--<div-->
+    <!--  id="about-content"-->
+    <!--  class="row-span-3 my-2 w-full overflow-hidden transition-all duration-500"-->
+    <!--&gt;-->
+    <!--  <div-->
+    <!--    id="about-content-slides"-->
+    <!--    class="hidden h-full"-->
+    <!--  >-->
+    <!--    <AboutContent />-->
+    <!--    <PassionsContent />-->
+    <!--    <div class="h-full bg-green-400"></div>-->
+    <!--    <div class="h-full bg-red-400"></div>-->
+    <!--  </div>-->
+    <!--</div>-->
+
+    <div
+      id="about-svg-morph"
+      class="text-tertiary size-16 shrink place-self-center sm:size-[5rem]"
+    >
+      <About />
+    </div>
   </div>
 </LandingGsapBox>

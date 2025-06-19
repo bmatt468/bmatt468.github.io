@@ -1,107 +1,17 @@
-@theme inline {
-  /*Light*/
-  --color-landing-header-bg: var(--color-abbey-50);
-  --color-landing-hero-bg: var(--color-shakespeare-50);
-  --color-landing-skills-bg: var(--color-jellybean-100);
-  --color-landing-experience-bg: var(--color-bismark-100);
-  --color-landing-freelance-bg: var(--color-java-100);
-  --color-landing-contact-bg: var(--color-puerto-rico-100);
-  --color-landing-footer-bg: var(--color-abbey-100);
-
-  --color-landing-header-text: var(--color-abbey-1000);
-  --color-landing-hero-text: var(--color-abbey-1000);
-  --color-landing-skills-text: var(--color-abbey-1000);
-  --color-landing-experience-text: var(--color-abbey-1050);
-  --color-landing-freelance-text: var(--color-abbey-1050);
-  --color-landing-contact-text: var(--color-abbey-1100);
-  --color-landing-footer-text: var(--color-abbey-1000);
-
-  /*Dark*/
-  --color-landing-header-bg-dark: var(--color-abbey-800);
-  --color-landing-hero-bg-dark: var(--color-shakespeare-800);
-  --color-landing-skills-bg-dark: var(--color-jellybean-800);
-  --color-landing-experience-bg-dark: var(--color-bismark-800);
-  --color-landing-freelance-bg-dark: var(--color-java-800);
-  --color-landing-contact-bg-dark: var(--color-puerto-rico-800);
-  --color-landing-footer-bg-dark: var(--color-abbey-900);
-
-  --color-landing-header-text-dark: var(--color-abbey-50);
-  --color-landing-hero-text-dark: var(--color-shakespeare-50);
-  --color-landing-skills-text-dark: var(--color-jellybean-50);
-  --color-landing-experience-text-dark: var(--color-bismark-50);
-  --color-landing-freelance-text-dark: var(--color-java-50);
-  --color-landing-contact-text-dark: var(--color-puerto-rico-50);
-  --color-landing-footer-text-dark: var(--color-abbey-100);
-}
-
 @layer components {
-  .landing-header {
-    @apply bg-landing-header-bg;
-    @apply text-landing-header-text;
+  .about-content-passions-card {
+    @apply text-primary bg-dark-secondary outline-tertiary-dark grid grid-rows-2 rounded-xl p-2 text-center outline drop-shadow-md;
 
-    @variant dark {
-      @apply bg-landing-header-bg-dark;
-      @apply text-landing-header-text-dark;
+    p {
+      @apply text-tertiary text-sm font-medium tracking-widest uppercase sm:text-base;
     }
-  }
 
-  .landing-hero {
-    @apply bg-landing-hero-bg;
-    @apply text-landing-hero-text;
+    div {
+      @apply flex justify-evenly overflow-hidden sm:justify-center sm:gap-x-2;
 
-    @variant dark {
-      @apply bg-landing-hero-bg-dark;
-      @apply text-landing-hero-text-dark;
-    }
-  }
-
-  .landing-skills {
-    @apply from-landing-skills-bg to-landing-experience-bg bg-gradient-to-b;
-    @apply text-landing-skills-text;
-
-    @variant dark {
-      @apply from-landing-skills-bg-dark to-landing-experience-bg-dark bg-gradient-to-b;
-      @apply text-landing-skills-text-dark;
-    }
-  }
-
-  .landing-experience {
-    @apply from-landing-experience-bg to-landing-freelance-bg bg-gradient-to-b;
-    @apply text-landing-experience-text;
-
-    @variant dark {
-      @apply from-landing-experience-bg-dark to-landing-freelance-bg-dark bg-gradient-to-b;
-      @apply text-landing-experience-text-dark;
-    }
-  }
-
-  .landing-freelance {
-    @apply from-landing-freelance-bg to-landing-contact-bg bg-gradient-to-b;
-    @apply text-landing-freelance-text;
-
-    @variant dark {
-      @apply from-landing-freelance-bg-dark to-landing-contact-bg-dark bg-gradient-to-b;
-      @apply text-landing-freelance-text-dark;
-    }
-  }
-
-  .landing-contact {
-    @apply bg-landing-contact-bg;
-    @apply text-landing-contact-text;
-
-    @variant dark {
-      @apply bg-landing-contact-bg-dark;
-      @apply text-landing-contact-text-dark;
-    }
-  }
-
-  .landing-footer {
-    @apply bg-landing-footer-bg;
-    @apply text-landing-footer-text;
-
-    @variant dark {
-      @apply bg-landing-footer-bg-dark;
-      @apply text-abbey-100;
+      svg {
+        @apply size-8 sm:size-10;
+      }
     }
   }
 }

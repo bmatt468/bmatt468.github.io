@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 
+import LandingAboutAlt from '@components/landing/LandingAboutAlt.astro';
 import LandingContact from '@components/landing/LandingContact.astro';
 import LandingFooter from '@components/landing/LandingFooter.astro';
 import LandingGsapBox from '@components/landing/LandingGsapBox.astro';
@@ -34,7 +35,10 @@ import LandingLayout from '@layouts/LandingLayout.astro';
 
     <LandingResume />
 
-    <div class="bg-dark-primary h-[50svh] overflow-hidden">
+    <div
+      class="bg-dark-primary h-[50svh] overflow-hidden"
+      id="resume-about-spacer"
+    >
       <Image
         src={Space4}
         alt=""
@@ -45,41 +49,7 @@ import LandingLayout from '@layouts/LandingLayout.astro';
       />
     </div>
 
-    <div
-      class="bg-dark-primary flex h-[50svh] items-center justify-center overflow-hidden p-2"
-    >
-      <div class="text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          🚧 Coming soon! 🚧
-        </h1>
-        <p
-          class="text-secondary my-4 text-xl font-medium tracking-widest text-balance uppercase sm:text-3xl"
-        >
-          Pardon the mess! Code is still being slung 😊
-        </p>
-      </div>
-    </div>
-
-    <LandingGsapBox
-      id="gsapBoxAbout"
-      linkId="about"
-      classes="hidden"
-    >
-      <div class="text-center">
-        <h1
-          class="text-primary text-5xl font-semibold tracking-tight sm:text-7xl"
-        >
-          About
-        </h1>
-        <p
-          class="text-secondary my-4 text-xl font-medium tracking-widest text-pretty uppercase sm:text-3xl"
-        >
-          I'm going to talk about me here
-        </p>
-      </div>
-    </LandingGsapBox>
+    <LandingAboutAlt />
 
     <LandingGsapBox
       id="gsapBoxSkills"
