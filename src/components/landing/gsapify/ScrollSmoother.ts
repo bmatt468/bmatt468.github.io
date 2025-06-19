@@ -8,6 +8,7 @@ function get(): ScrollSmoother {
       smooth: 1,
       smoothTouch: 1,
       effects: true,
+      normalizeScroll: true,
     });
   }
 

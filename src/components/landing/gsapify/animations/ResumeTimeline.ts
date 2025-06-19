@@ -10,8 +10,8 @@ export class ResumeTimeline extends BoxBoundTimeline {
     const worker = new ScrollTriggerWorker(this, false);
     const tl = worker.timeline;
     tl.set('#landing-space-image-wrapper', {
-      display: 'none',
-    });
+      autoAlpha: 0,
+    }, 'end');
     this.timeline.add(tl);
   }
 }
