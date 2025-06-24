@@ -1,13 +1,32 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import Logo from '@assets/logos/logo.svg';
 ---
 
-<BaseLayout metadata={{
+<BaseLayout backgroundClass="bg-primary" metadata={{
   title: 'Blog | Benjamin Matthews',
   description: 'My little slice of the interwebs where I talk about my current ADHD obsession (or something like that...)',
   site: Astro.request.url,
 }}>
-  <header></header>
-  <main></main>
+  <header class="px-8 py-5">
+    <div class="size-16">
+      <a href="/blog">
+        <Logo/>
+      </a>
+    </div>
+
+    <nav>
+      <a href="#">Blog Home</a>
+      <a href="#">Most Recent Post</a>
+      <a href="#">Tags</a>
+    </nav>
+
+    <div>
+
+    </div>
+  </header>
+  <main>
+    <h1>Blog</h1>
+  </main>
   <footer></footer>
 </BaseLayout>

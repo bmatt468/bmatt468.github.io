@@ -11,14 +11,15 @@ import ThemeInitialization from '@components/common/ThemeInitialization.astro';
 
 export interface Props {
   metadata?: MetadataType;
+  backgroundClass?: string;
 }
 
-const { metadata = {} } = Astro.props;
+const { metadata = {}, backgroundClass = '' } = Astro.props;
 ---
 
 <html
   lang="en"
-  class="h-full"
+  class:list={['h-full', backgroundClass]}
 >
   <head>
     <Favicons />
