@@ -1,11 +1,19 @@
 ---
 import '@styles/global.css';
 
+import type { Metadata as MetadataType } from 'src/env';
+
 import Analytics from '@components/common/Analytics.astro';
 import Favicons from '@components/common/Favicons.astro';
 import Fonts from '@components/common/Fonts.astro';
 import Metadata from '@components/common/Metadata.astro';
 import ThemeInitialization from '@components/common/ThemeInitialization.astro';
+
+export interface Props {
+  metadata?: MetadataType;
+}
+
+const { metadata = {} } = Astro.props;
 ---
 
 <html
@@ -15,7 +23,7 @@ import ThemeInitialization from '@components/common/ThemeInitialization.astro';
   <head>
     <Favicons />
     <Fonts />
-    <Metadata />
+    <Metadata {...metadata} />
     <Analytics />
     <ThemeInitialization />
   </head>
