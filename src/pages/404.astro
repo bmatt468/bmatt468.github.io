@@ -20,10 +20,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         Sorry, we couldn’t find the page you’re looking for.
       </p>
       <div class="mt-10">
+        <div>
+          <a
+            href={Astro.site}
+            class="text-primary text-sm/7 font-semibold"
+            ><span aria-hidden="true">&larr;</span> Back to home</a
+          >
+        </div>
         <a
-          href={Astro.site}
+          href="/blog"
           class="text-primary text-sm/7 font-semibold"
-          ><span aria-hidden="true">&larr;</span> Back to home</a
+          ><span aria-hidden="true">📖</span> Read the blog</a
         >
       </div>
     </div>
