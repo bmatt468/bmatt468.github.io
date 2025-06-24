@@ -2,10 +2,12 @@
 @import './colors.css';
 @import './landing.css';
 @import './icons.css';
+@import './blog.css';
 @plugin "@tailwindcss/typography";
 
 @theme inline {
   --font-sans: InterVariable, sans-serif;
+  --breakpoint-xs: 30rem;
 
   --color-abbey: oklch(0.431 0.017 248.21);
   --color-abbey-light: oklch(0.631 0.017 248.21);

@@ -1,0 +1,25 @@
+@theme inline {
+  /*light mode*/
+  --color-blog-header: var(--color-abbey-50);
+  --color-blog-text: var(--color-dark-primary);
+  --color-blog-link-hover: var(--color-secondary);
+
+  /*dark mode*/
+  --color-blog-header-dark: var(--color-dark-secondary);
+  --color-blog-text-dark: var(--color-primary);
+  --color-blog-link-hover-dark: var(--color-secondary);
+}
+
+@layer base {
+  .blog-root {
+    color: var(--color-blog-text);
+
+    a {
+      @apply hover:text-blog-link-hover dark:hover:text-blog-link-hover-dark transition-colors duration-200;
+    }
+
+    @variant dark {
+      color: var(--color-blog-text-dark);
+    }
+  }
+}

@@ -1,29 +1,55 @@
 ---
 import { Icon } from 'astro-icon/components';
 
+import Logo from '@assets/logos/logo-dual-theme.svg';
 import ThemeToggle from '@components/ui/ThemeToggle.astro';
 ---
 
-<header class="t-0 fixed z-50 w-full bg-white dark:bg-neutral-800">
-  <nav
-    class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-    aria-label="Global"
-  >
-    <div class="flex lg:flex-1">
-      <a
-        href="#"
-        class="-m-1.5 p-1.5"
-      >
-        <span class="sr-only">Benjamin Matthews</span>
-        <Icon
-          name="logos/logo"
-          class="size-10"
-        />
-      </a>
-    </div>
+<header
+  class="bg-blog-header dark:bg-blog-header-dark flex items-center justify-center px-3 py-2 sm:px-8 sm:py-5"
+>
+  <div class="aspect-4/3 w-12 text-left">
+    <a href="/blog">
+      <Logo />
+    </a>
+  </div>
 
-    <div class="flex flex-1 justify-end">
-      <ThemeToggle />
-    </div>
+  <nav
+    class="xs:mx-8 col-span-2 mx-4 flex grow items-center justify-start gap-6 sm:gap-12"
+  >
+    <a
+      href="#"
+      class="inline-flex items-center justify-center gap-2"
+    >
+      <Icon
+        name="mdi:home"
+        class="xs:size-4 size-8"
+      />
+      <span class="xs:inline hidden">Home</span>
+    </a>
+    <a
+      href="#"
+      class="inline-flex items-center justify-center gap-2"
+    >
+      <Icon
+        name="mdi:tags"
+        class="xs:size-4 size-8"
+      />
+      <span class="xs:inline hidden">Tags</span>
+    </a>
+    <a
+      href="#"
+      class="inline-flex items-center justify-center gap-2"
+    >
+      <Icon
+        name="mdi:recent"
+        class="xs:size-4 size-8"
+      />
+      <span class="xs:inline hidden">Tags</span>
+    </a>
   </nav>
+
+  <div class="text-right">
+    <ThemeToggle />
+  </div>
 </header>
