@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import Logo from '@assets/logos/logo.svg';
+import Logo from '@assets/logos/logo-dual-theme.svg';
 ---
 
 <BaseLayout backgroundClass="bg-primary" metadata={{
@@ -8,17 +8,18 @@ import Logo from '@assets/logos/logo.svg';
   description: 'My little slice of the interwebs where I talk about my current ADHD obsession (or something like that...)',
   site: Astro.request.url,
 }}>
-  <header class="px-8 py-5">
-    <div class="size-16">
+  <header class="px-8 py-5 bg-dark-primary flex items-center">
+    <div class="w-16 h-11">
       <a href="/blog">
         <Logo/>
       </a>
     </div>
 
-    <nav>
+    <nav class="w-full flex gap-2 justify-center">
       <a href="#">Blog Home</a>
-      <a href="#">Most Recent Post</a>
       <a href="#">Tags</a>
+      <a href="#">Most Recent Post</a>
+
     </nav>
 
     <div>

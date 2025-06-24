@@ -42,4 +42,16 @@
   path.ff-rocket-flame-flame {
     color: var(--color-amber-700);
   }
+
+  .logo-dual-theme-b-path {
+    fill: var(--color-abbey);
+
+    @variant dark {
+      fill: var(--color-abbey-white);
+    }
+  }
+
+  .logo-dual-theme-m-path {
+    fill: var(--color-secondary);
+  }
 }
