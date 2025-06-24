@@ -52,6 +52,10 @@
   }
 
   .logo-dual-theme-m-path {
-    fill: var(--color-secondary);
+    fill: var(--color-secondary-dark);
+
+    @variant dark {
+      fill: var(--color-secondary);
+    }
   }
 }

@@ -12,14 +12,39 @@
 
 @layer base {
   .blog-root {
+    @apply transform transition-colors duration-200 ease-in-out;
     color: var(--color-blog-text);
-
-    a {
-      @apply hover:text-blog-link-hover dark:hover:text-blog-link-hover-dark transition-colors duration-200;
-    }
 
     @variant dark {
       color: var(--color-blog-text-dark);
+    }
+
+    h1.title {
+      @apply max-w-xl text-4xl font-medium tracking-tight text-balance;
+    }
+
+    h2.subtitle {
+      @apply text-secondary-dark dark:text-secondary mt-2 mb-8 text-lg/6 font-normal tracking-widest text-balance uppercase sm:mb-12;
+    }
+
+    a {
+      @apply hover:text-blog-link-hover dark:hover:text-blog-link-hover-dark hover:transition-colors;
+    }
+  }
+}
+
+@layer components {
+  .blog-root {
+    #logo-dual-theme:hover {
+      color: var(--color-tertiary) !important;
+
+      .logo-dual-theme-b-path {
+        fill: currentColor;
+      }
+
+      .logo-dual-theme-m-path {
+        fill: currentColor;
+      }
     }
   }
 }
